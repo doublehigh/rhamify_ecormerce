@@ -16,9 +16,9 @@ class EcommerceCsvSeeder extends Seeder
     private array $sectionTables = [
         1 => 'abouts',
         2 => 'adverisements',
-        3 => 'blogs',
-        4 => 'blog_categories',
-        5 => 'blog_comments',
+        3 => null,
+        4 => null,
+        5 => null,
         6 => 'brands',
         7 => 'categories',
         8 => 'chats',
