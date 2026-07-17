@@ -153,7 +153,10 @@
                                     @foreach ($products as $product)
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="wsus__product_item">
-                                            <span class="wsus__new">{{productType($product->product_type)}}</span>
+                                            @php($productType = productType($product->product_type))
+                                            @if($productType)
+                                                <span class="wsus__new">{{$productType}}</span>
+                                            @endif
                                             @if(checkDiscount($product))
                                                 <span class="wsus__minus">-{{calculateDiscountPercent($product->price, $product->offer_price)}}%</span>
                                             @endif
@@ -223,7 +226,10 @@
                                     @foreach ($products as $product)
                                     <div class="col-xl-12">
                                         <div class="wsus__product_item wsus__list_view">
-                                            <span class="wsus__new">{{productType($product->product_type)}}</span>
+                                            @php($productType = productType($product->product_type))
+                                            @if($productType)
+                                                <span class="wsus__new">{{$productType}}</span>
+                                            @endif
                                             @if(checkDiscount($product))
                                             <span class="wsus__minus">-{{calculateDiscountPercent($product->price, $product->offer_price)}}%</span>
                                             @endif
