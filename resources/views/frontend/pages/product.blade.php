@@ -342,16 +342,6 @@
                 })
             })
         })
-        @php
-            if(request()->has('range') && request()->range !=  ''){
-                $price = explode(';', request()->range);
-                $from = $price[0];
-                $to = $price[1];
-            }else {
-                $from = 0;
-                $to = 8000;
-            }
-        @endphp
         jQuery(function () {
         jQuery("#slider_range").flatslider({
             min: 0, max: 10000,
