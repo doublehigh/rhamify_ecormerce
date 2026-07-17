@@ -415,15 +415,25 @@ body {
   .wsus__section_header .simply-hours-section,
   .wsus__section_header .simply-minutes-section,
   .wsus__section_header .simply-seconds-section {
-    width: 40px;
-    min-width: 40px;
-    height: 26px;
-    padding-top: 4px;
+    width: 34px;
+    min-width: 34px;
+    height: 28px;
+    padding-top: 2px;
   }
 
   .wsus__section_header .simply-amount {
-    font-size: 13px;
+    font-size: 11px;
     line-height: 1;
+    font-weight: 700;
+  }
+
+  .wsus__section_header .simply-word,
+  .wsus__flash_coundown .simply-word {
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   .wsus__flash_coundown {
@@ -441,6 +451,22 @@ body {
   .wsus__flash_coundown .common_btn {
     width: 100%;
     text-align: center;
+  }
+
+  .wsus__flash_coundown .simply-days-section,
+  .wsus__flash_coundown .simply-hours-section,
+  .wsus__flash_coundown .simply-minutes-section,
+  .wsus__flash_coundown .simply-seconds-section {
+    width: 40px;
+    min-width: 40px;
+    height: 36px;
+    padding-top: 4px;
+  }
+
+  .wsus__flash_coundown .simply-amount {
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
   }
 
   .wsus__product_item .wsus__pro_link {
@@ -488,12 +514,12 @@ body {
   .wsus__flash_coundown .simply-hours-section,
   .wsus__flash_coundown .simply-minutes-section,
   .wsus__flash_coundown .simply-seconds-section {
-    width: 36px;
-    min-width: 36px;
+    width: 30px;
+    min-width: 30px;
   }
 
   .wsus__section_header .simply-amount {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .wsus__offer_countdown .end_text {
@@ -502,5 +528,14 @@ body {
 
   .wsus__flash_coundown .end_text {
     font-size: 16px;
+  }
+
+  .wsus__section_header .simply-word,
+  .wsus__flash_coundown .simply-word {
+    font-size: 8px;
+  }
+
+  .wsus__flash_coundown .simply-amount {
+    font-size: 10px;
   }
 }
