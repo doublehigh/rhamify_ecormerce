@@ -322,7 +322,7 @@ body {
 .wsus__offer_countdown .simply-countdown,
 .wsus__flash_coundown .simply-countdown {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px;
 }
 
@@ -403,11 +403,11 @@ body {
     width: 100%;
     align-items: flex-start;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .wsus__offer_countdown .end_text {
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 0;
   }
 
@@ -415,14 +415,14 @@ body {
   .wsus__section_header .simply-hours-section,
   .wsus__section_header .simply-minutes-section,
   .wsus__section_header .simply-seconds-section {
-    width: 46px;
-    min-width: 46px;
-    height: 28px;
-    padding-top: 3px;
+    width: 40px;
+    min-width: 40px;
+    height: 26px;
+    padding-top: 4px;
   }
 
   .wsus__section_header .simply-amount {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1;
   }
 
@@ -432,7 +432,7 @@ body {
   }
 
   .wsus__flash_coundown .end_text {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 0;
     margin-bottom: 0;
     text-align: center;
@@ -471,7 +471,7 @@ body {
   .wsus__flash_coundown .simply-countdown,
   .wsus__offer_countdown .simply-countdown {
     justify-content: center;
-    width: 100%;
+    width: auto;
   }
 }
 
@@ -488,11 +488,19 @@ body {
   .wsus__flash_coundown .simply-hours-section,
   .wsus__flash_coundown .simply-minutes-section,
   .wsus__flash_coundown .simply-seconds-section {
-    width: 42px;
-    min-width: 42px;
+    width: 36px;
+    min-width: 36px;
   }
 
   .wsus__section_header .simply-amount {
-    font-size: 14px;
+    font-size: 12px;
+  }
+
+  .wsus__offer_countdown .end_text {
+    font-size: 13px;
+  }
+
+  .wsus__flash_coundown .end_text {
+    font-size: 16px;
   }
 }
