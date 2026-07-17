@@ -425,14 +425,14 @@ body {
   .wsus__section_header .simply-hours-section,
   .wsus__section_header .simply-minutes-section,
   .wsus__section_header .simply-seconds-section {
-    width: 27px;
-    min-width: 27px;
-    height: 25px;
-    padding-top: 2px;
+    width: 33px;
+    min-width: 33px;
+    height: 31px;
+    padding-top: 4px;
   }
 
   .wsus__section_header .simply-amount {
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 1;
   }
@@ -440,7 +440,7 @@ body {
   .wsus__section_header .simply-word,
   .wsus__flash_coundown .simply-word {
     display: block;
-    font-size: 7px;
+    font-size: 8px;
     font-weight: 800;
     line-height: 1;
     text-transform: uppercase;
@@ -467,14 +467,14 @@ body {
   .wsus__flash_coundown .simply-hours-section,
   .wsus__flash_coundown .simply-minutes-section,
   .wsus__flash_coundown .simply-seconds-section {
-    width: 30px;
-    min-width: 30px;
-    height: 28px;
-    padding-top: 3px;
+    width: 36px;
+    min-width: 36px;
+    height: 34px;
+    padding-top: 5px;
   }
 
   .wsus__flash_coundown .simply-amount {
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 700;
     line-height: 1;
   }
@@ -507,11 +507,11 @@ body {
 
 @media (max-width: 379.98px) {
   .wsus__offer_countdown {
-    gap: 5px;
+    gap: 0;
   }
 
   .wsus__offer_countdown .end_text {
-    font-size: 10px;
+    display: none;
   }
 
   .wsus__offer_countdown .simply-countdown,
@@ -523,30 +523,30 @@ body {
   .wsus__offer_countdown .simply-hours-section,
   .wsus__offer_countdown .simply-minutes-section,
   .wsus__offer_countdown .simply-seconds-section {
-    width: 23px;
-    min-width: 23px;
-    height: 23px;
-    padding-top: 2px;
+    width: 31px;
+    min-width: 31px;
+    height: 30px;
+    padding-top: 4px;
   }
 
   .wsus__flash_coundown .simply-days-section,
   .wsus__flash_coundown .simply-hours-section,
   .wsus__flash_coundown .simply-minutes-section,
   .wsus__flash_coundown .simply-seconds-section {
-    width: 27px;
-    min-width: 27px;
-    height: 25px;
-    padding-top: 2px;
+    width: 34px;
+    min-width: 34px;
+    height: 32px;
+    padding-top: 4px;
   }
 
   .wsus__section_header .simply-amount,
   .wsus__flash_coundown .simply-amount {
-    font-size: 8px;
+    font-size: 11px;
   }
 
   .wsus__section_header .simply-word,
   .wsus__flash_coundown .simply-word {
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .wsus__flash_coundown {

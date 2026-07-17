@@ -94,6 +94,7 @@
             month: {{date('m', strtotime($flashSaleDate->end_date))}},
             day: {{date('d', strtotime($flashSaleDate->end_date))}},
             words: countdownWords,
+            zeroPad: true,
         });
     })
 </script>
