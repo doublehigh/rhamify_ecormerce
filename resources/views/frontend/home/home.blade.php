@@ -13,6 +13,14 @@
         BANNER PART 2 END
     ==============================-->
 
+    <!--============================
+        MARKETPLACE SHORTCUTS START
+    ==============================-->
+    @include('frontend.home.sections.marketplace-shortcuts')
+    <!--============================
+        MARKETPLACE SHORTCUTS END
+    ==============================-->
+
 
     <!--============================
         FLASH SELL START

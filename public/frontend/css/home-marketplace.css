@@ -1,0 +1,344 @@
+body {
+  background: #f4f6f8;
+}
+
+#wsus__banner .container,
+.marketplace_shortcuts .container,
+#wsus__flash_sell .container,
+#wsus__monthly_top .container,
+#wsus__brand_sleder .container,
+#wsus__single_banner .container,
+#wsus__hot_deals .container,
+#wsus__electronic .container,
+#wsus__large_banner .container,
+#wsus__weekly_best .container,
+#wsus__home_services .container,
+#wsus__blogs .container {
+  max-width: 1240px;
+}
+
+#wsus__banner {
+  padding-top: 18px;
+}
+
+.wsus__banner_content {
+  margin-top: 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgb(16 24 40 / 10%);
+}
+
+.wsus__single_slider {
+  min-height: 360px;
+  display: flex !important;
+  align-items: center;
+}
+
+.wsus__single_slider_text {
+  max-width: 520px;
+  padding: 24px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgb(255 255 255 / 92%), rgb(255 255 255 / 68%), rgb(255 255 255 / 0%));
+}
+
+.marketplace_shortcuts {
+  padding-top: 18px;
+}
+
+.marketplace_shortcuts_inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.75fr);
+  gap: 16px;
+}
+
+.marketplace_shortcuts_panel {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgb(16 24 40 / 8%);
+}
+
+.category_panel {
+  padding: 16px;
+}
+
+.marketplace_panel_title {
+  color: #222;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.marketplace_category_grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.marketplace_category_link {
+  min-height: 72px;
+  border: 1px solid #edf0f3;
+  border-radius: 8px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  text-align: center;
+  transition: all .2s ease;
+}
+
+.marketplace_category_link i {
+  color: #08C;
+  font-size: 22px;
+}
+
+.marketplace_category_link span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.marketplace_category_link:hover {
+  color: #08C;
+  border-color: #08C;
+  transform: translateY(-2px);
+}
+
+.action_panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  background: #edf0f3;
+}
+
+.marketplace_action_link {
+  min-height: 87px;
+  background: #fff;
+  color: #242424;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  align-content: center;
+  padding: 14px;
+}
+
+.marketplace_action_link i {
+  grid-row: 1 / span 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e9f6ff;
+  color: #08C;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketplace_action_link span {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.marketplace_action_link small {
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.marketplace_action_link:hover span {
+  color: #08C;
+}
+
+.wsus__section_header {
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+  padding: 13px 16px 8px;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.wsus__section_header h3 {
+  font-size: 22px;
+}
+
+#wsus__flash_sell,
+#wsus__monthly_top,
+#wsus__brand_sleder,
+#wsus__single_banner,
+#wsus__hot_deals,
+#wsus__electronic,
+#wsus__large_banner,
+#wsus__weekly_best,
+#wsus__home_services,
+#wsus__blogs {
+  padding-top: 28px;
+}
+
+.wsus__product_item,
+.wsus__hot_deals__single,
+.wsus__single_blog,
+.wsus__home_services_single,
+.brand_border,
+.wsus__monthly_top_banner,
+.wsus__single_banner_content,
+.wsus__large_banner_content {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgb(16 24 40 / 8%);
+}
+
+.wsus__product_item:hover,
+.wsus__hot_deals__single:hover,
+.wsus__single_blog:hover {
+  box-shadow: 0 12px 24px rgb(16 24 40 / 14%);
+  transform: translateY(-2px);
+}
+
+.wsus__product_item,
+.wsus__hot_deals__single,
+.wsus__single_blog {
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.wsus__product_item .wsus__pro_link {
+  height: 255px;
+  background: #fff;
+}
+
+.wsus__product_item .wsus__pro_link img,
+.wsus__hot_deals__single_img img,
+.wsus__blog_img img {
+  object-fit: contain;
+  background: #fff;
+}
+
+.wsus__product_details .wsus__pro_name {
+  min-height: 40px;
+}
+
+.wsus__product_details .wsus__price,
+.wsus__hot_deals__single_text .wsus__tk {
+  color: #101828;
+}
+
+.wsus__product_details .add_cart {
+  background: #08C;
+  font-weight: 700;
+}
+
+#wsus__monthly_top .grid {
+  row-gap: 14px;
+}
+
+.grid .wsus__hot_deals__single_img {
+  background: #fff;
+}
+
+.monthly_top_filter {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.monthly_top_filter button {
+  flex: 0 0 auto;
+}
+
+#wsus__brand_sleder .brand_border {
+  background: #fff;
+  padding: 16px 42px;
+}
+
+.wsus__single_banner_content,
+.wsus__large_banner_content,
+.wsus__monthly_top_banner {
+  overflow: hidden;
+}
+
+.wsus__single_banner_content img,
+.wsus__large_banner_content img,
+.wsus__monthly_top_banner img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 991.98px) {
+  .marketplace_shortcuts_inner {
+    grid-template-columns: 1fr;
+  }
+
+  .marketplace_category_grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .wsus__single_slider {
+    min-height: 300px;
+    padding: 80px 42px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #wsus__banner {
+    padding-top: 10px;
+  }
+
+  .wsus__single_slider {
+    min-height: 250px;
+    padding: 42px 18px;
+  }
+
+  .wsus__single_slider_text {
+    padding: 16px;
+    background: rgb(255 255 255 / 88%);
+  }
+
+  .wsus__single_slider_text h3 {
+    font-size: 17px;
+  }
+
+  .wsus__single_slider_text h1 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .marketplace_category_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .action_panel {
+    grid-template-columns: 1fr;
+  }
+
+  .marketplace_action_link {
+    min-height: 74px;
+  }
+
+  .wsus__section_header {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .wsus__section_header h3 {
+    font-size: 18px;
+  }
+
+  .wsus__product_item .wsus__pro_link {
+    height: 220px;
+  }
+
+  #wsus__flash_sell,
+  #wsus__monthly_top,
+  #wsus__brand_sleder,
+  #wsus__single_banner,
+  #wsus__hot_deals,
+  #wsus__electronic,
+  #wsus__large_banner,
+  #wsus__weekly_best,
+  #wsus__home_services,
+  #wsus__blogs {
+    padding-top: 20px;
+  }
+}
