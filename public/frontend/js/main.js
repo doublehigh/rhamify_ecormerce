@@ -575,6 +575,22 @@ $(function () {
         arrows: true,
         nextArrow: '<i class="fas fa-long-arrow-alt-right nxt_arr"></i>',
         prevArrow: '<i class="fas fa-long-arrow-alt-left prv_arr"></i>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     });
 
 
