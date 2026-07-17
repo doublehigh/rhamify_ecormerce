@@ -245,6 +245,22 @@ body {
   padding: 8px 10px;
 }
 
+.wsus__pro_page_bammer {
+  height: auto !important;
+  background: #fff;
+}
+
+.wsus__pro_page_bammer a {
+  display: block;
+}
+
+.wsus__pro_page_bammer img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  object-fit: contain;
+}
+
 #wsus__monthly_top .grid {
   row-gap: 14px;
 }
