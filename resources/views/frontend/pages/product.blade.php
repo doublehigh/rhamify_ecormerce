@@ -123,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-8">
+                <div class="col-xl-9 col-lg-8" id="product-results">
                     <div class="row">
                         <div class="col-xl-12 d-none d-md-block mt-md-4 mt-lg-0">
                             <div class="wsus__product_topbar">
@@ -309,13 +309,13 @@
                         </div>
                     </div>
                     @endif
-                </div>
 
-                <div class="col-xl-12 text-center">
-                    <div class="mt-5" style="display:flex; justify-content:center">
+                    <div class="product-results-pagination text-center">
+                        <div class="mt-5" style="display:flex; justify-content:center">
                         @if ($products->hasPages())
                             {{$products->withQueryString()->links()}}
                         @endif
+                        </div>
                     </div>
                 </div>
             </div>
@@ -329,6 +329,73 @@
 @push('scripts')
     <script>
         $(document).ready(function(){
+            function updateProductResults(url, pushState = true) {
+                const $results = $('#product-results');
+
+                $results.addClass('is-loading');
+
+                $.ajax({
+                    method: 'GET',
+                    url: url,
+                    success: function(response) {
+                        const html = $('<div>').append($.parseHTML(response));
+                        const nextResults = html.find('#product-results').html();
+
+                        if (!nextResults) {
+                            window.location.href = url;
+                            return;
+                        }
+
+                        $results.html(nextResults);
+
+                        if (pushState) {
+                            window.history.pushState({ productResultsUrl: url }, '', url);
+                        }
+                    },
+                    error: function() {
+                        window.location.href = url;
+                    },
+                    complete: function() {
+                        $results.removeClass('is-loading');
+                    }
+                });
+            }
+
+            $('.wsus__product_sidebar').on('click', 'a', function(e) {
+                const url = $(this).attr('href');
+
+                if (!url || url === '#') {
+                    return;
+                }
+
+                e.preventDefault();
+                updateProductResults(url);
+            });
+
+            $('.price_ranger form').on('submit', function(e) {
+                e.preventDefault();
+
+                const query = $(this).serialize();
+                const url = `${$(this).attr('action')}?${query}`;
+
+                updateProductResults(url);
+            });
+
+            $(document).on('click', '.product-results-pagination a', function(e) {
+                const url = $(this).attr('href');
+
+                if (!url || url === '#') {
+                    return;
+                }
+
+                e.preventDefault();
+                updateProductResults(url);
+            });
+
+            window.addEventListener('popstate', function() {
+                updateProductResults(window.location.href, false);
+            });
+
             $('.list-view').on('click', function(){
                 let style = $(this).data('id');
 

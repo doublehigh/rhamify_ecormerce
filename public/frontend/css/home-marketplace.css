@@ -227,6 +227,15 @@ body {
   font-weight: 700;
 }
 
+#product-results {
+  transition: opacity .18s ease;
+}
+
+#product-results.is-loading {
+  opacity: .45;
+  pointer-events: none;
+}
+
 #wsus__monthly_top .grid {
   row-gap: 14px;
 }

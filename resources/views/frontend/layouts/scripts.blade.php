@@ -125,7 +125,7 @@
         }
 
         // add product to wishlist
-        $('.add_to_wishlist').on('click', function(e){
+        $(document).on('click', '.add_to_wishlist', function(e){
             e.preventDefault();
             let id = $(this).data('id');
 
@@ -184,7 +184,7 @@
         })
 
 
-        $('.show_product_modal').on('click', function(){
+        $(document).on('click', '.show_product_modal', function(){
             let id = $(this).data('id');
 
             $.ajax({
