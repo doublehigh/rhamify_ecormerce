@@ -314,6 +314,30 @@ body {
   height: auto;
 }
 
+.wsus__offer_countdown,
+.wsus__flash_coundown {
+  gap: 12px;
+}
+
+.wsus__offer_countdown .simply-countdown,
+.wsus__flash_coundown .simply-countdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.wsus__offer_countdown .simply-days-section,
+.wsus__offer_countdown .simply-hours-section,
+.wsus__offer_countdown .simply-minutes-section,
+.wsus__offer_countdown .simply-seconds-section,
+.wsus__flash_coundown .simply-days-section,
+.wsus__flash_coundown .simply-hours-section,
+.wsus__flash_coundown .simply-minutes-section,
+.wsus__flash_coundown .simply-seconds-section {
+  margin: 0;
+  min-width: 54px;
+}
+
 @media (max-width: 991.98px) {
   .marketplace_shortcuts_inner {
     grid-template-columns: 1fr;
@@ -375,6 +399,50 @@ body {
     font-size: 18px;
   }
 
+  .wsus__offer_countdown {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .wsus__offer_countdown .end_text {
+    font-size: 16px;
+    margin-right: 0;
+  }
+
+  .wsus__section_header .simply-days-section,
+  .wsus__section_header .simply-hours-section,
+  .wsus__section_header .simply-minutes-section,
+  .wsus__section_header .simply-seconds-section {
+    width: 46px;
+    min-width: 46px;
+    height: 28px;
+    padding-top: 3px;
+  }
+
+  .wsus__section_header .simply-amount {
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .wsus__flash_coundown {
+    padding: 18px 14px;
+    gap: 14px;
+  }
+
+  .wsus__flash_coundown .end_text {
+    font-size: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .wsus__flash_coundown .common_btn {
+    width: 100%;
+    text-align: center;
+  }
+
   .wsus__product_item .wsus__pro_link {
     height: 220px;
   }
@@ -398,5 +466,33 @@ body {
 
   .wsus__pro_page_bammer {
     margin-bottom: 22px;
+  }
+
+  .wsus__flash_coundown .simply-countdown,
+  .wsus__offer_countdown .simply-countdown {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 379.98px) {
+  .wsus__flash_coundown {
+    padding: 16px 10px;
+  }
+
+  .wsus__offer_countdown .simply-days-section,
+  .wsus__offer_countdown .simply-hours-section,
+  .wsus__offer_countdown .simply-minutes-section,
+  .wsus__offer_countdown .simply-seconds-section,
+  .wsus__flash_coundown .simply-days-section,
+  .wsus__flash_coundown .simply-hours-section,
+  .wsus__flash_coundown .simply-minutes-section,
+  .wsus__flash_coundown .simply-seconds-section {
+    width: 42px;
+    min-width: 42px;
+  }
+
+  .wsus__section_header .simply-amount {
+    font-size: 14px;
   }
 }
