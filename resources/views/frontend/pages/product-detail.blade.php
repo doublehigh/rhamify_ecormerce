@@ -226,16 +226,18 @@
 
                                                         <span>({{count($product->reviews)}} review)</span>
                                                     </p>
+                                                    @if($product->vendor)
                                                     <p><span>Store Name:</span> {{$product->vendor->shop_name}}</p>
                                                     <p><span>Address:</span> {{$product->vendor->address}}</p>
                                                     <p><span>Phone:</span> {{$product->vendor->phone}}</p>
                                                     <p><span>mail:</span> {{$product->vendor->email}}</p>
-                                                    <a href="vendor_details.html" class="see_btn">visit store</a>
+                                                    <a href="{{route('vendor.products', $product->vendor->id)}}" class="see_btn">visit store</a>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="col-xl-12">
                                                 <div class="wsus__vendor_details">
-                                                    {!!$product->vendor->description!!}
+                                                    {!!$product->vendor?->description!!}
                                                 </div>
                                             </div>
                                         </div>
@@ -429,4 +431,3 @@
         })
     </script>
 @endpush
-
