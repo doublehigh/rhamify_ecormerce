@@ -236,6 +236,10 @@ body {
   pointer-events: none;
 }
 
+#wsus__product_page {
+  padding-top: 34px;
+}
+
 .wsus__product_sidebar ul li a.product-filter-link.active {
   color: #08C;
   font-weight: 700;
@@ -247,6 +251,7 @@ body {
 
 .wsus__pro_page_bammer {
   height: auto !important;
+  margin-bottom: 30px;
   background: #fff;
 }
 
@@ -259,6 +264,10 @@ body {
   width: 100%;
   height: auto !important;
   object-fit: contain;
+}
+
+#wsus__single_banner {
+  padding-top: 30px;
 }
 
 #wsus__monthly_top .grid {
@@ -291,9 +300,16 @@ body {
   overflow: hidden;
 }
 
+.wsus__single_banner_content a,
+.wsus__large_banner_content a,
+.wsus__monthly_top_banner a {
+  display: block;
+}
+
 .wsus__single_banner_content img,
 .wsus__large_banner_content img,
 .wsus__monthly_top_banner img {
+  display: block;
   width: 100%;
   height: auto;
 }
@@ -374,5 +390,13 @@ body {
   #wsus__home_services,
   #wsus__blogs {
     padding-top: 20px;
+  }
+
+  #wsus__product_page {
+    padding-top: 24px;
+  }
+
+  .wsus__pro_page_bammer {
+    margin-bottom: 22px;
   }
 }
