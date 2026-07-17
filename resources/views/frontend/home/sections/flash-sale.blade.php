@@ -29,10 +29,23 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
+        const countdownWords = window.innerWidth <= 575 ? {
+            days: { singular: 'D', plural: 'D' },
+            hours: { singular: 'H', plural: 'H' },
+            minutes: { singular: 'M', plural: 'M' },
+            seconds: { singular: 'S', plural: 'S' }
+        } : {
+            days: { singular: 'day', plural: 'days' },
+            hours: { singular: 'hour', plural: 'hours' },
+            minutes: { singular: 'minute', plural: 'minutes' },
+            seconds: { singular: 'second', plural: 'seconds' }
+        };
+
         simplyCountdown('.simply-countdown-one', {
             year: {{date('Y', strtotime($flashSaleDate->end_date))}},
             month: {{date('m', strtotime($flashSaleDate->end_date))}},
             day: {{date('d', strtotime($flashSaleDate->end_date))}},
+            words: countdownWords,
         });
     })
 </script>
