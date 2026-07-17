@@ -66,7 +66,7 @@
                                         <ul>
                                             @foreach ($categories as $category)
 
-                                            <li><a href="{{route('products.index', ['category' => $category->slug])}}">{{$category->name}}</a></li>
+                                            <li><a class="product-filter-link {{request('category') === $category->slug ? 'active' : ''}}" data-filter-key="category" data-filter-value="{{$category->slug}}" href="{{route('products.index', ['category' => $category->slug])}}">{{$category->name}}</a></li>
                                             @endforeach
 
                                         </ul>
@@ -112,7 +112,7 @@
                                         <ul>
                                             @foreach ($brands  as $brand)
 
-                                            <li><a href="{{route('products.index', ['brand' => $brand->slug])}}">{{$brand->name}}</a></li>
+                                            <li><a class="product-filter-link {{request('brand') === $brand->slug ? 'active' : ''}}" data-filter-key="brand" data-filter-value="{{$brand->slug}}" href="{{route('products.index', ['brand' => $brand->slug])}}">{{$brand->name}}</a></li>
                                             @endforeach
 
                                         </ul>
@@ -351,12 +351,29 @@
                         if (pushState) {
                             window.history.pushState({ productResultsUrl: url }, '', url);
                         }
+
+                        updateActiveFilters(url);
                     },
                     error: function() {
                         window.location.href = url;
                     },
                     complete: function() {
                         $results.removeClass('is-loading');
+                    }
+                });
+            }
+
+            function updateActiveFilters(url) {
+                const params = new URL(url, window.location.origin).searchParams;
+
+                $('.product-filter-link').removeClass('active');
+
+                $('.product-filter-link').each(function() {
+                    const key = $(this).data('filter-key');
+                    const value = $(this).data('filter-value');
+
+                    if (params.get(key) === value) {
+                        $(this).addClass('active');
                     }
                 });
             }

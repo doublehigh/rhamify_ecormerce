@@ -236,6 +236,15 @@ body {
   pointer-events: none;
 }
 
+.wsus__product_sidebar ul li a.product-filter-link.active {
+  color: #08C;
+  font-weight: 700;
+  background: #e9f6ff;
+  border-left: 3px solid #08C;
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+
 #wsus__monthly_top .grid {
   row-gap: 14px;
 }
