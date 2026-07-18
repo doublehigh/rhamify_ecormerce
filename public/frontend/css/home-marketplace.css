@@ -401,54 +401,56 @@ body {
 
   .wsus__offer_countdown {
     width: 100%;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: column;
     gap: 8px;
   }
 
   .wsus__offer_countdown .end_text {
-    flex: 0 0 auto;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1;
     margin-right: 0;
   }
 
   .wsus__offer_countdown .simply-countdown,
   .wsus__flash_coundown .simply-countdown {
-    width: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
     max-width: 100%;
-    justify-content: center;
   }
 
   .wsus__section_header .simply-days-section,
   .wsus__section_header .simply-hours-section,
   .wsus__section_header .simply-minutes-section,
   .wsus__section_header .simply-seconds-section {
-    width: 33px;
-    min-width: 33px;
-    height: 31px;
-    padding-top: 4px;
+    width: auto;
+    min-width: 0;
+    height: 52px;
+    margin: 0;
+    padding: 8px 4px 6px;
   }
 
   .wsus__section_header .simply-amount {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.1;
   }
 
   .wsus__section_header .simply-word,
   .wsus__flash_coundown .simply-word {
     display: block;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 800;
-    line-height: 1;
+    height: auto;
+    line-height: 1.1;
     text-transform: uppercase;
   }
 
   .wsus__flash_coundown {
-    padding: 14px 10px;
-    gap: 10px;
+    padding: 16px 12px;
+    gap: 12px;
   }
 
   .wsus__flash_coundown .end_text {
@@ -467,16 +469,20 @@ body {
   .wsus__flash_coundown .simply-hours-section,
   .wsus__flash_coundown .simply-minutes-section,
   .wsus__flash_coundown .simply-seconds-section {
-    width: 36px;
-    min-width: 36px;
-    height: 34px;
-    padding-top: 5px;
+    width: auto !important;
+    min-width: 0;
+    height: 58px !important;
+    margin: 0 !important;
+    padding: 9px 4px 7px !important;
+    line-height: 1 !important;
   }
 
   .wsus__flash_coundown .simply-amount {
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1;
+    border-bottom: 0;
+    font-size: 19px;
+    font-weight: 900;
+    height: auto;
+    line-height: 1.1;
   }
 
   .wsus__product_item .wsus__pro_link {
@@ -506,47 +512,35 @@ body {
 }
 
 @media (max-width: 379.98px) {
-  .wsus__offer_countdown {
-    gap: 0;
-  }
-
-  .wsus__offer_countdown .end_text {
-    display: none;
-  }
-
   .wsus__offer_countdown .simply-countdown,
   .wsus__flash_coundown .simply-countdown {
-    gap: 3px;
+    gap: 6px;
   }
 
   .wsus__offer_countdown .simply-days-section,
   .wsus__offer_countdown .simply-hours-section,
   .wsus__offer_countdown .simply-minutes-section,
   .wsus__offer_countdown .simply-seconds-section {
-    width: 31px;
-    min-width: 31px;
-    height: 30px;
-    padding-top: 4px;
+    height: 48px;
+    padding: 7px 3px 5px;
   }
 
   .wsus__flash_coundown .simply-days-section,
   .wsus__flash_coundown .simply-hours-section,
   .wsus__flash_coundown .simply-minutes-section,
   .wsus__flash_coundown .simply-seconds-section {
-    width: 34px;
-    min-width: 34px;
-    height: 32px;
-    padding-top: 4px;
+    height: 54px !important;
+    padding: 8px 3px 6px !important;
   }
 
   .wsus__section_header .simply-amount,
   .wsus__flash_coundown .simply-amount {
-    font-size: 11px;
+    font-size: 16px;
   }
 
   .wsus__section_header .simply-word,
   .wsus__flash_coundown .simply-word {
-    font-size: 8px;
+    font-size: 9px;
   }
 
   .wsus__flash_coundown {
