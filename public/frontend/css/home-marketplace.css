@@ -394,7 +394,9 @@ body {
     width: min(100%, 255px);
     max-width: 100%;
     padding: 12px;
-    background: rgb(255 255 255 / 90%);
+    background: rgb(255 255 255 / 72%);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 8px 18px rgb(16 24 40 / 10%);
   }
 
   .wsus__single_slider_text h3 {
