@@ -725,7 +725,7 @@ body {
   }
 
   #wsus__brand_sleder .brand_border {
-    padding: 10px 32px;
+    padding: 10px 26px;
   }
 
   #wsus__brand_sleder .slick-slide {
@@ -733,14 +733,14 @@ body {
   }
 
   #wsus__brand_sleder .wsus__brand_logo {
-    height: 54px;
+    height: 74px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   #wsus__brand_sleder .wsus__brand_logo img {
-    max-height: 42px;
+    max-height: 62px;
     object-fit: contain;
   }
 
@@ -1170,15 +1170,15 @@ body {
   }
 
   #wsus__brand_sleder .brand_border {
-    padding: 8px 28px;
+    padding: 8px 22px;
   }
 
   #wsus__brand_sleder .wsus__brand_logo {
-    height: 46px;
+    height: 66px;
   }
 
   #wsus__brand_sleder .wsus__brand_logo img {
-    max-height: 36px;
+    max-height: 56px;
   }
 
   #wsus__flash_sell .wsus__product_item .wsus__pro_link,
