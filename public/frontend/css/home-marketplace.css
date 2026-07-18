@@ -679,11 +679,6 @@ body {
     padding-top: 14px;
   }
 
-  #wsus__electronic {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
   #wsus__large_banner,
   #wsus__weekly_best {
     margin-top: 0 !important;
@@ -725,6 +720,26 @@ body {
   #wsus__brand_sleder .wsus__brand_logo img {
     max-height: 42px;
     object-fit: contain;
+  }
+
+  #wsus__electronic {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 6px !important;
+  }
+
+  #wsus__hot_deals + #wsus__electronic,
+  #wsus__electronic + #wsus__electronic {
+    padding-top: 6px !important;
+  }
+
+  #wsus__electronic .wsus__section_header {
+    margin-top: 0 !important;
+    margin-bottom: 8px;
+  }
+
+  #wsus__electronic .flash_sell_slider {
+    margin-top: 0 !important;
   }
 
   #wsus__single_banner .row,
