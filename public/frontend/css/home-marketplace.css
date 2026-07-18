@@ -683,6 +683,7 @@ body {
   }
 
   #wsus__monthly_top .grid > [class*="col-"] {
+    width: calc(50% - 6px) !important;
     padding-left: 6px;
     padding-right: 6px;
   }
@@ -802,6 +803,7 @@ body {
   }
 
   #wsus__monthly_top .grid > [class*="col-"] {
+    width: calc(50% - 5px) !important;
     padding-left: 5px;
     padding-right: 5px;
   }
