@@ -358,7 +358,7 @@ body {
 
 .wsus__monthly_top_banner img {
   height: 100%;
-  object-fit: contain;
+  object-fit: fill;
   object-position: center;
 }
 
@@ -554,7 +554,7 @@ body {
 
   #wsus__monthly_top .wsus__monthly_top_banner img {
     height: 100% !important;
-    object-fit: contain;
+    object-fit: fill;
     object-position: center;
   }
 
