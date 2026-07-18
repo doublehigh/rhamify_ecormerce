@@ -209,6 +209,10 @@ body {
   padding-top: 28px;
 }
 
+#wsus__monthly_top {
+  margin-top: 0 !important;
+}
+
 .wsus__product_item,
 .wsus__hot_deals__single,
 .wsus__single_blog,
@@ -656,6 +660,11 @@ body {
     padding-top: 20px;
   }
 
+  #wsus__monthly_top {
+    margin-top: 0 !important;
+    padding-top: 10px;
+  }
+
   #wsus__product_page {
     padding-top: 24px;
   }
@@ -691,6 +700,11 @@ body {
 
   #wsus__monthly_top .wsus__monthly_top_banner {
     height: 76px !important;
+  }
+
+  #wsus__monthly_top {
+    margin-top: 0 !important;
+    padding-top: 8px;
   }
 
   .marketplace_category_link {
