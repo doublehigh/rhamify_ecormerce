@@ -132,12 +132,33 @@ function advertisementLink(?string $url, ?string $fallback = null): string
     $url = trim((string) $url);
     $fallback = $fallback ?: url('/');
 
-    if ($url === '' || $url === '#' || trim($url, '/') === 'shop') {
+    if ($url === '' || $url === '#') {
         return $fallback;
     }
 
     if (\Str::startsWith($url, ['http://', 'https://', '#', 'mailto:', 'tel:'])) {
         return $url;
+    }
+
+    $path = trim((string) parse_url($url, PHP_URL_PATH), '/');
+    $allowedPaths = [
+        '',
+        'products',
+        'flash-sale',
+        'vendor',
+        'about',
+        'terms-and-conditions',
+        'contact',
+        'product-traking',
+        'blog',
+    ];
+
+    if (! in_array($path, $allowedPaths, true) && ! \Str::startsWith($path, [
+        'product-detail/',
+        'vendor-product/',
+        'blog-details/',
+    ])) {
+        return $fallback;
     }
 
     return url($url);
@@ -149,4 +170,3 @@ function getCurrencyIcon()
 
     return $icon->currency_icon;
 }
-
