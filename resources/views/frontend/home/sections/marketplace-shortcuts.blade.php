@@ -38,3 +38,55 @@
         </div>
     </div>
 </section>
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        const categoryRail = document.querySelector('.marketplace_category_grid');
+
+        if (!categoryRail) {
+            return;
+        }
+
+        let categoryAutoScroll;
+        let resumeAutoScroll;
+
+        function stopCategoryAutoScroll() {
+            window.clearInterval(categoryAutoScroll);
+            window.clearTimeout(resumeAutoScroll);
+        }
+
+        function startCategoryAutoScroll() {
+            stopCategoryAutoScroll();
+
+            if (window.innerWidth > 575 || categoryRail.scrollWidth <= categoryRail.clientWidth) {
+                return;
+            }
+
+            categoryAutoScroll = window.setInterval(function() {
+                const firstItem = categoryRail.querySelector('.marketplace_category_link');
+                const itemGap = 10;
+                const scrollAmount = firstItem ? firstItem.offsetWidth + itemGap : 112;
+                const isAtEnd = categoryRail.scrollLeft + categoryRail.clientWidth >= categoryRail.scrollWidth - 4;
+
+                categoryRail.scrollTo({
+                    left: isAtEnd ? 0 : categoryRail.scrollLeft + scrollAmount,
+                    behavior: 'smooth'
+                });
+            }, 2400);
+        }
+
+        function pauseCategoryAutoScroll() {
+            stopCategoryAutoScroll();
+            resumeAutoScroll = window.setTimeout(startCategoryAutoScroll, 3500);
+        }
+
+        categoryRail.addEventListener('touchstart', pauseCategoryAutoScroll, { passive: true });
+        categoryRail.addEventListener('pointerdown', pauseCategoryAutoScroll);
+        categoryRail.addEventListener('wheel', pauseCategoryAutoScroll, { passive: true });
+        window.addEventListener('resize', startCategoryAutoScroll);
+
+        startCategoryAutoScroll();
+    });
+</script>
+@endpush
