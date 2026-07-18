@@ -532,6 +532,17 @@ body {
     margin: 0 3px;
   }
 
+  #wsus__monthly_top .wsus__monthly_top_banner {
+    height: clamp(82px, 26vw, 140px) !important;
+    margin-bottom: 16px;
+  }
+
+  #wsus__monthly_top .wsus__monthly_top_banner img {
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .wsus__section_header {
     align-items: flex-start;
     gap: 10px;
@@ -676,6 +687,10 @@ body {
 
   .wsus__single_slider_text .common_btn {
     padding: 7px 10px;
+  }
+
+  #wsus__monthly_top .wsus__monthly_top_banner {
+    height: 76px !important;
   }
 
   .marketplace_category_link {
