@@ -127,11 +127,26 @@ function limitText($text, $limit = 20)
     return \Str::limit($text, $limit);
 }
 
+function advertisementLink(?string $url, ?string $fallback = null): string
+{
+    $url = trim((string) $url);
+    $fallback = $fallback ?: url('/');
+
+    if ($url === '' || $url === '#' || trim($url, '/') === 'shop') {
+        return $fallback;
+    }
+
+    if (\Str::startsWith($url, ['http://', 'https://', '#', 'mailto:', 'tel:'])) {
+        return $url;
+    }
+
+    return url($url);
+}
+
 function getCurrencyIcon()
 {
     $icon = GeneralSetting::first();
 
     return $icon->currency_icon;
 }
-
 
