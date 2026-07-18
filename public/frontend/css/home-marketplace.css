@@ -677,21 +677,24 @@ body {
   }
 
   #wsus__monthly_top .grid {
-    margin-left: -5px;
-    margin-right: -5px;
-    row-gap: 10px;
+    margin-left: -6px;
+    margin-right: -6px;
+    row-gap: 12px;
   }
 
   #wsus__monthly_top .grid > [class*="col-"] {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 
   #wsus__monthly_top .wsus__hot_deals__single {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
     margin-top: 0;
+    margin-left: 1px;
+    margin-right: 1px;
     padding: 8px;
     border: 1px solid #edf0f3;
     border-radius: 8px;
@@ -793,14 +796,14 @@ body {
   }
 
   #wsus__monthly_top .grid {
-    margin-left: -4px;
-    margin-right: -4px;
-    row-gap: 8px;
+    margin-left: -5px;
+    margin-right: -5px;
+    row-gap: 10px;
   }
 
   #wsus__monthly_top .grid > [class*="col-"] {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   #wsus__monthly_top .wsus__hot_deals__single {
