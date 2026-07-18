@@ -435,7 +435,23 @@ body {
   }
 
   .marketplace_category_grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px 2px 8px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .marketplace_category_grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .marketplace_category_link {
+    flex: 0 0 112px;
+    min-height: 76px;
+    scroll-snap-align: start;
   }
 
   .action_panel {
@@ -590,6 +606,20 @@ body {
 
   .wsus__single_slider_text .common_btn {
     padding: 7px 10px;
+  }
+
+  .marketplace_category_link {
+    flex-basis: 100px;
+    min-height: 72px;
+    padding: 9px;
+  }
+
+  .marketplace_category_link i {
+    font-size: 20px;
+  }
+
+  .marketplace_category_link span {
+    font-size: 11px;
   }
 
   .wsus__offer_countdown .simply-countdown,
