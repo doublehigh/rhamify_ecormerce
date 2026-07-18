@@ -145,6 +145,10 @@ body {
   padding: 14px;
 }
 
+.marketplace_action_duplicate {
+  display: none;
+}
+
 .marketplace_action_link i {
   grid-row: 1 / span 2;
   width: 36px;
@@ -465,12 +469,33 @@ body {
     display: flex;
   }
 
+  .marketplace_action_viewport {
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+
+  .marketplace_action_viewport:hover .action_panel,
+  .marketplace_action_viewport:active .action_panel {
+    animation-play-state: paused;
+  }
+
   .action_panel {
-    grid-template-columns: 1fr;
+    display: flex;
+    width: max-content;
+    gap: 10px;
+    background: transparent;
+    animation: marketplaceActionAutoScroll 18s linear infinite;
   }
 
   .marketplace_action_link {
-    min-height: 74px;
+    flex: 0 0 178px;
+    min-height: 76px;
+    border: 1px solid #edf0f3;
+    border-radius: 8px;
+  }
+
+  .marketplace_action_duplicate {
+    display: grid;
   }
 
   .wsus__section_header {
@@ -637,6 +662,16 @@ body {
     animation-duration: 24s;
   }
 
+  .action_panel {
+    animation-duration: 16s;
+  }
+
+  .marketplace_action_link {
+    flex-basis: 162px;
+    min-height: 72px;
+    padding: 12px;
+  }
+
   .wsus__offer_countdown .simply-countdown,
   .wsus__flash_coundown .simply-countdown {
     gap: 6px;
@@ -678,6 +713,16 @@ body {
 }
 
 @keyframes marketplaceCategoryAutoScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 5px));
+  }
+}
+
+@keyframes marketplaceActionAutoScroll {
   from {
     transform: translateX(0);
   }

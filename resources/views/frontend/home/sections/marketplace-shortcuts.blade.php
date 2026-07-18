@@ -22,27 +22,50 @@
                 </div>
             </div>
 
-            <div class="marketplace_shortcuts_panel action_panel">
-                <a href="{{route('flash-sale')}}" class="marketplace_action_link">
-                    <i class="fas fa-bolt"></i>
-                    <span>Flash Sale</span>
-                    <small>Limited-time deals</small>
-                </a>
-                <a href="{{route('vendor.index')}}" class="marketplace_action_link">
-                    <i class="fas fa-store"></i>
-                    <span>Vendor Stores</span>
-                    <small>Shop trusted sellers</small>
-                </a>
-                <a href="{{route('product-traking.index')}}" class="marketplace_action_link">
-                    <i class="fas fa-truck"></i>
-                    <span>Track Order</span>
-                    <small>Follow delivery status</small>
-                </a>
-                <a href="{{route('blog')}}" class="marketplace_action_link">
-                    <i class="far fa-newspaper"></i>
-                    <span>Buying Guides</span>
-                    <small>Tips and updates</small>
-                </a>
+            <div class="marketplace_shortcuts_panel marketplace_action_viewport">
+                <div class="action_panel">
+                    <a href="{{route('flash-sale')}}" class="marketplace_action_link">
+                        <i class="fas fa-bolt"></i>
+                        <span>Flash Sale</span>
+                        <small>Limited-time deals</small>
+                    </a>
+                    <a href="{{route('vendor.index')}}" class="marketplace_action_link">
+                        <i class="fas fa-store"></i>
+                        <span>Vendor Stores</span>
+                        <small>Shop trusted sellers</small>
+                    </a>
+                    <a href="{{route('product-traking.index')}}" class="marketplace_action_link">
+                        <i class="fas fa-truck"></i>
+                        <span>Track Order</span>
+                        <small>Follow delivery status</small>
+                    </a>
+                    <a href="{{route('blog')}}" class="marketplace_action_link">
+                        <i class="far fa-newspaper"></i>
+                        <span>Buying Guides</span>
+                        <small>Tips and updates</small>
+                    </a>
+
+                    <a href="{{route('flash-sale')}}" class="marketplace_action_link marketplace_action_duplicate" aria-hidden="true" tabindex="-1">
+                        <i class="fas fa-bolt"></i>
+                        <span>Flash Sale</span>
+                        <small>Limited-time deals</small>
+                    </a>
+                    <a href="{{route('vendor.index')}}" class="marketplace_action_link marketplace_action_duplicate" aria-hidden="true" tabindex="-1">
+                        <i class="fas fa-store"></i>
+                        <span>Vendor Stores</span>
+                        <small>Shop trusted sellers</small>
+                    </a>
+                    <a href="{{route('product-traking.index')}}" class="marketplace_action_link marketplace_action_duplicate" aria-hidden="true" tabindex="-1">
+                        <i class="fas fa-truck"></i>
+                        <span>Track Order</span>
+                        <small>Follow delivery status</small>
+                    </a>
+                    <a href="{{route('blog')}}" class="marketplace_action_link marketplace_action_duplicate" aria-hidden="true" tabindex="-1">
+                        <i class="far fa-newspaper"></i>
+                        <span>Buying Guides</span>
+                        <small>Tips and updates</small>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
