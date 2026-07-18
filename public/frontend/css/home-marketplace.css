@@ -27,6 +27,22 @@ body {
   box-shadow: 0 10px 30px rgb(16 24 40 / 10%);
 }
 
+#wsus__banner .banner_slider {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#wsus__banner .banner_slider .slick-slide,
+#wsus__banner .banner_slider .slick-slide > div,
+#wsus__banner .banner_slider .col-xl-12 {
+  min-width: 0;
+}
+
+#wsus__banner .banner_slider .col-xl-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .wsus__single_slider {
   min-height: 360px;
   display: flex !important;
@@ -358,23 +374,61 @@ body {
     padding-top: 10px;
   }
 
+  #wsus__banner .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .wsus__banner_content {
+    border-radius: 6px;
+  }
+
   .wsus__single_slider {
-    min-height: 250px;
-    padding: 42px 18px;
+    min-height: 220px;
+    height: auto !important;
+    padding: 18px 12px !important;
+    background-position: center right !important;
   }
 
   .wsus__single_slider_text {
-    padding: 16px;
-    background: rgb(255 255 255 / 88%);
+    width: min(100%, 255px);
+    max-width: 100%;
+    padding: 12px;
+    background: rgb(255 255 255 / 90%);
   }
 
   .wsus__single_slider_text h3 {
-    font-size: 17px;
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 4px;
   }
 
   .wsus__single_slider_text h1 {
-    font-size: 28px;
+    font-size: 22px;
     line-height: 1.15;
+    margin: 6px 0;
+  }
+
+  .wsus__single_slider_text h6 {
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .wsus__single_slider_text .common_btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  #wsus__banner .slick-dots {
+    left: 12px;
+    bottom: 10px;
+  }
+
+  #wsus__banner .slick-dots li button {
+    width: 20px;
+    height: 6px;
+    margin: 0 3px;
   }
 
   .marketplace_category_grid {
@@ -512,6 +566,24 @@ body {
 }
 
 @media (max-width: 379.98px) {
+  .wsus__single_slider {
+    min-height: 205px;
+    padding: 14px 10px !important;
+  }
+
+  .wsus__single_slider_text {
+    width: min(100%, 230px);
+    padding: 10px;
+  }
+
+  .wsus__single_slider_text h1 {
+    font-size: 20px;
+  }
+
+  .wsus__single_slider_text .common_btn {
+    padding: 7px 10px;
+  }
+
   .wsus__offer_countdown .simply-countdown,
   .wsus__flash_coundown .simply-countdown {
     gap: 6px;
