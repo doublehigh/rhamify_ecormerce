@@ -470,7 +470,10 @@ body {
   }
 
   .marketplace_action_viewport {
+    --marketplace-action-card-width: 178px;
+    --marketplace-action-center-offset: max(0px, calc((100vw - var(--marketplace-action-card-width)) / 2 - 24px));
     overflow: hidden;
+    padding: 10px 0;
     touch-action: pan-y;
   }
 
@@ -488,7 +491,7 @@ body {
   }
 
   .marketplace_action_link {
-    flex: 0 0 178px;
+    flex: 0 0 var(--marketplace-action-card-width);
     min-height: 76px;
     border: 1px solid #edf0f3;
     border-radius: 8px;
@@ -663,11 +666,12 @@ body {
   }
 
   .action_panel {
+    --marketplace-action-card-width: 162px;
+    --marketplace-action-center-offset: max(0px, calc((100vw - var(--marketplace-action-card-width)) / 2 - 20px));
     animation-duration: 16s;
   }
 
   .marketplace_action_link {
-    flex-basis: 162px;
     min-height: 72px;
     padding: 12px;
   }
@@ -724,10 +728,10 @@ body {
 
 @keyframes marketplaceActionAutoScroll {
   from {
-    transform: translateX(0);
+    transform: translateX(var(--marketplace-action-center-offset, 0));
   }
 
   to {
-    transform: translateX(calc(-50% - 5px));
+    transform: translateX(calc(-50% - 5px + var(--marketplace-action-center-offset, 0px)));
   }
 }
