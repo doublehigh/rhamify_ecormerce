@@ -42,9 +42,9 @@
 @push('scripts')
 <script>
     $(document).ready(function() {
-        const categoryRail = document.querySelector('.marketplace_category_grid');
+        const categoryRail = $('.marketplace_category_grid');
 
-        if (!categoryRail) {
+        if (!categoryRail.length) {
             return;
         }
 
@@ -54,25 +54,28 @@
         function stopCategoryAutoScroll() {
             window.clearInterval(categoryAutoScroll);
             window.clearTimeout(resumeAutoScroll);
+            categoryRail.stop(true);
         }
 
         function startCategoryAutoScroll() {
             stopCategoryAutoScroll();
 
-            if (window.innerWidth > 575 || categoryRail.scrollWidth <= categoryRail.clientWidth) {
+            const rail = categoryRail.get(0);
+
+            if (window.innerWidth > 575 || rail.scrollWidth <= rail.clientWidth) {
                 return;
             }
 
             categoryAutoScroll = window.setInterval(function() {
-                const firstItem = categoryRail.querySelector('.marketplace_category_link');
+                const firstItem = categoryRail.find('.marketplace_category_link').first();
                 const itemGap = 10;
-                const scrollAmount = firstItem ? firstItem.offsetWidth + itemGap : 112;
-                const isAtEnd = categoryRail.scrollLeft + categoryRail.clientWidth >= categoryRail.scrollWidth - 4;
+                const scrollAmount = firstItem.length ? firstItem.outerWidth() + itemGap : 112;
+                const maxScroll = rail.scrollWidth - rail.clientWidth;
+                const isAtEnd = categoryRail.scrollLeft() >= maxScroll - 4;
 
-                categoryRail.scrollTo({
-                    left: isAtEnd ? 0 : categoryRail.scrollLeft + scrollAmount,
-                    behavior: 'smooth'
-                });
+                categoryRail.animate({
+                    scrollLeft: isAtEnd ? 0 : Math.min(categoryRail.scrollLeft() + scrollAmount, maxScroll)
+                }, 650);
             }, 2400);
         }
 
@@ -81,12 +84,11 @@
             resumeAutoScroll = window.setTimeout(startCategoryAutoScroll, 3500);
         }
 
-        categoryRail.addEventListener('touchstart', pauseCategoryAutoScroll, { passive: true });
-        categoryRail.addEventListener('pointerdown', pauseCategoryAutoScroll);
-        categoryRail.addEventListener('wheel', pauseCategoryAutoScroll, { passive: true });
-        window.addEventListener('resize', startCategoryAutoScroll);
+        categoryRail.on('touchstart pointerdown wheel', pauseCategoryAutoScroll);
+        $(window).on('resize load', startCategoryAutoScroll);
 
         startCategoryAutoScroll();
+        window.setTimeout(startCategoryAutoScroll, 800);
     });
 </script>
 @endpush
