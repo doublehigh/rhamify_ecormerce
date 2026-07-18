@@ -334,6 +334,7 @@ body {
 .wsus__single_banner_content,
 .wsus__large_banner_content,
 .wsus__monthly_top_banner {
+  background: #fff;
   overflow: hidden;
 }
 
@@ -349,6 +350,16 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.wsus__monthly_top_banner a {
+  height: 100%;
+}
+
+.wsus__monthly_top_banner img {
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .wsus__offer_countdown,
@@ -543,7 +554,7 @@ body {
 
   #wsus__monthly_top .wsus__monthly_top_banner img {
     height: 100% !important;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 
