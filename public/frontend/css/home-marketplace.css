@@ -89,10 +89,6 @@ body {
   gap: 10px;
 }
 
-.marketplace_category_duplicate {
-  display: none;
-}
-
 .marketplace_category_link {
   min-height: 72px;
   border: 1px solid #edf0f3;
@@ -106,6 +102,10 @@ body {
   padding: 10px;
   text-align: center;
   transition: all .2s ease;
+}
+
+.marketplace_category_duplicate {
+  display: none;
 }
 
 .marketplace_category_link i {
