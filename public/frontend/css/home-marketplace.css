@@ -709,7 +709,7 @@ body {
     height: 118px;
     border-right: 0;
     border-bottom: 1px solid #f0f2f4;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
   }
 
   #wsus__monthly_top .grid .wsus__hot_deals__single_img img {
@@ -721,7 +721,7 @@ body {
   #wsus__monthly_top .grid .wsus__hot_deals__single_text {
     width: 100% !important;
     padding-left: 0 !important;
-    margin-top: 8px;
+    margin-top: 12px;
   }
 
   #wsus__monthly_top .wsus__hot_deals__single_text h5 {
@@ -818,7 +818,7 @@ body {
 
   #wsus__monthly_top .grid .wsus__hot_deals__single_img {
     height: 104px;
-    padding-bottom: 7px;
+    padding-bottom: 9px;
   }
 
   #wsus__monthly_top .wsus__hot_deals__single_text h5 {
