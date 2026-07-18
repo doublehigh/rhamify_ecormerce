@@ -342,6 +342,7 @@ body {
 .wsus__large_banner_content a,
 .wsus__monthly_top_banner a {
   display: block;
+  height: 100%;
 }
 
 .wsus__single_banner_content img,
@@ -349,14 +350,6 @@ body {
 .wsus__monthly_top_banner img {
   display: block;
   width: 100%;
-  height: auto;
-}
-
-.wsus__monthly_top_banner a {
-  height: 100%;
-}
-
-.wsus__monthly_top_banner img {
   height: 100%;
   object-fit: fill;
   object-position: center;
