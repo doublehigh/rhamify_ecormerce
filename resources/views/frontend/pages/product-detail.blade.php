@@ -44,7 +44,7 @@
         <div class="container">
             <div class="wsus__details_bg">
                 <div class="row">
-                    <div class="col-xl-4 col-md-5 col-lg-5" style="z-index:999">
+                    <div class="col-xl-4 col-md-5 col-lg-5">
                         <div id="sticky_pro_zoom" >
                             <div class="exzoom hidden" id="exzoom">
                                 <div class="exzoom_img_box">
@@ -100,7 +100,7 @@
 
                                 <span>({{count($product->reviews)}} review)</span>
                             </p>
-                           <p class="description">{!! $product->short_description !!}</p>
+                           <p class="description">{{ $product->short_description }}</p>
 
                             <form class="shopping-cart-form">
                                 <div class="wsus__selectbox">
@@ -144,7 +144,7 @@
                                         <button type="button" style="border: 1px solid gray;
                                         padding: 7px 11px;
                                         margin-left: 7px;
-                                        border-radius: 100%; background-color: #0088cc" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        border-radius: 100%; background-color: var(--site-primary)" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <i class="far fa-comment-alt text-light"></i>
                                         </button>
 
@@ -237,7 +237,7 @@
                                             </div>
                                             <div class="col-xl-12">
                                                 <div class="wsus__vendor_details">
-                                                    {!!$product->vendor?->description!!}
+                                                    {!! nl2br(e($product->vendor?->description)) !!}
                                                 </div>
                                             </div>
                                         </div>

@@ -172,7 +172,7 @@
                 let id = $(this).data('id');
 
                 $.ajax({
-                    method: 'GET',
+                    method: 'PUT',
                     url: "{{route('admin.order.status')}}",
                     data: {status: status, id:id},
                     success: function(data){
@@ -191,7 +191,7 @@
                 let id = $(this).data('id');
 
                 $.ajax({
-                    method: 'GET',
+                    method: 'PUT',
                     url: "{{route('admin.payment.status')}}",
                     data: {status: status, id:id},
                     success: function(data){

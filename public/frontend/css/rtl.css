@@ -398,11 +398,11 @@
 }
 
 .form-check label:hover {
-	color: #54b3fd !important;
+	color: var(--site-primary) !important;
 }
 
 .wsis__mega_menu_item li a:hover {
-	color: #007aff !important;
+	color: var(--site-primary) !important;
 }
 /* HOME PAGE END */
 

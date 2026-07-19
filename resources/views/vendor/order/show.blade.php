@@ -144,7 +144,9 @@
 
                             <div class="row">
                                 <div class="col-md-4">
-                                    <form action="{{ route('vendor.orders.status', $order->id) }}">
+                                    <form action="{{ route('vendor.orders.status', $order->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
                                         <div class="form-group mt-5">
                                             <label for="" class="mb-2">Order Status</label>
                                             <select name="status" id="" class="form-control">

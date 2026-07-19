@@ -22,6 +22,10 @@ class WishlistController extends Controller
             return response(['status' => 'error', 'message' => 'login before add a product into wishlist!']);
         }
 
+        $request->validate([
+            'id' => ['required', 'integer', 'exists:products,id'],
+        ]);
+
         $wishlistCount = Wishlist::where(['product_id' => $request->id, 'user_id' => Auth::user()->id])->count();
         if($wishlistCount > 0){
             return response(['status' => 'error', 'message' => 'The product is already at wishlist!']);

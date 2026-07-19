@@ -333,7 +333,7 @@
 
                                         <span>({{count($product->reviews)}} review)</span>
                                     </p>
-                                    <p class="description">{!! $product->short_description !!}</p>
+                                    <p class="description">{{ $product->short_description }}</p>
 
                                     <form class="shopping-cart-form">
                                         <div class="wsus__selectbox">

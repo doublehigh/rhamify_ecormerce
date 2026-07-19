@@ -55,6 +55,35 @@
                     @endforeach
                 </select>
             </div>
+            <hr>
+            <h6>Website Colour Combination</h6>
+            <p class="text-muted">These colours control the main customer-facing website theme.</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Primary Colour</label>
+                        <input type="color" class="form-control" name="theme_primary" value="{{@$generalSettings->theme_primary ?? '#f68b1e'}}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Primary Dark</label>
+                        <input type="color" class="form-control" name="theme_primary_dark" value="{{@$generalSettings->theme_primary_dark ?? '#d97812'}}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Secondary Colour</label>
+                        <input type="color" class="form-control" name="theme_secondary" value="{{@$generalSettings->theme_secondary ?? '#313133'}}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Accent Colour</label>
+                        <input type="color" class="form-control" name="theme_accent" value="{{@$generalSettings->theme_accent ?? '#f68b1e'}}">
+                    </div>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

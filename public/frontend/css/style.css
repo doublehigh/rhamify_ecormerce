@@ -66,7 +66,7 @@ p {
   text-transform: capitalize;
   font-weight: 600;
   color: #fff;
-  background: #08C;
+  background: var(--site-primary);
   padding: 12px 25px;
   border: none;
   border-radius: 30px;
@@ -87,7 +87,7 @@ p {
   text-transform: capitalize;
   font-size: 16px;
   font-weight: 400;
-  color: #08C;
+  color: var(--site-primary);
   border: 1px solid #eee;
   padding: 5px 23px 5px 10px;
   border-radius: 3px;
@@ -129,8 +129,8 @@ p {
 
 .shop_btn:hover {
   color: #fff;
-  background: #08C;
-  border-color: #08C;
+  background: var(--site-primary);
+  border-color: var(--site-primary);
 }
 
 .add_cart {
@@ -139,7 +139,7 @@ p {
   font-weight: 600;
   color: #fff;
   padding: 10px 15px;
-  background: #08C;
+  background: var(--site-primary);
   border-radius: 3px;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
@@ -167,7 +167,7 @@ p {
 #wsus__topbar {
   width: 100%;
   height: 45px;
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .wsus__topbar_left {
@@ -222,14 +222,14 @@ p {
   width: 110px;
   top: 98%;
   left: -12px;
-  border-top: 1px solid #aad8ff5e;
-  border-bottom: 1px solid #aad8ff5e;
+  border-top: 1px solid var(--site-primary-soft-strong);
+  border-bottom: 1px solid var(--site-primary-soft-strong);
   border-radius: 5px;
   -webkit-transform: scaleY(0);
   -moz-transform: scaleY(0);
   -ms-transform: scaleY(0);
   -o-transform: scaleY(0);
-  border: 1px solid #def0ff;
+  border: 1px solid var(--site-primary-soft);
 }
 
 .wsus__topbar_dropdown li {
@@ -239,7 +239,7 @@ p {
 .wsus__topbar_dropdown li a {
   width: 100%;
   padding-left: 10px;
-  border-bottom: 1px solid #aad8ff73;
+  border-bottom: 1px solid var(--site-primary-soft-strong);
   line-height: 40px;
   color: #0b2c3d;
 }
@@ -249,8 +249,8 @@ p {
 }
 
 .wsus__topbar_dropdown li a:hover {
-  background: #aad8ff73;
-  color: #007aff;
+  background: var(--site-primary-soft);
+  color: var(--site-primary);
 }
 
 .wsus__topbar_left li:hover .wsus__topbar_dropdown {
@@ -301,7 +301,7 @@ p {
 ========================*/
 header {
   width: 100%;
-  background: #08C;
+  background: var(--site-primary);
   padding: 19px 0px;
   height: 90px;
   border-bottom: 1px solid #fff;
@@ -368,7 +368,7 @@ header {
   top: 50%;
   transform: translateY(-50%);
   right: 2px;
-  background: #aad8ffab;
+  background: var(--site-primary-soft-strong);
   padding: 16px 35px;
   border-radius: 80px;
   transition: all linear 0.3s;
@@ -418,7 +418,7 @@ header {
 }
 
 .wsus__call_text a:hover {
-  color: #007aff;
+  color: var(--site-primary);
 }
 
 .wsus__icon_area {
@@ -511,14 +511,14 @@ header {
 }
 
 .wsus__mini_cart h4 span:hover {
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .wsus__mini_cart ul {
   display: block;
   overflow-y: auto !important;
   scrollbar-width: thin;
-  scrollbar-color: #08C #0b172d;
+  scrollbar-color: var(--site-primary) #0b172d;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
   -moz-transition: all linear 0.3s ease;
@@ -570,7 +570,7 @@ header {
 }
 
 .wsis__del_icon:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__mini_cart .wsus__cart_text {
@@ -591,7 +591,7 @@ header {
 }
 
 .wsus__mini_cart .wsus__cart_text a:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__mini_cart .wsus__cart_text p {
@@ -658,7 +658,7 @@ header {
   line-height: 48px;
   display: block;
   font-size: 20px;
-  background: #08C;
+  background: var(--site-primary);
   position: relative;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
@@ -736,12 +736,12 @@ header {
 }
 
 .wsus_menu_cat_item>li:hover>a {
-  color: #007aff;
-  background: #aad8ff73;
+  color: var(--site-primary);
+  background: var(--site-primary-soft);
 }
 
 .wsus_menu_cat_item>li:hover .wsus__droap_arrow::after {
-  color: #007aff;
+  color: var(--site-primary);
 }
 
 .wsus_menu_cat_droapdown {
@@ -752,7 +752,7 @@ header {
   top: 0;
   left: 105%;
   padding: 0;
-  border: 1px solid #def0ff;
+  border: 1px solid var(--site-primary-soft);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   opacity: 0;
@@ -778,7 +778,7 @@ header {
 }
 
 .wsus_menu_cat_droapdown li a:hover {
-  color: #007aff;
+  color: var(--site-primary);
 }
 
 .wsus_menu_cat_item li:hover .wsus_menu_cat_droapdown {
@@ -795,7 +795,7 @@ header {
   top: 0;
   left: 105%;
   padding: 0;
-  border: 1px solid #def0ff;
+  border: 1px solid var(--site-primary-soft);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   opacity: 0;
@@ -857,7 +857,7 @@ header {
 
 .wsus__menu_item>li:hover>a,
 .wsus__menu_item li a.active {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__menu_item_right li {
@@ -1108,7 +1108,7 @@ header {
 }
 
 .wsus__menu_droapdown2>li>a:hover {
-  color: #007aff;
+  color: var(--site-primary);
 }
 
 .wsus__menu_droapdown>li:hover .wsus__menu_droapdown2 {
@@ -1172,7 +1172,7 @@ header {
   width: 35px;
   height: 35px;
   line-height: 36px;
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
   border-radius: 50%;
   text-align: center;
@@ -1192,7 +1192,7 @@ header {
 }
 
 .wsus__pop_up_text h5 span {
-  color: #08C;
+  color: var(--site-primary);
   font-size: 35px;
   font-weight: 700;
   margin-left: 10px;
@@ -1214,7 +1214,7 @@ header {
 }
 
 .wsus__pop_up_text form .news_input {
-  border: 1px solid#08C;
+  border: 1px solid var(--site-primary);
   padding: 10px;
   color: #353535;
   border-radius: 30px;
@@ -1303,7 +1303,7 @@ PRODUCT MODAL VIEW START
 }
 
 .product_popup_modal .btn-close:hover {
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .report_modal .btn-close {
@@ -1334,7 +1334,7 @@ PRODUCT MODAL VIEW START
   position: absolute;
   top: 50%;
   left: 5px;
-  background: #08C;
+  background: var(--site-primary);
   width: 35px;
   height: 35px;
   z-index: 1;
@@ -1390,7 +1390,7 @@ PRODUCT MODAL VIEW END
 }
 
 .wsus__single_slider_text h3 {
-  color: #08C;
+  color: var(--site-primary);
   text-transform: capitalize;
   font-weight: 600;
   font-size: 25px;
@@ -1405,7 +1405,7 @@ PRODUCT MODAL VIEW END
 }
 
 .wsus__single_slider_text h6 {
-  color: #08C;
+  color: var(--site-primary);
   text-transform: capitalize;
   font-weight: 600;
   font-size: 18px;
@@ -1423,7 +1423,7 @@ PRODUCT MODAL VIEW END
   font-size: 0;
   width: 30px;
   height: 8px;
-  background: #76c3ff;
+  background: var(--site-primary-soft-strong);
   border-radius: 50px;
   margin: 0 5px;
   outline: 0;
@@ -1431,7 +1431,7 @@ PRODUCT MODAL VIEW END
 }
 
 #wsus__banner .slick-dots li.slick-active button {
-  background: #0086ee;
+  background: var(--site-primary);
 }
 
 /*======================
@@ -1461,7 +1461,7 @@ PRODUCT MODAL VIEW END
   left: -15px;
   width: 35px;
   height: 35px;
-  background: #08C;
+  background: var(--site-primary);
   opacity: .5;
   line-height: 35px;
   font-size: 15px;
@@ -1486,7 +1486,7 @@ PRODUCT MODAL VIEW END
 
 #wsus__brand_sleder .nxt_arr:hover,
 #wsus__brand_sleder .prv_arr:hover {
-  background: #08C;
+  background: var(--site-primary);
   opacity: 1;
 }
 
@@ -1535,7 +1535,7 @@ PRODUCT MODAL VIEW END
   font-size: 20px;
   font-weight: 600;
   text-transform: capitalize;
-  color: #08C;
+  color: var(--site-primary);
   margin-right: 10px;
 }
 
@@ -1565,7 +1565,7 @@ PRODUCT MODAL VIEW END
   text-align: center;
   width: 50px;
   height: 30px;
-  background: #08C;
+  background: var(--site-primary);
   margin: 0px 5px;
   border-radius: 3px;
   padding-top: 2px;
@@ -1623,7 +1623,7 @@ PRODUCT MODAL VIEW END
 
 .wsus__new {
   position: absolute;
-  background: #08C;
+  background: var(--site-primary);
   width: auto;
   height: 25px;
   text-align: center;
@@ -1713,7 +1713,7 @@ PRODUCT MODAL VIEW END
   line-height: 30px;
   margin-bottom: 10px;
   border-radius: 2px;
-  color: #08C !important;
+  color: var(--site-primary) !important;
   font-size: 14px;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
@@ -1721,7 +1721,7 @@ PRODUCT MODAL VIEW END
   -ms-transition: all linear 0.3s ease;
   -o-transition: all linear 0.3s ease;
   background: #fff;
-  border: 1px solid #08C !important;
+  border: 1px solid var(--site-primary) !important;
 }
 
 .wsus__product_item:hover .wsus__single_pro_icon {
@@ -1730,8 +1730,8 @@ PRODUCT MODAL VIEW END
 
 .wsus__single_pro_icon li a:hover {
   color: #fff !important;
-  border-color: #08C;
-  background: #08C;
+  border-color: var(--site-primary);
+  background: var(--site-primary);
 }
 
 .wsus__product_details {
@@ -1763,7 +1763,7 @@ PRODUCT MODAL VIEW END
 }
 
 .wsus__product_details .wsus__pro_name:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__product_details .wsus__price {
@@ -1839,7 +1839,7 @@ PRODUCT MODAL VIEW END
   left: 15px;
   width: 35px;
   height: 35px;
-  background: #08C;
+  background: var(--site-primary);
   opacity: .5;
   line-height: 35px;
   font-size: 15px;
@@ -1870,7 +1870,7 @@ PRODUCT MODAL VIEW END
 #wsus__electronic2 .prv_arr:hover,
 #wsus__electronic .nxt_arr:hover,
 #wsus__electronic .prv_arr:hover {
-  background: #08C;
+  background: var(--site-primary);
   opacity: 1;
 }
 
@@ -1922,7 +1922,7 @@ MONTHLY TOP PRODUCT START
 .monthly_top_filter2 button:hover,
 .monthly_top_filter2 button.active {
   color: #fff;
-  background: #08C !important;
+  background: var(--site-primary) !important;
 }
 
 .wsus__monthly_top_banner {
@@ -2019,7 +2019,7 @@ MONTHLY TOP PRODUCT START
   right: 12px;
   width: 25px;
   height: 25px;
-  background: #08C;
+  background: var(--site-primary);
   line-height: 24px;
   font-size: 15px;
   text-align: center;
@@ -2041,7 +2041,7 @@ MONTHLY TOP PRODUCT START
 
 #wsus__hot_deals .nxt_arr:hover,
 #wsus__hot_deals .prv_arr:hover {
-  background: #045c9f;
+  background: var(--site-primary-dark);
 }
 
 /*======================
@@ -2113,7 +2113,7 @@ HOME BLOGS END
 }
 
 .wsus__single_banner_text h6 span {
-  color: #08C;
+  color: var(--site-primary);
   font-weight: 900;
   font-size: 30px;
   margin-left: 10px;
@@ -2136,8 +2136,8 @@ HOME BLOGS END
 
 .single_banner_2 .shop_btn:hover {
   color: #fff;
-  background: #08C;
-  border-color: #08C;
+  background: var(--site-primary);
+  border-color: var(--site-primary);
 }
 
 /*======================
@@ -2230,7 +2230,7 @@ HOME BLOGS END
 }
 
 .wsus__hot_title:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__hot_deals_text .wsus__rating {
@@ -2283,8 +2283,8 @@ HOME BLOGS END
 .wsus__hot_deals_text ul li:nth-child(2) a:hover,
 .wsus__hot_deals_text ul li:nth-child(3) a:hover {
   color: #fff;
-  border-color: #08C;
-  background: #08C;
+  border-color: var(--site-primary);
+  background: var(--site-primary);
 }
 
 .wsus__hot_deals__single {
@@ -2340,7 +2340,7 @@ HOME BLOGS END
 }
 
 .wsus__hot_deals__single:hover h5 {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__hot_large_item {
@@ -2440,7 +2440,7 @@ WEEKLY BEST ITEM START
   right: 12px;
   width: 30px;
   height: 30px;
-  background: #08C;
+  background: var(--site-primary);
   line-height: 32px;
   font-size: 15px;
   text-align: center;
@@ -2469,7 +2469,7 @@ WEEKLY BEST ITEM START
 #wsus__weekly_best .prv_arr:hover,
 .home_blogs .nxt_arr:hover,
 .home_blogs .prv_arr:hover {
-  background: #045c9f;
+  background: var(--site-primary-dark);
   opacity: 1;
 }
 
@@ -2489,7 +2489,7 @@ HOME SERVOCES START
 }
 
 .wsus__home_services_single i {
-  color: #08C;
+  color: var(--site-primary);
   font-size: 30px;
   margin-bottom: 20px;
   transition: all linear 0.3s;
@@ -2515,7 +2515,7 @@ HOME SERVOCES START
 }
 
 .wsus__home_services_single:hover h5 {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__home_services_single:hover i {
@@ -2639,7 +2639,7 @@ HOME SERVOCES START
 	FOOTER PART START
 ========================*/
 footer {
-  background: #def0ff;
+  background: var(--site-primary-soft);
   padding-top: 70px;
 }
 
@@ -2677,7 +2677,7 @@ footer {
 }
 
 .wsus__footer_content .action:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__footer_social {
@@ -2712,7 +2712,7 @@ footer {
 }
 
 .twitter:hover {
-  background: #00adef !important;
+  background: var(--site-primary) !important;
   color: #fff;
 }
 
@@ -2732,7 +2732,7 @@ footer {
 }
 
 .linkedin:hover {
-  background: #0077b0 !important;
+  background: var(--site-primary-dark) !important;
   color: #fff;
 }
 
@@ -2756,7 +2756,7 @@ footer {
 }
 
 .wsus__footer_menu li {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__footer_menu li a {
@@ -2777,13 +2777,13 @@ footer {
 }
 
 .wsus__footer_menu li a:hover {
-  color: #08C !important;
+  color: var(--site-primary) !important;
 }
 
 .wsus__footer_bottom {
   padding: 30px 0px;
   margin-top: 67px;
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .wsus__copyright {
@@ -2883,7 +2883,7 @@ BREADCRUMB START
 
 #wsus__breadcrumb ul li:last-child a {
   margin: 0;
-  color: #54b3fd;
+  color: var(--site-primary);
 }
 
 #wsus__breadcrumb ul li:last-child a::after {
@@ -2982,7 +2982,7 @@ PPRODUCT PAGE START
 }
 
 .wsus__sidebar_filter {
-  background: #08C;
+  background: var(--site-primary);
   display: none;
   align-items: center;
   justify-content: space-between;
@@ -3085,7 +3085,7 @@ PPRODUCT PAGE START
   font-size: 16px;
   color: #353535 !important;
   border: none;
-  background: #0088cc14 !important;
+  background: color-mix(in srgb, var(--site-primary) 8%, transparent) !important;
   text-transform: capitalize;
 }
 
@@ -3107,8 +3107,8 @@ PPRODUCT PAGE START
 }
 
 .form-check-input:checked {
-  background-color: #08C;
-  border-color: #08C;
+  background-color: var(--site-primary);
+  border-color: var(--site-primary);
 }
 
 .form-check label {
@@ -3125,7 +3125,7 @@ PPRODUCT PAGE START
 }
 
 .form-check label:hover {
-  color: #54b3fd;
+  color: var(--site-primary);
 }
 
 .form-check-input:focus {
@@ -3151,7 +3151,7 @@ PPRODUCT PAGE START
 }
 
 .wsus__product_sidebar ul li a:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .price_ranger label {
@@ -3211,7 +3211,7 @@ PPRODUCT PAGE START
   margin-right: 10px;
   background: #fff;
   border: 1px solid #eee;
-  color: #08C;
+  color: var(--site-primary);
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
   -moz-transition: all linear 0.3s ease;
@@ -3226,9 +3226,9 @@ PPRODUCT PAGE START
 }
 
 .wsus__product_topbar_left #v-pills-tab button.active {
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
-  border-color: #08C;
+  border-color: var(--site-primary);
 }
 
 .wsus__product_topbar .select2-container--default .select2-selection--single {
@@ -3264,7 +3264,7 @@ PPRODUCT PAGE START
   -ms-transition: all linear 0.3s;
   -o-transition: all linear 0.3s;
   border-radius: 50%;
-  border: 1px solid#08C;
+  border: 1px solid var(--site-primary);
   margin-right: 10px;
 }
 
@@ -3277,7 +3277,7 @@ PPRODUCT PAGE START
 #pagination nav ul li a:hover,
 #pagination2 nav ul li a.page_active,
 #pagination2 nav ul li a:hover {
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
 }
 
@@ -3325,7 +3325,7 @@ PPRODUCT PAGE START
   height: 40px;
   /* color: #fff; */
   /* border: none; */
-  /* background: #08C; */
+  /* background: var(--site-primary); */
 }
 
 .wsus__list_view .wsus__single_pro_icon li a {
@@ -3429,7 +3429,7 @@ PRODUCT DETAILS START
   height: 30px;
   line-height: 30px;
   text-align: center;
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
   border-radius: 50%;
   font-size: 10px;
@@ -3526,7 +3526,7 @@ PRODUCT DETAILS START
 .wsus__pro_details_text h4 {
   font-size: 30px;
   font-weight: 700;
-  color: #08C;
+  color: var(--site-primary);
   margin: 10px 0px 5px 0px;
   display: flex;
   align-items: center;
@@ -3568,12 +3568,12 @@ PRODUCT DETAILS START
   font-size: 16px;
   font-weight: 600;
   display: block;
-  background: #08C;
+  background: var(--site-primary);
   width: 40px;
   height: 30px;
   line-height: 30px;
   text-align: center;
-  border: 1px dashed#08C;
+  border: 1px dashed var(--site-primary);
   border-radius: 2px;
 }
 
@@ -3694,8 +3694,8 @@ PRODUCT DETAILS START
 
 .wsus_pro__det_size ul li a:hover {
   color: #fff;
-  border-color: #08C;
-  background: #08C;
+  border-color: var(--site-primary);
+  background: var(--site-primary);
 }
 
 .wsus_pro__det_size ul li:last-child a {
@@ -3703,14 +3703,14 @@ PRODUCT DETAILS START
 }
 
 .wsus__pro_details_text .title:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__quentity h3 {
   font-size: 22px;
   font-weight: 600;
   margin-left: 20px;
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__selectbox .select2-container--default .select2-selection--single {
@@ -3772,8 +3772,8 @@ PRODUCT DETAILS START
 .wsus__button_area li:nth-child(3) a:hover,
 .wsus__button_area li:nth-child(4) a:hover {
   color: #fff;
-  border-color: #08C;
-  background: #08C;
+  border-color: var(--site-primary);
+  background: var(--site-primary);
 }
 
 .wsus__pro_det_share ul li a {
@@ -3784,7 +3784,7 @@ PRODUCT DETAILS START
   border-radius: 50%;
   margin-right: 10px;
   color: #fff;
-  background: #0088cc !important;
+  background: var(--site-primary) !important;
   font-size: 14px;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
@@ -3796,7 +3796,7 @@ PRODUCT DETAILS START
 .wsus__pro_report {
   text-transform: capitalize;
   font-size: 14px;
-  color: #08C;
+  color: var(--site-primary);
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
   -moz-transition: all linear 0.3s ease;
@@ -3811,7 +3811,7 @@ PRODUCT DETAILS START
 }
 
 .wsus__pro_report:hover {
-  color: #045c9f;
+  color: var(--site-primary-dark);
 }
 
 .report_modal .modal-dialog {
@@ -3893,7 +3893,7 @@ PRODUCT DETAILS START
   display: block;
   width: 40px;
   height: 40px;
-  background: rgb(0, 136, 204);
+  background: var(--site-primary);
   text-align: center;
   line-height: 40px;
   border-radius: 3px;
@@ -3999,8 +3999,8 @@ PRODUCT DETAILS START
 
 .wsus__pro_det_description .nav-pills .nav-link.active,
 .wsus__pro_det_description .nav-pills .nav-link:hover {
-  color: #08C !important;
-  background: #e5f1fc !important;
+  color: var(--site-primary) !important;
+  background: var(--site-primary-soft) !important;
 }
 
 .wsus__description_area h2,
@@ -4186,7 +4186,7 @@ PRODUCT DETAILS START
 
 .wsus__comment_area h4 span {
   display: inline-block;
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
   padding: 0px 10px;
   font-size: 16px;
@@ -4353,7 +4353,7 @@ CART VIEW PAGE START
 
 .wsus__pro_status p {
   text-transform: capitalize;
-  color: #08C !important;
+  color: var(--site-primary) !important;
 }
 
 .wsus__pro_status span {
@@ -4413,7 +4413,7 @@ CART VIEW PAGE START
 }
 
 .wsus__cart_list table tr th {
-  background: #def0ff;
+  background: var(--site-primary-soft);
   border: none;
   color: #353535;
   text-align: center;
@@ -4451,7 +4451,7 @@ CART VIEW PAGE START
 }
 
 .cart_summery h5 {
-  background: #def0ff;
+  background: var(--site-primary-soft);
   text-align: center;
   padding: 15px 0px 15px 0px !important;
   border-bottom: 1px solid #ddd !important;
@@ -4499,7 +4499,7 @@ CART VIEW PAGE START
 
 .wsus__cart_list_footer {
   border-radius: 5px;
-  background: #def0ff;
+  background: var(--site-primary-soft);
 }
 
 .wsus__cart_list_footer_top {
@@ -4523,7 +4523,7 @@ CART VIEW PAGE START
   font-weight: 400;
   border-radius: 30px;
   resize: none;
-  border: 1px solid#08C;
+  border: 1px solid var(--site-primary);
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
@@ -4611,17 +4611,17 @@ CHECKOUT PAGE START
 }
 
 .wsus__checkout_form h5 a {
-  color: #08c;
+  color: var(--site-primary);
   font-size: 13px;
   font-weight: 400;
-  border: 1px solid #08c;
+  border: 1px solid var(--site-primary);
   padding: 5px 10px 3px 10px;
   border-radius: 3px;
   transition: all linear .3s;
 }
 
 .wsus__checkout_form h5 a:hover {
-  background: #08c;
+  background: var(--site-primary);
   color: #fff;
 }
 
@@ -4636,7 +4636,7 @@ CHECKOUT PAGE START
 .wsus__check_single_form .form-check-input {
   width: 15px;
   padding: 0;
-  border-color: #08c;
+  border-color: var(--site-primary);
   border-radius: 3px !important;
 }
 
@@ -4732,7 +4732,7 @@ CHECKOUT PAGE START
 }
 
 .wsus__order_details .form-check label a {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__checkout_form .select2-container--default .select2-selection--single {
@@ -4812,7 +4812,7 @@ INVOICE PAGE SATAR
 
 .wsus__invoice_top i {
   font-size: 45px;
-  color: #08C;
+  color: var(--site-primary);
   float: left;
   margin-right: 20px;
 }
@@ -4915,7 +4915,7 @@ INVOICE PAGE SATAR
 }
 
 .wsus__invoice_description th {
-  background: #0088cc14 !important;
+  background: color-mix(in srgb, var(--site-primary) 8%, transparent) !important;
   border: none;
   color: #353535;
   text-transform: capitalize;
@@ -4941,7 +4941,7 @@ INVOICE PAGE SATAR
 .wsus__invoice_footer {
   padding: 20px;
   border-radius: 5px;
-  background: #0088cc14;
+  background: color-mix(in srgb, var(--site-primary) 8%, transparent);
 }
 
 .wsus__invoice_footer p {
@@ -4990,7 +4990,7 @@ WISHLIST PAGE START
 }
 
 .wishlist .wsus__pro_img a:hover {
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .wishlist .wsus__pro_name {
@@ -5097,7 +5097,7 @@ WISHLIST PAGE START
 }
 
 .wsus__compare_stock {
-  color: #08C;
+  color: var(--site-primary);
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -5216,7 +5216,7 @@ WISHLIST PAGE START
 }
 
 .wsus__contact_single i {
-  color: #08C;
+  color: var(--site-primary);
   font-size: 25px;
 }
 
@@ -5239,7 +5239,7 @@ WISHLIST PAGE START
 }
 
 .wsus__contact_single a:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__contact_question h5 {
@@ -5323,7 +5323,7 @@ WISHLIST PAGE START
   text-transform: capitalize;
   font-size: 18px;
   font-weight: 400;
-  color: #08C;
+  color: var(--site-primary);
   background: #eeeeee;
   outline: none;
   border-radius: 30px;
@@ -5333,8 +5333,8 @@ WISHLIST PAGE START
 .wsus__login_reg_area .nav-pills .nav-link.active,
 .wsus__login_reg_area .nav-pills .show>.nav-link {
   color: #fff !important;
-  border-color: #08C !important;
-  background: #08C !important;
+  border-color: var(--site-primary) !important;
+  background: var(--site-primary) !important;
 }
 
 .wsus__login_input {
@@ -5346,7 +5346,7 @@ WISHLIST PAGE START
 .wsus__login_input i {
   width: 57px;
   height: 47px;
-  background: #08C;
+  background: var(--site-primary);
   line-height: 45px;
   text-align: center;
   margin-right: 10px;
@@ -5365,7 +5365,7 @@ WISHLIST PAGE START
   font-size: 16px;
   font-weight: 400;
   color: #353535;
-  border: 1px solid #08C;
+  border: 1px solid var(--site-primary);
 }
 
 .wsus__login_save {
@@ -5497,7 +5497,7 @@ WISHLIST PAGE START
 
 .wsus__about_accordian .accordion-body {
   padding: 1rem 1.25rem;
-  border: 1px solid #def0ff;
+  border: 1px solid var(--site-primary-soft);
 }
 
 .wsus__about_accordian .accordion-body p {
@@ -5538,7 +5538,7 @@ WISHLIST PAGE START
 .wsus__about_counter_single span {
   font-size: 40px;
   font-weight: 600;
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__about_counter_single h2 {
@@ -5568,7 +5568,7 @@ WISHLIST PAGE START
 
 .wsus__why_shop_single i {
   font-size: 60px;
-  color: #08C;
+  color: var(--site-primary);
   margin-bottom: 20px;
 }
 
@@ -5635,7 +5635,7 @@ WISHLIST PAGE START
   position: absolute;
   width: 96%;
   height: 96%;
-  background: #08C;
+  background: var(--site-primary);
   top: 2%;
   left: 2%;
   opacity: 0;
@@ -5644,7 +5644,7 @@ WISHLIST PAGE START
   -moz-transition: all linear 0.3s ease;
   -ms-transition: all linear 0.3s ease;
   -o-transition: all linear 0.3s ease;
-  border: 5px solid#08C;
+  border: 5px solid var(--site-primary);
   border-radius: 10px;
 }
 
@@ -5673,7 +5673,7 @@ WISHLIST PAGE START
   text-align: center;
   margin: 0px 3px;
   border-radius: 50%;
-  color: #08C;
+  color: var(--site-primary);
   background: #fff;
   font-size: 18px;
   transition: all linear 0.3s;
@@ -5684,7 +5684,7 @@ WISHLIST PAGE START
 }
 
 .wsus__team_img ul li a:hover {
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
 }
 
@@ -5798,7 +5798,7 @@ WISHLIST PAGE START
 }
 
 .wsus__team_address a:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__team_details_text ul li a {
@@ -5849,7 +5849,7 @@ WISHLIST PAGE START
   line-height: 70px;
   text-align: center;
   border-radius: 50%;
-  background: #08C;
+  background: var(--site-primary);
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
   -moz-transition: all linear 0.3s ease;
@@ -5870,7 +5870,7 @@ WISHLIST PAGE START
 }
 
 .wsus__team_service_single:hover {
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .wsus__team_service_single:hover i {
@@ -5878,7 +5878,7 @@ WISHLIST PAGE START
 }
 
 .wsus__team_service_single.hover {
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .wsus__team_service_single.hover i {
@@ -5908,7 +5908,7 @@ WISHLIST PAGE START
 .wsus__team_det_rev_single img {
   width: 100px !important;
   height: 100px;
-  /* border: 1px solid #08C; */
+  /* border: 1px solid var(--site-primary); */
   margin: -65px auto 0 auto;
   border-radius: 50%;
   box-shadow: rgb(50 50 93 / 15%) 0px 0px 5px 0px;
@@ -5947,7 +5947,7 @@ WISHLIST PAGE START
   border-radius: 50%;
   line-height: 60px;
   text-align: center;
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
   box-shadow: rgb(0 0 0 / 14%) 0px 3px 6px, rgb(0 0 0 / 16%) 0px 0px 7px;
 }
@@ -6000,7 +6000,7 @@ WISHLIST PAGE START
 }
 
 .wsus__404_text h4 span {
-  color: #08C;
+  color: var(--site-primary);
   font-size: 35px;
   font-weight: 600;
   text-transform: capitalize;
@@ -6086,7 +6086,7 @@ WISHLIST PAGE START
 }
 
 .wsus__blog_text_center .date span {
-  color: #08C;
+  color: var(--site-primary);
   text-transform: capitalize;
   font-size: 13px;
   font-weight: 400;
@@ -6116,7 +6116,7 @@ WISHLIST PAGE START
 }
 
 .wsus__single_blog .blue {
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .wsus__single_blog .orange {
@@ -6128,7 +6128,7 @@ WISHLIST PAGE START
 }
 
 .wsus__blog_text_center a:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 /*========================
@@ -6169,7 +6169,7 @@ WISHLIST PAGE START
 }
 
 .wsus__main_blog_header span i {
-  color: #08C;
+  color: var(--site-primary);
   margin-right: 5px;
 }
 
@@ -6189,7 +6189,7 @@ WISHLIST PAGE START
 .wsus__blog_quot_area i {
   font-size: 40px;
   font-weight: 900;
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__blog_quot_area p {
@@ -6239,7 +6239,7 @@ WISHLIST PAGE START
   content: "\f0a4";
   top: 1px;
   left: -24px;
-  color: #08C;
+  color: var(--site-primary);
   font-size: 14px;
   border: none;
 }
@@ -6312,7 +6312,7 @@ WISHLIST PAGE START
   font-size: 0;
   width: 30px;
   height: 8px;
-  background: #76c3ff;
+  background: var(--site-primary-soft-strong);
   border-radius: 50px;
   margin: 0 5px;
   outline: 0;
@@ -6320,7 +6320,7 @@ WISHLIST PAGE START
 }
 
 .wsus__related_post .slick-dots li.slick-active button {
-  background: #0086ee;
+  background: var(--site-primary);
 }
 
 .wsus__comment_area {
@@ -6379,7 +6379,7 @@ WISHLIST PAGE START
 
 .wsus__comment_text a {
   text-transform: capitalize;
-  background: #08C;
+  background: var(--site-primary);
   padding: 2px 10px 2px 10px;
   border-radius: 3px;
   color: #fff;
@@ -6398,7 +6398,7 @@ WISHLIST PAGE START
 }
 
 .wsus__comment_text a:hover {
-  background: #0363ae;
+  background: var(--site-primary-dark);
 }
 
 .replay .accordion-body {
@@ -6562,7 +6562,7 @@ WISHLIST PAGE START
 }
 
 .wsus__blog_post_single a:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__popular_tag {
@@ -6591,8 +6591,8 @@ WISHLIST PAGE START
 }
 
 .wsus__popular_tag ul li a:hover {
-  color: #08C;
-  border-color: #08C;
+  color: var(--site-primary);
+  border-color: var(--site-primary);
 }
 
 /*========================
@@ -6630,7 +6630,7 @@ WISHLIST PAGE START
 
 .wsus__faq_text {
   padding: 30px;
-  background: rgba(0, 136, 204, 0.08) !important;
+  background: color-mix(in srgb, var(--site-primary) 8%, transparent) !important;
   border-radius: 5px;
   margin-top: 75px;
   text-align: center;
@@ -6659,7 +6659,7 @@ WISHLIST PAGE START
 }
 
 .wsus__faq_text .call:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 /*========================
@@ -6732,7 +6732,7 @@ WISHLIST PAGE START
   height: 500px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #08C #0b172d;
+  scrollbar-color: var(--site-primary) #0b172d;
 }
 
 .dashboard_link li a {
@@ -6824,7 +6824,7 @@ WISHLIST PAGE START
 }
 
 .wsus__dashboard .blue {
-  background: #0072e3;
+  background: var(--site-primary);
 }
 
 .wsus__dashboard .sky {
@@ -6939,7 +6939,7 @@ WISHLIST PAGE START
 }
 
 .wsus__message_icon span i:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__message .wsus__single_inout label {
@@ -7038,9 +7038,9 @@ WISHLIST PAGE START
 }
 
 .wsus__dashboard_order .status a {
-  border: 1px solid#08C;
+  border: 1px solid var(--site-primary);
   text-align: center;
-  color: #08C;
+  color: var(--site-primary);
   border-radius: 5px;
   padding: 2px 15px;
   text-transform: capitalize;
@@ -7054,7 +7054,7 @@ WISHLIST PAGE START
 }
 
 .wsus__dashboard_order .status a:hover {
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
 }
 
@@ -7102,7 +7102,7 @@ WISHLIST PAGE START
 }
 
 .wsus__dash_rev_text h5 span {
-  color: #08C;
+  color: var(--site-primary);
   font-weight: 500;
   font-style: italic;
 }
@@ -7129,7 +7129,7 @@ WISHLIST PAGE START
   -moz-transition: all linear 0.3s ease;
   -ms-transition: all linear 0.3s ease;
   -o-transition: all linear 0.3s ease;
-  background: #08C;
+  background: var(--site-primary);
   font-size: 13px;
 }
 
@@ -7217,7 +7217,7 @@ WISHLIST PAGE START
   text-align: center;
   border-radius: 3px;
   margin-right: 10px;
-  color: #08C;
+  color: var(--site-primary);
   border: 1px solid #eee;
 }
 
@@ -7265,7 +7265,7 @@ WISHLIST PAGE START
   text-transform: capitalize;
   font-size: 20px;
   font-weight: 500;
-  background: #def0ff;
+  background: var(--site-primary-soft);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -7274,10 +7274,10 @@ WISHLIST PAGE START
 }
 
 .wsus__dash_add_single h4 span {
-  color: #08C;
+  color: var(--site-primary);
   text-transform: capitalize;
   font-weight: 500;
-  border: 1px solid#08C;
+  border: 1px solid var(--site-primary);
   background: #fff;
   padding: 0px 10px;
   border-radius: 4px;
@@ -7319,7 +7319,7 @@ WISHLIST PAGE START
   color: #fff;
   padding: 5px;
   width: 100%;
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .wsus__address_btn a i {
@@ -7369,7 +7369,7 @@ WISHLIST PAGE START
 .close_icon {
   width: 40px;
   height: 40px;
-  background: #08C;
+  background: var(--site-primary);
   text-align: center;
   line-height: 40px;
   color: #fff;
@@ -7390,7 +7390,7 @@ WISHLIST PAGE START
   width: 40px;
   height: 40px;
   line-height: 40px;
-  background: #08C;
+  background: var(--site-primary);
   font-size: 20px;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
@@ -7469,7 +7469,7 @@ TERMS & CONDITION START
   text-transform: capitalize;
   font-size: 16px;
   font-weight: 500;
-  color: #08C;
+  color: var(--site-primary);
 }
 
 /*======================
@@ -7494,7 +7494,7 @@ FORGET PASSWORD START
 
 .wsus__forget_area .qiestion_icon i {
   font-size: 40px;
-  color: #08C;
+  color: var(--site-primary);
   margin-bottom: 15px;
 }
 
@@ -7511,7 +7511,7 @@ FORGET PASSWORD START
 
 .wsus__forget_area p span {
   text-transform: uppercase;
-  color: #08C;
+  color: var(--site-primary);
   font-weight: 700;
   display: block;
 }
@@ -7579,7 +7579,7 @@ PAYMENT PAGE  START
 .wsus__pay_info_area .nav-pills .nav-link {
   margin-bottom: 10px;
   padding: 15px 0px;
-  background: #08C;
+  background: var(--site-primary);
   border-radius: 30px;
 }
 
@@ -7713,7 +7713,7 @@ PAYMENT PAGE  START
   content: "\f00c";
   top: 1px;
   left: 0;
-  color: #08C;
+  color: var(--site-primary);
   font-size: 14px;
   border: none;
 }
@@ -7906,7 +7906,7 @@ TRACKING ORDER START
 }
 
 .progtrckr li:nth-child(1)::after {
-  background: #08C;
+  background: var(--site-primary);
 }
 
 .progtrckr li:nth-child(2)::before {
@@ -7918,13 +7918,13 @@ TRACKING ORDER START
 }
 
 .check_mark::before {
-  background: #08C !important;
+  background: var(--site-primary) !important;
   color: #fff !important;
-  border-color: #08C !important;
+  border-color: var(--site-primary) !important;
 }
 
 .check_mark::after {
-  background: #08C !important;
+  background: var(--site-primary) !important;
 }
 
 .red_mark::before {
@@ -7971,13 +7971,13 @@ TRACKING ORDER START
 
 .progtrckr li.progtrckr_done::before {
   content: "\f00c";
-  background:#08C;
+  background:var(--site-primary);
   color: #fff;
-  border-color:#08C;
+  border-color:var(--site-primary);
 }
 
 .progtrckr li.progtrckr_done::after {
-  background:#08C;
+  background:var(--site-primary);
 } */
 
 .wsus__track_area .common_btn {
@@ -8217,7 +8217,7 @@ CUSTOM PAGE END
 .wsus__daily_deals_single {
   border: 1px solid #eee;
   overflow: hidden;
-  background: #def0ff;
+  background: var(--site-primary-soft);
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
   -moz-transition: all linear 0.3s ease;
@@ -8252,7 +8252,7 @@ CUSTOM PAGE END
   color: #fff;
   width: 100%;
   text-align: center;
-  background: #08C;
+  background: var(--site-primary);
   padding: 8px 0px 10px 0px;
 }
 
@@ -8312,7 +8312,7 @@ CUSTOM PAGE END
 }
 
 .wsus__daily_deals_text .deals_title:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 /*======================
@@ -8409,7 +8409,7 @@ DAILY DEALS DETAILS START
 }
 
 .wsus__offer_progress .progress-bar {
-  background-color: #08C;
+  background-color: var(--site-primary);
 }
 
 /*======================
@@ -8442,7 +8442,7 @@ DAILY DEALS DETAILS END
 .wsus__single_brand::after {
   position: absolute;
   content: "";
-  background: #08C;
+  background: var(--site-primary);
   width: 70%;
   height: 70%;
   top: 50%;
@@ -8470,7 +8470,7 @@ DAILY DEALS DETAILS END
   position: absolute;
   top: 0;
   left: 0;
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
   text-transform: capitalize;
   font-size: 14px;
@@ -8510,7 +8510,7 @@ header .dropdown .nav-link {
 
 header .dropdown-menu {
   padding: 0;
-  border: 1px solid #aad8ff73;
+  border: 1px solid var(--site-primary-soft-strong);
   border-radius: 5px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -8529,7 +8529,7 @@ header .dropdown-menu a {
   padding: 5px 0px;
   text-transform: uppercase;
   font-size: 14px;
-  border-bottom: 1px solid #aad8ff73 !important;
+  border-bottom: 1px solid var(--site-primary-soft-strong) !important;
   font-weight: 600;
   border-radius: 0 !important;
   color: #333 !important;
@@ -8537,11 +8537,11 @@ header .dropdown-menu a {
 }
 
 header .dropdown-menu a:hover {
-  background: #aad8ff73 !important;
+  background: var(--site-primary-soft) !important;
 }
 
 header .wsus__search button:hover {
-  background: #08C !important;
+  background: var(--site-primary) !important;
   color: #fff !important;
 }
 
@@ -8551,7 +8551,7 @@ header .wsus__search button:hover {
   line-height: 50px;
   text-align: center;
   float: left;
-  background: #5897fb;
+  background: var(--site-primary);
   color: #fff;
   font-size: 23px;
   transition: all linear 0.3s;
@@ -8562,7 +8562,7 @@ header .wsus__search button:hover {
 }
 
 .wsus__main_menu .cat_icon:hover {
-  background: #316089 !important;
+  background: var(--site-primary-dark) !important;
 }
 
 .wsus__menu_item_right li:first-child {
@@ -8578,12 +8578,12 @@ header .wsus__search button:hover {
 }
 
 header .wsus__call_text a:hover {
-  color: #316089 !important;
+  color: var(--site-primary-dark) !important;
 }
 
 
 .wsus__menu_item li a:hover {
-  color: #08C !important;
+  color: var(--site-primary) !important;
 }
 
 
@@ -8624,7 +8624,7 @@ header .wsus__call_text a:hover {
 
 .wsus_menu_cat_item>li:hover>a,
 .wsus_menu_cat_droapdown>li:hover>a {
-  color: #08C !important;
+  color: var(--site-primary) !important;
   background: none;
 }
 
@@ -8783,7 +8783,7 @@ header .wsus__call_text a:hover {
 
 .wsus__hot_deals_2 .wsus__hot_deals_text ul li:nth-child(2) a:hover,
 .wsus__hot_deals_2 .wsus__hot_deals_text ul li:nth-child(3) a:hover {
-  border-color: #08C !important;
+  border-color: var(--site-primary) !important;
 }
 
 .wsus__hot_deals_2 .simply-countdown {
@@ -8851,7 +8851,7 @@ header .wsus__call_text a:hover {
 .banner_1 .wsus__single_banner_text h6 span {
   font-size: 67px;
   font-weight: 900;
-  color: #08C;
+  color: var(--site-primary);
   margin-left: 10px;
 }
 
@@ -8910,7 +8910,7 @@ header .wsus__call_text a:hover {
   height: 50px;
   border-radius: 50%;
   line-height: 50px;
-  background: #08C;
+  background: var(--site-primary);
   position: absolute;
   top: -25px;
   left: 50%;
@@ -8927,7 +8927,7 @@ header .wsus__call_text a:hover {
 }
 
 .wsus__single_blog_2 .wsus__blog_text_center a:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .wsus__single_blog_2 .blog_top {
@@ -9049,7 +9049,7 @@ header .wsus__call_text a:hover {
 }
 
 .footer_2 .wsus__footer_social li a {
-  background: #def0ff2e;
+  background: color-mix(in srgb, var(--site-primary) 8%, transparent);
   color: #fff;
 }
 
@@ -9104,7 +9104,7 @@ DASHBOARD CHAT START
   max-height: 645px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #08C #0b172d;
+  scrollbar-color: var(--site-primary) #0b172d;
   width: 100%;
 }
 
@@ -9115,7 +9115,7 @@ DASHBOARD CHAT START
   padding: 10px;
   color: #fff;
   font-weight: 600;
-  background: #08C;
+  background: var(--site-primary);
   text-align: center;
   width: 100%;
 }
@@ -9164,7 +9164,7 @@ DASHBOARD CHAT START
 }
 
 .wsus_chat_list_img span {
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
   width: 20px;
   height: 20px;
@@ -9233,7 +9233,7 @@ DASHBOARD CHAT START
   height: 591px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #08C #0b172d;
+  scrollbar-color: var(--site-primary) #0b172d;
 }
 
 .wsus__chat_single {
@@ -9312,7 +9312,7 @@ DASHBOARD CHAT START
 }
 
 .single_chat_2 .wsus__chat_single_text p {
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
 }
 
@@ -9337,7 +9337,7 @@ DASHBOARD CHAT START
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: #08C;
+  background: var(--site-primary);
   color: #fff;
   padding-right: 2px;
   transition: all linear .3s;
@@ -9403,7 +9403,7 @@ DASHBOARD CHAT END
   margin-left: 5px;
   display: inline-block;
   font-size: 23px;
-  color: #08C;
+  color: var(--site-primary);
   font-weight: 600;
 }
 
@@ -9411,7 +9411,7 @@ DASHBOARD CHAT END
   margin-left: 5px;
   display: inline-block;
   font-size: 30px;
-  color: #08C;
+  color: var(--site-primary);
   font-weight: 700;
 }
 
@@ -9427,7 +9427,7 @@ DASHBOARD CHAT END
 }
 
 .login_link:hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 .invoice_print i {
@@ -9446,7 +9446,7 @@ DASHBOARD CHAT END
 
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
-  color: #08C;
+  color: var(--site-primary);
 }
 
 /* extra css end here */
@@ -9524,7 +9524,7 @@ a:not([href]):not([class]):hover {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
     border-radius: 50%;
-    border: 1px solid #08C;
+    border: 1px solid var(--site-primary);
     margin-right: 10px;
 }
 
@@ -9542,7 +9542,7 @@ a:not([href]):not([class]):hover {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
     border-radius: 50%;
-    border: 1px solid #08C;
+    border: 1px solid var(--site-primary);
     margin-right: 10px;
 }
 
@@ -9560,7 +9560,7 @@ a:not([href]):not([class]):hover {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
     border-radius: 100% !important;;
-    border: 1px solid #08C;
+    border: 1px solid var(--site-primary);
     margin-right: 10px;
 }
 
@@ -9607,7 +9607,7 @@ a:not([href]):not([class]):hover {
     text-transform: capitalize;
     font-weight: 600;
     color: #fff;
-    background: #08C;
+    background: var(--site-primary);
     padding: 12px 25px;
     border: none;
     border-radius: 30px;
@@ -9627,15 +9627,15 @@ font-size: 16px;
 width: auto;
 height: 40px;
 color: #fff;
-border: 1px solid #08C;
-background: #08C;
+border: 1px solid var(--site-primary);
+background: var(--site-primary);
 margin-right: 10px;
 }
 
 .add_cart_two:hover {
 
-color: #08C;
-border: 1px solid #08C;
+color: var(--site-primary);
+border: 1px solid var(--site-primary);
 background: #fff;
 
 }
@@ -9709,10 +9709,13 @@ background: #fff;
 
 
   .msg-notification {
-    border: 5px solid #08c !important;
+    border: 5px solid var(--site-primary) !important;
   }
   .wsus__chat_area_footer {
     width: 100% !important;
     bottom: 0 !important;
     /* position: absolute !important; */
   }
+
+
+

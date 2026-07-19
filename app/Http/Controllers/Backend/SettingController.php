@@ -36,6 +36,10 @@ class SettingController extends Controller
             'currency_name' => ['required', 'max:200'],
             'time_zone' => ['required', 'max:200'],
             'currency_icon' => ['required', 'max:200'],
+            'theme_primary' => ['required', 'regex:/^#[0-9A-Fa-f]{6}$/'],
+            'theme_primary_dark' => ['required', 'regex:/^#[0-9A-Fa-f]{6}$/'],
+            'theme_secondary' => ['required', 'regex:/^#[0-9A-Fa-f]{6}$/'],
+            'theme_accent' => ['required', 'regex:/^#[0-9A-Fa-f]{6}$/'],
         ]);
 
         GeneralSetting::updateOrCreate(
@@ -49,7 +53,11 @@ class SettingController extends Controller
                 'map' => $request->map,
                 'currency_name' => $request->currency_name,
                 'currency_icon' => $request->currency_icon,
-                'time_zone' => $request->time_zone
+                'time_zone' => $request->time_zone,
+                'theme_primary' => $request->theme_primary,
+                'theme_primary_dark' => $request->theme_primary_dark,
+                'theme_secondary' => $request->theme_secondary,
+                'theme_accent' => $request->theme_accent
             ]
         );
 

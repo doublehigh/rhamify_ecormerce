@@ -82,7 +82,7 @@
   width: 15px;
   height: 60px;
   line-height: 60px;
-  background: #08C;
+  background: var(--site-primary);
   text-align: center;
   font-size: 13px;
   position: absolute;
@@ -99,7 +99,7 @@
 }
 
 .exzoom .exzoom_btn a:hover {
-  background: #045C9F;
+  background: var(--site-primary-dark);
   color: #fff;
 }
 

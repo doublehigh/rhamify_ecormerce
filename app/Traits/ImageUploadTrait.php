@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use Illuminate\Http\Request;
 use File;
+use Illuminate\Support\Str;
 
 trait ImageUploadTrait {
 
@@ -13,8 +14,9 @@ trait ImageUploadTrait {
         if($request->hasFile($inputName)){
 
             $image = $request->{$inputName};
-            $ext = $image->getClientOriginalExtension();
-            $imageName = 'media_'.uniqid().'.'.$ext;
+            $this->ensureSafeImage($image);
+            File::ensureDirectoryExists(public_path($path));
+            $imageName = 'media_'.Str::uuid().'.'.$image->extension();
 
             $image->move(public_path($path), $imageName);
 
@@ -33,8 +35,9 @@ trait ImageUploadTrait {
 
             foreach($images as $image){
 
-                $ext = $image->getClientOriginalExtension();
-                $imageName = 'media_'.uniqid().'.'.$ext;
+                $this->ensureSafeImage($image);
+                File::ensureDirectoryExists(public_path($path));
+                $imageName = 'media_'.Str::uuid().'.'.$image->extension();
 
                 $image->move(public_path($path), $imageName);
 
@@ -54,8 +57,9 @@ trait ImageUploadTrait {
             }
 
             $image = $request->{$inputName};
-            $ext = $image->getClientOriginalExtension();
-            $imageName = 'media_'.uniqid().'.'.$ext;
+            $this->ensureSafeImage($image);
+            File::ensureDirectoryExists(public_path($path));
+            $imageName = 'media_'.Str::uuid().'.'.$image->extension();
 
             $image->move(public_path($path), $imageName);
 
@@ -70,5 +74,12 @@ trait ImageUploadTrait {
             File::delete(public_path($path));
         }
     }
-}
 
+    private function ensureSafeImage($image): void
+    {
+        abort_unless($image->isValid(), 422, 'Invalid image upload.');
+
+        $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+        abort_unless(in_array($image->getMimeType(), $allowedMimeTypes, true), 422, 'Unsupported image type.');
+    }
+}

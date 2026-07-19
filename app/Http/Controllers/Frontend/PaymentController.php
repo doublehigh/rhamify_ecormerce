@@ -265,6 +265,11 @@ class PaymentController extends Controller
     {
         $codPaySetting = CodSetting::first();
         $setting = GeneralSetting::first();
+
+        if(! Session::has('address') || \Cart::content()->count() === 0){
+            return redirect()->route('user.checkout');
+        }
+
         if($codPaySetting->status == 0){
             return redirect()->back();
         }

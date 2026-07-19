@@ -3,7 +3,10 @@ aria-labelledby="v-pills-home-tab">
     <div class="row">
         <div class="col-xl-12 m-auto">
             <div class="wsus__payment_area">
-                <a class="nav-link common_btn text-center" href="{{route('user.cod.payment')}}">Proceed</a>
+                <form action="{{route('user.cod.payment')}}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link common_btn text-center w-100 border-0">Proceed</button>
+                </form>
             </div>
         </div>
     </div>

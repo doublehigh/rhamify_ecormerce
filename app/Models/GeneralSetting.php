@@ -18,6 +18,10 @@ class GeneralSetting extends Model
         'map',
         'currency_name',
         'time_zone',
-        'currency_icon'
+        'currency_icon',
+        'theme_primary',
+        'theme_primary_dark',
+        'theme_secondary',
+        'theme_accent'
     ];
 }

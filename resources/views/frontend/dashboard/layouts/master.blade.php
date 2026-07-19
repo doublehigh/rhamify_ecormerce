@@ -29,8 +29,18 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
-  <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}?v={{ filemtime(public_path('frontend/css/style.css')) }}">
+  <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}?v={{ filemtime(public_path('frontend/css/responsive.css')) }}">
+  <style>
+    :root {
+      --site-primary: {{ $settings->theme_primary ?? '#f68b1e' }};
+      --site-primary-dark: {{ $settings->theme_primary_dark ?? '#d97812' }};
+      --site-secondary: {{ $settings->theme_secondary ?? '#313133' }};
+      --site-accent: {{ $settings->theme_accent ?? '#f68b1e' }};
+      --site-primary-soft: color-mix(in srgb, var(--site-primary) 12%, #ffffff);
+    }
+  </style>
+  <link rel="stylesheet" href="{{asset('frontend/css/theme.css')}}?v={{ filemtime(public_path('frontend/css/theme.css')) }}">
     @if($settings->layout === 'RTL')
     <link rel="stylesheet" href="{{asset('frontend/css/rtl.css')}}">
   @endif
@@ -38,7 +48,7 @@
   <script>
     const USER = {
         id: "{{ auth()->user()->id }}",
-        name: "{{ auth()->user()->nmae }}",
+        name: "{{ auth()->user()->name }}",
         image: "{{ asset(auth()->user()->image) }}"
     }
     const PUSHER = {

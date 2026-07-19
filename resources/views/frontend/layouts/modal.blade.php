@@ -46,7 +46,7 @@
 
                 <span>({{count($product->reviews)}} review)</span>
                 </p>
-                <p class="description">{!! limitText($product->short_description, 200) !!}</p>
+                <p class="description">{{ limitText($product->short_description, 200) }}</p>
 
                 <form class="shopping-cart-form">
                     <div class="wsus__selectbox">

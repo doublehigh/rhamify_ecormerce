@@ -82,13 +82,15 @@
     <span class="wsus__mobile_menu_close"><i class="fal fa-times"></i></span>
     <ul class="wsus__mobile_menu_header_icon d-inline-flex">
 
-        <li><a href="{{route('user.wishlist.index')}}"><i class="fal fa-heart"></i><span id="wishlist_count">
+        <li><a href="{{route('user.wishlist.index')}}"><i class="fal fa-heart"></i><span class="wishlist-count">
             @if (auth()->check())
             {{\App\Models\Wishlist::where('user_id', auth()->user()->id)->count()}}
             @else
             0
             @endif
         </span></a></li>
+
+        <li><a class="wsus__cart_icon" href="#"><i class="fal fa-shopping-bag"></i><span id="mobile-cart-count" class="cart-count">{{Cart::content()->count()}}</span></a></li>
 
         @if (auth()->check())
         @if (auth()->user()->role === 'user')
@@ -126,17 +128,25 @@
                     <ul class="wsus_mobile_menu_category">
                         @foreach ($categories as $categoryItem)
                         <li>
-                            <a href="#" class="{{count($categoryItem->subCategories) > 0 ? 'accordion-button' : ''}} collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseThreew-{{$loop->index}}" aria-expanded="false"
-                                aria-controls="flush-collapseThreew-{{$loop->index}}"><i class="{{$categoryItem->icon}}"></i> {{$categoryItem->name}}</a>
+                            @if(count($categoryItem->subCategories) > 0)
+                                <button type="button" class="accordion-button collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThreew-{{$loop->index}}" aria-expanded="false"
+                                    aria-controls="flush-collapseThreew-{{$loop->index}}">
+                                    <span><i class="{{$categoryItem->icon}}"></i> {{$categoryItem->name}}</span>
+                                </button>
+                            @else
+                                <a href="{{route('products.index', ['category' => $categoryItem->slug])}}"><i class="{{$categoryItem->icon}}"></i> {{$categoryItem->name}}</a>
+                            @endif
 
                             @if(count($categoryItem->subCategories) > 0)
                                 <div id="flush-collapseThreew-{{$loop->index}}" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <ul>
+                                            <li><a href="{{route('products.index', ['category' => $categoryItem->slug])}}">All {{$categoryItem->name}}</a></li>
                                             @foreach ($categoryItem->subCategories as $subCategoryItem)
-                                                <li><a href="#">{{$subCategoryItem->name}}</a></li>
+                                                <li><a href="{{route('products.index', ['subcategory' => $subCategoryItem->slug])}}">{{$subCategoryItem->name}}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>

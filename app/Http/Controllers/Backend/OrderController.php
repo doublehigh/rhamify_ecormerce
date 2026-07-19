@@ -13,6 +13,7 @@ use App\DataTables\shippedOrderDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class OrderController extends Controller
 {
@@ -103,6 +104,11 @@ class OrderController extends Controller
 
     public function changeOrderStatus(Request $request)
     {
+        $request->validate([
+            'id' => ['required', 'integer', 'exists:orders,id'],
+            'status' => ['required', Rule::in(array_keys(config('order_status.order_status_admin')))],
+        ]);
+
         $order = Order::findOrFail($request->id);
         $order->order_status = $request->status;
         $order->save();
@@ -112,6 +118,11 @@ class OrderController extends Controller
 
     public function changePaymentStatus(Request $request)
     {
+        $request->validate([
+            'id' => ['required', 'integer', 'exists:orders,id'],
+            'status' => ['required', Rule::in([0, 1])],
+        ]);
+
         $paymentStatus = Order::findOrFail($request->id);
         $paymentStatus->payment_status = $request->status;
         $paymentStatus->save();

@@ -74,7 +74,7 @@
                                         </td>
 
                                         <td class="wsus__pro_name">
-                                            <p>{!! $item->name !!}</p>
+                                            <p>{{ $item->name }}</p>
                                             @foreach ($item->options->variants as $key => $variant)
                                                 <span>{{$key}}: {{$variant['name']}} ({{$settings->currency_icon.$variant['price']}})</span>
                                             @endforeach
@@ -98,7 +98,11 @@
                                         </td>
 
                                         <td class="wsus__pro_icon">
-                                            <a href="{{route('cart.remove-product', $item->rowId)}}"><i class="far fa-times"></i></a>
+                                            <form action="{{route('cart.remove-product', $item->rowId)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="border-0 bg-transparent p-0"><i class="far fa-times"></i></button>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -142,7 +146,7 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="wsus__single_banner_content">
                             @if ($cartpage_banner_section->banner_one->status == 1)
-                            <a href="{{$cartpage_banner_section->banner_one->banner_url}}">
+                            <a href="{{advertisementLink($cartpage_banner_section->banner_one->banner_url, route('products.index'))}}">
                                 <img class="img-fluid w-100" src="{{asset($cartpage_banner_section->banner_one->banner_image)}}" alt="Cart banner">
                             </a>
                             @endif
@@ -151,7 +155,7 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="wsus__single_banner_content single_banner_2">
                             @if ($cartpage_banner_section->banner_two->status == 1)
-                            <a href="{{$cartpage_banner_section->banner_two->banner_url}}">
+                            <a href="{{advertisementLink($cartpage_banner_section->banner_two->banner_url, route('products.index'))}}">
                                 <img class="img-fluid w-100" src="{{asset($cartpage_banner_section->banner_two->banner_image)}}" alt="Cart banner">
                             </a>
                             @endif
@@ -263,7 +267,7 @@
                     if (result.isConfirmed) {
 
                         $.ajax({
-                            type: 'get',
+                            type: 'DELETE',
                             url: "{{route('clear.cart')}}",
                             success: function(data){
                                 if(data.status === 'success'){
@@ -298,7 +302,7 @@
             e.preventDefault();
             let formData = $(this).serialize();
             $.ajax({
-                method: 'GET',
+                method: 'POST',
                 url: "{{ route('apply-coupon') }}",
                 data: formData,
                 success: function(data) {

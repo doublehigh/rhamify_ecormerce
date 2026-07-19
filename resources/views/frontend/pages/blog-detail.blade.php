@@ -44,7 +44,7 @@
                             <span><i class="fal fa-calendar-alt"></i> {{date('M d Y', strtotime($blog->created_at))}}</span>
                         </p>
                         <div class="wsus__description_area">
-                            <h1>{!!$blog->title!!}</h1>
+                            <h1>{{ $blog->title }}</h1>
                             {!!$blog->description!!}
                         </div>
                         <div class="wsus__share_blog">
@@ -74,7 +74,7 @@
                                         <div class="wsus__blog_text">
                                             <a class="blog_top red" href="#">{{$blogItem->category->name}}</a>
                                             <div class="wsus__blog_text_center">
-                                                <a href="{{route('blog-details', $blogItem->slug)}}">{!!limitText($blogItem->title, 45)!!}</a>
+                                                <a href="{{route('blog-details', $blogItem->slug)}}">{{ limitText($blogItem->title, 45) }}</a>
                                                 <p class="date">{{date('M D Y', strtotime($blogItem->created_at))}}</p>
                                             </div>
                                         </div>

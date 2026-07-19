@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/jquery.nice-number.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/jquery.calendar.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/add_row_custon.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend/css/mobile_menu.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/mobile_menu.css')}}?v={{ filemtime(public_path('frontend/css/mobile_menu.css')) }}">
     <link rel="stylesheet" href="{{asset('frontend/css/jquery.exzoom.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/multiple-image-video.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/ranger_style.css')}}">
@@ -30,9 +30,19 @@
     <link rel="stylesheet" href="{{asset('frontend/css/venobox.min.css')}}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend/css/home-marketplace.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}?v={{ filemtime(public_path('frontend/css/style.css')) }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}?v={{ filemtime(public_path('frontend/css/responsive.css')) }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/home-marketplace.css')}}?v={{ filemtime(public_path('frontend/css/home-marketplace.css')) }}">
+    <style>
+        :root {
+            --site-primary: {{ $settings->theme_primary ?? '#f68b1e' }};
+            --site-primary-dark: {{ $settings->theme_primary_dark ?? '#d97812' }};
+            --site-secondary: {{ $settings->theme_secondary ?? '#313133' }};
+            --site-accent: {{ $settings->theme_accent ?? '#f68b1e' }};
+            --site-primary-soft: color-mix(in srgb, var(--site-primary) 12%, #ffffff);
+        }
+    </style>
+    <link rel="stylesheet" href="{{asset('frontend/css/theme.css')}}?v={{ filemtime(public_path('frontend/css/theme.css')) }}">
     @if($settings->layout === 'RTL')
     <link rel="stylesheet" href="{{asset('frontend/css/rtl.css')}}">
     @endif

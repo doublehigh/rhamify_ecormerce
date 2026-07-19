@@ -136,8 +136,8 @@ Route::put('shipping-rule/change-status', [ShippingRuleController::class, 'chang
 Route::resource('shipping-rule', ShippingRuleController::class);
 
 /** Order routes */
-Route::get('payment-status', [OrderController::class, 'changePaymentStatus'])->name('payment.status');
-Route::get('order-status', [OrderController::class, 'changeOrderStatus'])->name('order.status');
+Route::put('payment-status', [OrderController::class, 'changePaymentStatus'])->name('payment.status');
+Route::put('order-status', [OrderController::class, 'changeOrderStatus'])->name('order.status');
 
 Route::get('pending-orders', [OrderController::class, 'pendingOrders'])->name('pending-orders');
 Route::get('processed-orders', [OrderController::class, 'processedOrders'])->name('processed-orders');
@@ -261,7 +261,6 @@ Route::resource('paypal-setting', PaypalSettingController::class);
 Route::put('stripe-setting/{id}', [StripeSettingController::class, 'update'])->name('stripe-setting.update');
 Route::put('razorpay-setting/{id}', [RazorpaySettingController::class, 'update'])->name('razorpay-setting.update');
 Route::put('cod-setting/{id}', [CodSettingController::class, 'update'])->name('cod-setting.update');
-
 
 
 

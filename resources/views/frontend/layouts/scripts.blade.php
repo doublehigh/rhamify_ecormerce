@@ -36,7 +36,7 @@
                 method: 'GET',
                 url: "{{ route('cart-count') }}",
                 success: function(data) {
-                    $('#cart-count').text(data);
+                    $('.cart-count').text(data);
                 },
                 error: function(data) {
 
@@ -95,6 +95,7 @@
                     let productId = '#mini_cart_' + rowId;
                     $(productId).remove()
 
+                    getCartCount()
                     getSidebarCartSubtoal()
 
                     if ($('.mini_cart_wrapper').find('li').length === 0) {
@@ -130,12 +131,12 @@
             let id = $(this).data('id');
 
             $.ajax({
-                method: 'GET',
+                method: 'POST',
                 url: "{{route('wishlist.store')}}",
                 data: {id:id},
                 success:function(data){
                     if(data.status === 'success'){
-                        $('#wishlist_count').text(data.count)
+                        $('.wishlist-count').text(data.count)
                         toastr.success(data.message);
                     }else if(data.status === 'error'){
                         toastr.error(data.message);

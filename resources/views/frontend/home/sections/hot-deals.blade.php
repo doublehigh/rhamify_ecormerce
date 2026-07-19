@@ -33,7 +33,7 @@
                     <div class="col-xl-6 col-lg-6">
                         @if ($homepage_secion_banner_three->banner_one->status == 1)
                             <div class="wsus__single_banner_content banner_1">
-                                <a href="{{ $homepage_secion_banner_three->banner_one->banner_url }}">
+                                <a href="{{ advertisementLink($homepage_secion_banner_three->banner_one->banner_url, route('products.index')) }}">
                                     <img class="img-fluid"
                                         src="{{ asset($homepage_secion_banner_three->banner_one->banner_image) }}"
                                         alt="">
@@ -46,7 +46,7 @@
                             <div class="col-12">
                                 @if ($homepage_secion_banner_three->banner_two->status == 1)
                                     <div class="wsus__single_banner_content single_banner_2">
-                                        <a href="{{ $homepage_secion_banner_three->banner_two->banner_url }}">
+                                        <a href="{{ advertisementLink($homepage_secion_banner_three->banner_two->banner_url, route('products.index')) }}">
                                             <img class="img-fluid"
                                                 src="{{ asset($homepage_secion_banner_three->banner_two->banner_image) }}"
                                                 alt="">
@@ -57,7 +57,7 @@
                             <div class="col-12 mt-lg-4">
                                 <div class="wsus__single_banner_content">
                                     @if ($homepage_secion_banner_three->banner_three->status == 1)
-                                        <a href="{{ $homepage_secion_banner_three->banner_three->banner_url }}">
+                                        <a href="{{ advertisementLink($homepage_secion_banner_three->banner_three->banner_url, route('products.index')) }}">
                                             <img class="img-fluid"
                                                 src="{{ asset($homepage_secion_banner_three->banner_three->banner_image) }}"
                                                 alt="">
@@ -73,4 +73,3 @@
         </section>
     </div>
 </section>
-

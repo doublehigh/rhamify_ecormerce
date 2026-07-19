@@ -34,6 +34,12 @@ class CartController extends Controller
     /** Add item to cart */
     public function addToCart(Request $request)
     {
+        $request->validate([
+            'product_id' => ['required', 'integer', 'exists:products,id'],
+            'qty' => ['required', 'integer', 'min:1', 'max:100'],
+            'variants_items' => ['nullable', 'array'],
+            'variants_items.*' => ['integer', 'exists:product_variant_items,id'],
+        ]);
 
         $product = Product::findOrFail($request->product_id);
 
@@ -85,13 +91,21 @@ class CartController extends Controller
     /** Update product quantity */
     public function updateProductQty(Request $request)
     {
-        $productId = Cart::get($request->rowId)->id;
+        $request->validate([
+            'rowId' => ['required', 'string'],
+            'quantity' => ['required', 'integer', 'min:1', 'max:100'],
+        ]);
+
+        $cartItem = Cart::get($request->rowId);
+        abort_if($cartItem === null, 404);
+
+        $productId = $cartItem->id;
         $product = Product::findOrFail($productId);
 
         // check product quantity
         if($product->qty === 0){
             return response(['status' => 'error', 'message' => 'Product stock out']);
-        }elseif($product->qty < $request->qty){
+        }elseif($product->qty < $request->quantity){
             return response(['status' => 'error', 'message' => 'Quantity not available in our stock']);
         }
 
@@ -159,6 +173,10 @@ class CartController extends Controller
     /** Apply coupon */
     public function applyCoupon(Request $request)
     {
+        $request->validate([
+            'coupon_code' => ['nullable', 'string', 'max:100'],
+        ]);
+
         if($request->coupon_code === null){
             return response(['status' => 'error', 'message' => 'Coupon filed is required']);
         }

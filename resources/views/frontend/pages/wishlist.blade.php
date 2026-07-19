@@ -66,7 +66,11 @@
                                     <tr class="d-flex">
                                         <td class="wsus__pro_img"><img src="{{asset($item->product->thumb_image)}}" alt="product"
                                                 class="img-fluid w-100">
-                                            <a href="{{route('user.wishlist.destory', $item->id)}}"><i class="far fa-times"></i></a>
+                                            <form action="{{route('user.wishlist.destory', $item->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="border-0 bg-transparent p-0"><i class="far fa-times"></i></button>
+                                            </form>
                                         </td>
 
                                         <td class="wsus__pro_name" style="width:500px">

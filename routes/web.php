@@ -58,14 +58,14 @@ Route::get('change-product-list-view', [FrontendProductController::class, 'chage
 Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
 Route::get('cart-details', [CartController::class, 'cartDetails'])->name('cart-details');
 Route::post('cart/update-quantity', [CartController::class, 'updateProductQty'])->name('cart.update-quantity');
-Route::get('clear-cart', [CartController::class, 'clearCart'])->name('clear.cart');
-Route::get('cart/remove-product/{rowId}', [CartController::class, 'removeProduct'])->name('cart.remove-product');
+Route::delete('clear-cart', [CartController::class, 'clearCart'])->name('clear.cart');
+Route::delete('cart/remove-product/{rowId}', [CartController::class, 'removeProduct'])->name('cart.remove-product');
 Route::get('cart-count', [CartController::class, 'getCartCount'])->name('cart-count');
 Route::get('cart-products', [CartController::class, 'getCartProducts'])->name('cart-products');
 Route::post('cart/remove-sidebar-product', [CartController::class, 'removeSidebarProduct'])->name('cart.remove-sidebar-product');
 Route::get('cart/sidebar-product-total', [CartController::class, 'cartTotal'])->name('cart.sidebar-product-total');
 
-Route::get('apply-coupon', [CartController::class, 'applyCoupon'])->name('apply-coupon');
+Route::post('apply-coupon', [CartController::class, 'applyCoupon'])->name('apply-coupon');
 Route::get('coupon-calculation', [CartController::class, 'couponCalculation'])->name('coupon-calculation');
 
 /** Newsletter routes */
@@ -95,7 +95,7 @@ Route::get('blog', [BlogController::class, 'blog'])->name('blog');
 /** Product routes */
 Route::get('show-product-modal/{id}', [HomeController::class, 'ShowProductModal'])->name('show-product-modal');
 /** add product in wishlist */
-Route::get('wishlist/add-product', [WishlistController::class, 'addToWishlist'])->name('wishlist.store');
+Route::post('wishlist/add-product', [WishlistController::class, 'addToWishlist'])->name('wishlist.store');
 
 
 
@@ -122,7 +122,7 @@ Route::group(['middleware' =>['auth', 'verified'], 'prefix' => 'user', 'as' => '
 
     /** Wishlist routes */
     Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
-    Route::get('wishlist/remove-product/{id}', [WishlistController::class, 'destory'])->name('wishlist.destory');
+    Route::delete('wishlist/remove-product/{id}', [WishlistController::class, 'destory'])->name('wishlist.destory');
 
     Route::get('reviews', [ReviewController::class, 'index'])->name('review.index');
 
@@ -157,5 +157,5 @@ Route::group(['middleware' =>['auth', 'verified'], 'prefix' => 'user', 'as' => '
     Route::post('razorpay/payment', [PaymentController::class, 'payWithRazorPay'])->name('razorpay.payment');
 
     /** COD routes */
-    Route::get('cod/payment', [PaymentController::class, 'payWithCod'])->name('cod.payment');
+    Route::post('cod/payment', [PaymentController::class, 'payWithCod'])->name('cod.payment');
 });

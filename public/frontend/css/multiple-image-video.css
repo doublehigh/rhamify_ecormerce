@@ -17,7 +17,7 @@
 }
 .img_upload .cam:hover,
 .img_upload .vid:hover{
-  background: #d9edf7;
+  background: var(--site-primary-soft);
 }
 .img_upload .cam span,
 .img_upload .vid span  {
