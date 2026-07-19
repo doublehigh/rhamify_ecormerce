@@ -14,15 +14,20 @@
 
       <div class="row">
         <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
-          <div class="dashboard_content mt-2 mt-md-0">
-            <h3><i class="far fa-user"></i> Vendor Request</h3>
-            <div class="wsus__dashboard_profile">
+          <div class="dashboard_content mt-2 mt-md-0 dashboard-vendor-request-page">
+            <div class="dashboard-page-header">
+              <div>
+                <h3><i class="fas fa-store"></i> Vendor Request</h3>
+                <p>Submit your shop information to start selling.</p>
+              </div>
+            </div>
+            <div class="wsus__dashboard_profile dashboard-info-card">
               <div class="wsus__dash_pro_area">
                 {!!@$content->content!!}
               </div>
             </div>
             <br>
-            <div class="wsus__dashboard_profile">
+            <div class="wsus__dashboard_profile dashboard-form-card">
                 <div class="wsus__dash_pro_area">
                     <form action="{{route('user.vendor-request.create')}}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -57,7 +62,7 @@
                             <textarea name="about" placeholder="About You"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="common_btn">Submit</button>
 
                     </form>
                 </div>
@@ -71,4 +76,3 @@
     DASHBOARD START
   ==============================-->
 @endsection
-

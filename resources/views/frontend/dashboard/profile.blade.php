@@ -14,9 +14,14 @@
 
       <div class="row">
         <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
-          <div class="dashboard_content mt-2 mt-md-0">
-            <h3><i class="far fa-user"></i> profile</h3>
-            <div class="wsus__dashboard_profile">
+          <div class="dashboard_content mt-2 mt-md-0 dashboard-profile-page">
+            <div class="dashboard-page-header">
+              <div>
+                <h3><i class="far fa-user"></i> Profile</h3>
+                <p>Manage your account information and password.</p>
+              </div>
+            </div>
+            <div class="wsus__dashboard_profile dashboard-form-card">
               <div class="wsus__dash_pro_area">
                 <h4>basic information</h4>
 

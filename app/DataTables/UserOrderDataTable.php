@@ -25,7 +25,7 @@ class UserOrderDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function($query){
-                $showBtn = "<a href='".route('user.orders.show', $query->id)."' class='btn btn-primary'><i class='far fa-eye'></i></a>";
+                $showBtn = "<a href='".route('user.orders.show', $query->id)."' class='btn btn-primary order-view-btn'><i class='far fa-eye'></i><span>View</span></a>";
 
                 return $showBtn;
             })
@@ -92,7 +92,7 @@ class UserOrderDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('vendororder-table')
+                    ->setTableId('user-orders-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')

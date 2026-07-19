@@ -6,9 +6,15 @@
       @include('frontend.dashboard.layouts.sidebar')
       <div class="row">
         <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
-          <div class="dashboard_content">
-            <h3><i class="fal fa-gift-card"></i> address</h3>
-            <div class="wsus__dashboard_add">
+          <div class="dashboard_content dashboard-address-page">
+            <div class="dashboard-page-header">
+              <div>
+                <h3><i class="fal fa-gift-card"></i> Addresses</h3>
+                <p>Keep your delivery information ready for checkout.</p>
+              </div>
+              <a href="{{route('user.address.create')}}" class="dashboard-header-link"><i class="far fa-plus"></i> Add address</a>
+            </div>
+            <div class="wsus__dashboard_add dashboard-form-card">
               <div class="row">
                 @foreach ($addresses as $address)
                 <div class="col-xl-6">
@@ -31,10 +37,6 @@
                   </div>
                 </div>
                 @endforeach
-                <div class="col-12">
-                  <a href="{{route('user.address.create')}}" class="add_address_btn common_btn"><i class="far fa-plus"></i>
-                    add new address</a>
-                </div>
               </div>
             </div>
           </div>

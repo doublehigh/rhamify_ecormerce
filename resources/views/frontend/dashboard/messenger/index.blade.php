@@ -6,9 +6,14 @@
       @include('frontend.dashboard.layouts.sidebar')
       <div class="row">
         <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
-            <div class="dashboard_content mt-2 mt-md-0">
-                <h3><i class="far fa-star" aria-hidden="true"></i> Message</h3>
-                <div class="wsus__dashboard_review">
+            <div class="dashboard_content mt-2 mt-md-0 dashboard-messages-page">
+                <div class="dashboard-page-header">
+                    <div>
+                        <h3><i class="fas fa-comment-dots" aria-hidden="true"></i> Messages</h3>
+                        <p>Chat with sellers about orders and products.</p>
+                    </div>
+                </div>
+                <div class="wsus__dashboard_review dashboard-chat-card">
                     <div class="row">
                         <div class="col-xl-4 col-md-5">
                             <div class="wsus__chatlist d-flex align-items-start">
@@ -50,7 +55,7 @@
                                             height: 70vh;" >
 
                                                 <div class="wsus__chat_area_header">
-                                                    <h2 id="chat-inbox-title">Chat with Daniel Paul</h2>
+                                                    <h2 id="chat-inbox-title">Select a seller</h2>
                                                 </div>
                                                 <div class="wsus__chat_area_body" data-inbox="">
 

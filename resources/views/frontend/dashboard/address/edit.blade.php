@@ -7,9 +7,15 @@
 
       <div class="row">
         <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
-          <div class="dashboard_content mt-2 mt-md-0">
-            <h3><i class="fal fa-gift-card"></i>create address</h3>
-            <div class="wsus__dashboard_add wsus__add_address">
+          <div class="dashboard_content mt-2 mt-md-0 dashboard-address-page">
+            <div class="dashboard-page-header">
+              <div>
+                <h3><i class="fal fa-gift-card"></i> Edit Address</h3>
+                <p>Update your delivery address details.</p>
+              </div>
+              <a href="{{route('user.address.index')}}" class="dashboard-header-link"><i class="fas fa-arrow-left"></i> Back to addresses</a>
+            </div>
+            <div class="wsus__dashboard_add wsus__add_address dashboard-form-card">
               <form action="{{route('user.address.update', $address->id)}}" method="POST">
                 @csrf
                 @method('PUT')
