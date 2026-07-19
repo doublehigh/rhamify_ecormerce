@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <title>General Dashboard &mdash; Stisla</title>
+  <title>Rhamify Admin Dashboard</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('backend/assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -26,6 +26,15 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('backend/assets/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('backend/assets/css/components.css')}}">
+  <link rel="stylesheet" href="{{asset('backend/assets/css/custom.css')}}?v={{ filemtime(public_path('backend/assets/css/custom.css')) }}">
+  <style>
+    :root {
+      --rhamify-primary: {{ $settings->theme_primary ?? '#f68b1e' }};
+      --rhamify-primary-dark: {{ $settings->theme_primary_dark ?? '#d97812' }};
+      --rhamify-secondary: {{ $settings->theme_secondary ?? '#313133' }};
+      --rhamify-accent: {{ $settings->theme_accent ?? '#f68b1e' }};
+    }
+  </style>
 
   @if($settings->layout === 'RTL')
   <link rel="stylesheet" href="{{asset('backend/assets/css/rtl.css')}}">
@@ -34,7 +43,7 @@
   <script>
     const USER = {
         id: "{{ auth()->user()->id }}",
-        name: "{{ auth()->user()->nmae }}",
+        name: "{{ auth()->user()->name }}",
         image: "{{ asset(auth()->user()->image) }}"
     }
     const PUSHER = {

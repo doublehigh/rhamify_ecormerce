@@ -1,10 +1,15 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="">{{ $settings->site_name }}</a>
+            <a href="{{ route('admin.dashbaord') }}" class="admin-sidebar-brand">
+                <img src="{{ asset(@$logoSetting->logo ?? 'frontend/images/logo_2.png') }}" alt="{{ $settings->site_name }} logo">
+            </a>
+            <button type="button" data-toggle="sidebar" class="admin-sidebar-collapse" aria-label="Toggle sidebar width">
+                <i class="fas fa-angle-left"></i>
+            </button>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="">||</a>
+            <a href="{{ route('admin.dashbaord') }}">R</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
