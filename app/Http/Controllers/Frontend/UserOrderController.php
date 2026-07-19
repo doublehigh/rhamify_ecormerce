@@ -16,7 +16,9 @@ class UserOrderController extends Controller
 
     public function show(string $id)
     {
-        $order = Order::where('user_id', auth()->id())->findOrFail($id);
+        $order = Order::with(['orderProducts.product', 'orderProducts.vendor', 'transaction'])
+            ->where('user_id', auth()->id())
+            ->findOrFail($id);
         return view('frontend.dashboard.order.show', compact('order'));
     }
 }

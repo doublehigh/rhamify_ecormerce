@@ -25,7 +25,7 @@ class VendorOrderDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function($query){
-                $showBtn = "<a href='".route('vendor.orders.show', $query->id)."' class='btn btn-primary'><i class='far fa-eye'></i></a>";
+                $showBtn = "<a href='".route('vendor.orders.show', $query->id)."' class='btn btn-primary order-view-btn'><i class='far fa-eye'></i><span>View</span></a>";
 
                 return $showBtn;
             })
@@ -94,7 +94,7 @@ class VendorOrderDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('vendororder-table')
+                    ->setTableId('vendor-orders-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')

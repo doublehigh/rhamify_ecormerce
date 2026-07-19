@@ -19,7 +19,7 @@ class VendorOrderController extends Controller
     public function show(string $id)
     {
         $vendorId = Auth::user()->vendor->id;
-        $order = Order::with(['orderProducts' => fn ($query) => $query->where('vendor_id', $vendorId)])
+        $order = Order::with(['orderProducts' => fn ($query) => $query->where('vendor_id', $vendorId)->with('product')])
             ->whereHas('orderProducts', fn ($query) => $query->where('vendor_id', $vendorId))
             ->findOrFail($id);
 

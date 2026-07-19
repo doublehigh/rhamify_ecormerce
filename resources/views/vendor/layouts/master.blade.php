@@ -30,13 +30,23 @@
   <link rel="stylesheet" href="{{asset('backend/assets/modules/bootstrap-daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-  <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}?v={{ filemtime(public_path('frontend/css/style.css')) }}">
+  <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}?v={{ filemtime(public_path('frontend/css/responsive.css')) }}">
+  <style>
+    :root {
+      --site-primary: {{ $settings->theme_primary ?? '#f68b1e' }};
+      --site-primary-dark: {{ $settings->theme_primary_dark ?? '#d97812' }};
+      --site-secondary: {{ $settings->theme_secondary ?? '#313133' }};
+      --site-accent: {{ $settings->theme_accent ?? '#f68b1e' }};
+      --site-primary-soft: color-mix(in srgb, var(--site-primary) 12%, #ffffff);
+    }
+  </style>
+  <link rel="stylesheet" href="{{asset('frontend/css/theme.css')}}?v={{ filemtime(public_path('frontend/css/theme.css')) }}">
   <!-- <link rel="stylesheet" href="css/rtl.css"> -->
   <script>
     const USER = {
         id: "{{ auth()->user()->id }}",
-        name: "{{ auth()->user()->nmae }}",
+        name: "{{ auth()->user()->name }}",
         image: "{{ asset(auth()->user()->image) }}"
     }
     const PUSHER = {
@@ -55,7 +65,7 @@
   ==============================-->
   <div class="wsus__dashboard_menu">
     <div class="wsusd__dashboard_user">
-      <img src="{{asset(auth()->user()->image)}}" alt="img" class="img-fluid">
+      <img src="{{ auth()->user()->image ? asset(auth()->user()->image) : asset('frontend/images/ts-2.jpg') }}" alt="{{ auth()->user()->name }}" class="img-fluid">
       <p>{{auth()->user()->name}}</p>
     </div>
   </div>

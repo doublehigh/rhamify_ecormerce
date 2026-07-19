@@ -24,23 +24,23 @@ class VendorProductDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
         ->addColumn('action', function($query){
-            $editBtn = "<a href='".route('vendor.products.edit', $query->id)."' class='btn btn-primary'><i class='far fa-edit'></i></a>";
-            $deleteBtn = "<a href='".route('vendor.products.destroy', $query->id)."' class='btn btn-danger delete-item' ><i class='far fa-trash-alt'></i></a>";
+            $editBtn = "<a href='".route('vendor.products.edit', $query->id)."' class='vendor-product-action-btn vendor-product-action-btn--edit' title='Edit product' aria-label='Edit product'><i class='far fa-edit'></i></a>";
+            $deleteBtn = "<a href='".route('vendor.products.destroy', $query->id)."' class='vendor-product-action-btn vendor-product-action-btn--delete delete-item' title='Delete product' aria-label='Delete product'><i class='far fa-trash-alt'></i></a>";
 
-            $moreBtn = '<div class="btn-group dropstart" style="margin-left:3px">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            $moreBtn = '<div class="btn-group dropstart vendor-product-more">
+                <button type="button" class="vendor-product-action-btn vendor-product-action-btn--more dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="More product actions" aria-label="More product actions">
                 <i class="fas fa-cog"></i>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item has-icon" href="'.route('vendor.products-image-gallery.index', ['product' => $query->id]).'"> Image Gallery</a></li>
-                    <li><a class="dropdown-item has-icon" href="'.route('vendor.products-variant.index', ['product' => $query->id]).'"> Variants</a></li>
+                    <li><a class="dropdown-item has-icon" href="'.route('vendor.products-image-gallery.index', ['product' => $query->id]).'"><i class="far fa-images"></i> Image Gallery</a></li>
+                    <li><a class="dropdown-item has-icon" href="'.route('vendor.products-variant.index', ['product' => $query->id]).'"><i class="fas fa-layer-group"></i> Variants</a></li>
                 </ul>
             </div>';
 
-            return $editBtn.$deleteBtn.$moreBtn;
+            return '<div class="vendor-product-actions">'.$editBtn.$deleteBtn.$moreBtn.'</div>';
         })
         ->addColumn('image', function($query){
-            return "<img width='70px' src='".asset($query->thumb_image)."' ></img>";
+            return "<img class='vendor-product-table-img' src='".asset($query->thumb_image)."' alt='".e($query->name)."'>";
         })
         ->addColumn('type', function($query){
             switch ($query->product_type) {
@@ -64,13 +64,16 @@ class VendorProductDataTable extends DataTable
             }
         })
         ->addColumn('status', function($query){
+            $inputId = 'vendor-product-status-'.$query->id;
+            $statusText = $query->status == 1 ? 'Active' : 'Inactive';
+            $checked = $query->status == 1 ? 'checked' : '';
             if($query->status == 1){
 
-                $button = '<div class="form-check form-switch">
-                <input checked class="form-check-input change-status" type="checkbox" id="flexSwitchCheckDefault" data-id="'.$query->id.'"></div>';
+                $button = '<label class="vendor-product-status-switch vendor-status-toggle" for="'.$inputId.'">
+                <input '.$checked.' class="change-status vendor-status-toggle__input" type="checkbox" id="'.$inputId.'" data-id="'.$query->id.'"><span class="vendor-status-toggle__track" aria-hidden="true"></span><span class="vendor-status-toggle__text">'.$statusText.'</span></label>';
             }else {
-                $button = '<div class="form-check form-switch">
-                <input class="form-check-input change-status" type="checkbox" id="flexSwitchCheckDefault" data-id="'.$query->id.'"></div>';
+                $button = '<label class="vendor-product-status-switch vendor-status-toggle" for="'.$inputId.'">
+                <input '.$checked.' class="change-status vendor-status-toggle__input" type="checkbox" id="'.$inputId.'" data-id="'.$query->id.'"><span class="vendor-status-toggle__track" aria-hidden="true"></span><span class="vendor-status-toggle__text">'.$statusText.'</span></label>';
             }
             return $button;
         })

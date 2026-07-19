@@ -1297,23 +1297,50 @@ header .wsus__header_logo {
 }
 
 .wsus__dashboard_menu {
+  align-items: center !important;
   background-color: var(--site-surface) !important;
   border-bottom: 1px solid var(--site-border) !important;
   box-shadow: 0 8px 24px rgb(16 24 40 / 6%);
-  justify-content: flex-start !important;
+  justify-content: flex-end !important;
   position: sticky;
   top: 0;
   z-index: 10020;
 }
 
+.wsusd__dashboard_user {
+  align-items: center !important;
+  display: flex !important;
+  gap: 10px;
+  min-width: 0;
+}
+
 .wsusd__dashboard_user p {
   color: var(--site-text) !important;
   font-size: 15px !important;
+  line-height: 1.2;
+  margin: 0 !important;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .wsusd__dashboard_user img {
   border: 2px solid var(--site-primary-soft-strong);
   background-color: var(--site-primary-soft);
+  flex: 0 0 auto;
+  height: 42px !important;
+  margin-right: 0 !important;
+  object-fit: cover;
+  width: 42px !important;
+}
+
+@media (min-width: 992px) {
+  .wsus__dashboard_menu {
+    margin-left: 15%;
+    padding: 8px 24px !important;
+    width: 85%;
+  }
 }
 
 .dashboard_sidebar {
@@ -1465,7 +1492,7 @@ header .wsus__header_logo {
 
 @media (max-width: 991.98px) {
   .dashboard_sidebar {
-    width: min(280px, 86vw) !important;
+    width: min(204px, 66vw) !important;
     left: auto !important;
     right: 0 !important;
     margin-left: 0 !important;
@@ -1716,6 +1743,267 @@ header .wsus__header_logo {
   font-size: 12px;
 }
 
+#vendor-orders-table {
+  border-collapse: separate !important;
+  border-spacing: 0;
+  min-width: 900px;
+}
+
+#vendor-orders-table thead th {
+  background-color: var(--site-primary-soft) !important;
+  border-bottom: 1px solid var(--site-primary-soft-strong) !important;
+  color: var(--site-text) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  padding: 12px 10px !important;
+  text-transform: uppercase;
+}
+
+#vendor-orders-table tbody td {
+  border-bottom: 1px solid var(--site-border) !important;
+  color: var(--site-muted) !important;
+  font-size: 13px !important;
+  padding: 12px 10px !important;
+  vertical-align: middle;
+}
+
+#vendor-orders-table tbody tr:hover {
+  background-color: var(--site-primary-soft) !important;
+}
+
+#vendor-orders-table .badge {
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1;
+  padding: 6px 9px;
+}
+
+#vendor-orders-table .order-view-btn {
+  min-width: 74px;
+}
+
+.vendor-products-page .wsus__dashboard_profile {
+  padding: 18px !important;
+}
+
+.vendor-products-page .wsus__dash_pro_area {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#vendorproduct-table,
+.vendor-products-table {
+  border-collapse: separate !important;
+  border-spacing: 0;
+  min-width: 980px;
+}
+
+#vendorproduct-table thead th,
+.vendor-products-table thead th {
+  background-color: var(--site-primary-soft) !important;
+  border-bottom: 1px solid var(--site-primary-soft-strong) !important;
+  color: var(--site-text) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  padding: 13px 12px !important;
+  text-transform: uppercase;
+  vertical-align: middle !important;
+}
+
+#vendorproduct-table tbody td,
+.vendor-products-table tbody td {
+  border-bottom: 1px solid var(--site-border) !important;
+  color: var(--site-muted) !important;
+  font-size: 13px !important;
+  padding: 13px 12px !important;
+  vertical-align: middle !important;
+}
+
+#vendorproduct-table tbody tr:hover,
+.vendor-products-table tbody tr:hover {
+  background-color: var(--site-primary-soft) !important;
+}
+
+.vendor-product-table-img {
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+
+.vendor-product-status-switch {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  margin: 0;
+  min-height: 30px;
+  padding-left: 0;
+}
+
+.vendor-status-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.vendor-status-toggle__input {
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 1px;
+}
+
+.vendor-status-toggle__track {
+  background-color: #e5e7eb;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  display: inline-flex;
+  height: 22px;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  width: 42px;
+}
+
+.vendor-status-toggle__track::after {
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgb(15 23 42 / 18%);
+  content: "";
+  height: 16px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  transition: transform 0.2s ease;
+  width: 16px;
+}
+
+.vendor-status-toggle__input:checked + .vendor-status-toggle__track {
+  background-color: var(--site-primary);
+  border-color: var(--site-primary);
+}
+
+.vendor-status-toggle__input:checked + .vendor-status-toggle__track::after {
+  transform: translateX(20px);
+}
+
+.vendor-status-toggle__input:focus-visible + .vendor-status-toggle__track {
+  box-shadow: 0 0 0 3px var(--site-primary-soft-strong);
+}
+
+.vendor-status-toggle__text {
+  color: var(--site-muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.vendor-status-toggle__input:checked ~ .vendor-status-toggle__text {
+  color: var(--site-text);
+}
+
+.vendor-product-actions {
+  align-items: center;
+  display: inline-flex;
+  gap: 7px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.vendor-product-action-btn {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  display: inline-flex;
+  height: 36px;
+  justify-content: center;
+  line-height: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  width: 36px;
+}
+
+.vendor-product-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.vendor-product-action-btn--edit {
+  background-color: var(--site-primary-soft);
+  border-color: var(--site-primary-soft-strong);
+  color: var(--site-primary-dark) !important;
+}
+
+.vendor-product-action-btn--edit:hover {
+  background-color: var(--site-primary);
+  border-color: var(--site-primary);
+  color: #ffffff !important;
+}
+
+.vendor-product-action-btn--delete {
+  background-color: #fff1f2;
+  border-color: #fecdd3;
+  color: #e11d48 !important;
+}
+
+.vendor-product-action-btn--delete:hover {
+  background-color: #e11d48;
+  border-color: #e11d48;
+  color: #ffffff !important;
+}
+
+.vendor-product-more {
+  margin-left: 0 !important;
+}
+
+.vendor-product-action-btn--more {
+  background-color: #f8fafc;
+  border-color: var(--site-border);
+  color: var(--site-text) !important;
+}
+
+.vendor-product-action-btn--more:hover,
+.vendor-product-action-btn--more.show {
+  background-color: var(--site-text);
+  border-color: var(--site-text);
+  color: #ffffff !important;
+}
+
+.vendor-product-action-btn--more::after {
+  display: none !important;
+}
+
+.vendor-product-more .dropdown-menu {
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgb(16 24 40 / 12%);
+  min-width: 168px;
+  padding: 7px;
+}
+
+.vendor-product-more .dropdown-item {
+  align-items: center;
+  border-radius: 6px;
+  color: var(--site-text);
+  display: flex;
+  font-size: 13px;
+  gap: 8px;
+  padding: 8px 10px;
+}
+
+.vendor-product-more .dropdown-item:hover {
+  background-color: var(--site-primary-soft);
+  color: var(--site-primary-dark);
+}
+
+.vendor-products-table .badge,
+#vendorproduct-table .badge {
+  border-radius: 999px;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 6px 9px;
+}
+
 .dashboard-order-details-page .wsus__invoice_area {
   margin-top: 0 !important;
   padding: 0 !important;
@@ -1770,6 +2058,82 @@ header .wsus__header_logo {
   margin-bottom: 4px;
 }
 
+.order-invoice-brand {
+  align-items: center;
+  background-color: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+}
+
+.order-invoice-brand__identity {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+}
+
+.order-invoice-brand__identity img {
+  height: 42px;
+  object-fit: contain;
+  width: 118px;
+}
+
+.order-invoice-brand__identity h4 {
+  color: var(--site-text);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.order-invoice-brand__identity p,
+.order-invoice-brand__meta span,
+.order-invoice-print-footer span {
+  color: var(--site-muted);
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.order-invoice-brand__meta {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.order-invoice-brand__meta span {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.order-invoice-brand__meta strong {
+  color: var(--site-primary-dark);
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 3px;
+}
+
+.order-invoice-print-footer {
+  border-top: 1px solid var(--site-border);
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.order-invoice-print-footer strong {
+  color: var(--site-text);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .dashboard-order-details-page .wsus__invoice_description {
   border-color: var(--site-border) !important;
   border-radius: 8px !important;
@@ -1778,7 +2142,17 @@ header .wsus__header_logo {
 }
 
 .dashboard-order-details-page .wsus__invoice_description table {
+  display: table !important;
   min-width: 760px;
+  width: 100% !important;
+}
+
+.dashboard-order-details-page .wsus__invoice_description thead {
+  display: table-header-group !important;
+}
+
+.dashboard-order-details-page .wsus__invoice_description tbody {
+  display: table-row-group !important;
 }
 
 .dashboard-order-details-page .wsus__invoice_description .table tr {
@@ -1798,13 +2172,16 @@ header .wsus__header_logo {
 .dashboard-order-details-page .wsus__invoice_description td {
   border-color: var(--site-border) !important;
   color: var(--site-muted) !important;
+  display: table-cell !important;
   font-size: 13px !important;
   padding: 14px 12px !important;
+  text-align: center;
   vertical-align: middle;
 }
 
 .dashboard-order-details-page .wsus__invoice_description .name {
   min-width: 260px;
+  text-align: left;
   width: 38%;
 }
 
@@ -1864,6 +2241,179 @@ header .wsus__header_logo {
   color: var(--site-text) !important;
   font-weight: 700;
   margin-right: 0;
+}
+
+.user-order-details-page .wsus__invoice_description table {
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.user-order-details-page .wsus__invoice_description .table-responsive {
+  overflow-x: visible;
+}
+
+.user-order-details-page .wsus__invoice_description col.image-col {
+  width: 90px;
+}
+
+.user-order-details-page .wsus__invoice_description col.product-col {
+  width: auto;
+}
+
+.user-order-details-page .wsus__invoice_description col.vendor-col {
+  width: 150px;
+}
+
+.user-order-details-page .wsus__invoice_description col.amount-col,
+.user-order-details-page .wsus__invoice_description col.quantity-col,
+.user-order-details-page .wsus__invoice_description col.total-col {
+  width: 118px;
+}
+
+.user-order-details-page .wsus__invoice_description .image {
+  min-width: 0;
+  text-align: center;
+  width: auto;
+}
+
+.user-order-details-page .wsus__invoice_description .image img {
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--site-border);
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.user-order-details-page .wsus__invoice_description .name,
+.user-order-details-page .wsus__invoice_description .vendor,
+.user-order-details-page .wsus__invoice_description .amount,
+.user-order-details-page .wsus__invoice_description .quentity,
+.user-order-details-page .wsus__invoice_description .total {
+  min-width: 0;
+  width: auto;
+}
+
+.user-order-details-page .wsus__invoice_description th:nth-child(1),
+.user-order-details-page .wsus__invoice_description th:nth-child(3),
+.user-order-details-page .wsus__invoice_description th:nth-child(4),
+.user-order-details-page .wsus__invoice_description th:nth-child(5),
+.user-order-details-page .wsus__invoice_description th:nth-child(6),
+.user-order-details-page .wsus__invoice_description td:nth-child(1),
+.user-order-details-page .wsus__invoice_description td:nth-child(3),
+.user-order-details-page .wsus__invoice_description td:nth-child(4),
+.user-order-details-page .wsus__invoice_description td:nth-child(5),
+.user-order-details-page .wsus__invoice_description td:nth-child(6) {
+  text-align: center;
+}
+
+.vendor-order-actions {
+  margin-top: 4px;
+}
+
+.vendor-order-actions .form-group {
+  background-color: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.vendor-order-actions label {
+  color: var(--site-text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.vendor-order-actions select {
+  border-color: var(--site-border) !important;
+  border-radius: 7px !important;
+  color: var(--site-text);
+  font-size: 13px;
+  min-height: 42px;
+}
+
+.vendor-order-details-page .wsus__invoice_description table {
+  display: table !important;
+  min-width: 0;
+  table-layout: fixed;
+  width: 100% !important;
+}
+
+.vendor-order-details-page .wsus__invoice_description .table-responsive {
+  overflow-x: visible;
+}
+
+.vendor-order-details-page .wsus__invoice_description thead {
+  display: table-header-group !important;
+}
+
+.vendor-order-details-page .wsus__invoice_description tbody {
+  display: table-row-group !important;
+}
+
+.vendor-order-details-page .wsus__invoice_description tr {
+  display: table-row !important;
+}
+
+.vendor-order-details-page .wsus__invoice_description col.image-col {
+  width: 90px;
+}
+
+.vendor-order-details-page .wsus__invoice_description col.product-col {
+  width: auto;
+}
+
+.vendor-order-details-page .wsus__invoice_description col.amount-col,
+.vendor-order-details-page .wsus__invoice_description col.total-col {
+  width: 140px;
+}
+
+.vendor-order-details-page .wsus__invoice_description col.quantity-col {
+  width: 105px;
+}
+
+.vendor-order-details-page .wsus__invoice_description .image {
+  min-width: 0;
+  text-align: center;
+  width: auto;
+}
+
+.vendor-order-details-page .wsus__invoice_description .image img {
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--site-border);
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.vendor-order-details-page .wsus__invoice_description .name {
+  min-width: 0;
+  width: auto;
+}
+
+.vendor-order-details-page .wsus__invoice_description .amount,
+.vendor-order-details-page .wsus__invoice_description .quentity,
+.vendor-order-details-page .wsus__invoice_description .total {
+  min-width: 0;
+  width: auto;
+}
+
+.vendor-order-details-page .wsus__invoice_description th,
+.vendor-order-details-page .wsus__invoice_description td {
+  display: table-cell !important;
+  text-align: left;
+  vertical-align: middle !important;
+  width: auto !important;
+}
+
+.vendor-order-details-page .wsus__invoice_description th:nth-child(1),
+.vendor-order-details-page .wsus__invoice_description th:nth-child(3),
+.vendor-order-details-page .wsus__invoice_description th:nth-child(4),
+.vendor-order-details-page .wsus__invoice_description th:nth-child(5),
+.vendor-order-details-page .wsus__invoice_description td:nth-child(1),
+.vendor-order-details-page .wsus__invoice_description td:nth-child(3),
+.vendor-order-details-page .wsus__invoice_description td:nth-child(4),
+.vendor-order-details-page .wsus__invoice_description td:nth-child(5) {
+  text-align: center;
 }
 
 @media (max-width: 991.98px) {
@@ -1930,6 +2480,16 @@ header .wsus__header_logo {
     gap: 9px;
   }
 
+  .order-invoice-brand,
+  .order-invoice-print-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .order-invoice-brand__meta {
+    text-align: left;
+  }
+
   .order-detail-summary > div,
   .dashboard-order-details-page .wsus__invoice_single {
     padding: 12px;
@@ -1980,6 +2540,124 @@ header .wsus__header_logo {
 
   .dashboard-order-details-page .wsus__invoice_footer {
     width: 100%;
+  }
+
+  .user-order-details-page .wsus__invoice_description table {
+    min-width: 900px;
+    table-layout: fixed;
+  }
+
+  .user-order-details-page .wsus__invoice_description col {
+    width: auto;
+  }
+
+  .user-order-details-page .wsus__invoice_description {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .user-order-details-page .wsus__invoice_description .table-responsive {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .user-order-details-page .wsus__invoice_description thead {
+    display: table-header-group !important;
+  }
+
+  .user-order-details-page .wsus__invoice_description tbody {
+    display: table-row-group !important;
+  }
+
+  .user-order-details-page .wsus__invoice_description tr {
+    border-bottom: 0;
+    display: table-row !important;
+    padding: 0;
+  }
+
+  .user-order-details-page .wsus__invoice_description td {
+    border-color: var(--site-border) !important;
+    display: table-cell !important;
+    padding: 12px !important;
+    white-space: normal !important;
+    width: auto !important;
+  }
+
+  .user-order-details-page .wsus__invoice_description td::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .user-order-details-page .wsus__invoice_description .image {
+    min-width: 0;
+    width: auto;
+  }
+
+  .user-order-details-page .wsus__invoice_description .amount,
+  .user-order-details-page .wsus__invoice_description .quentity,
+  .user-order-details-page .wsus__invoice_description .total {
+    min-width: 0;
+    text-align: center;
+    width: auto;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description table {
+    min-width: 780px;
+    table-layout: fixed;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description col {
+    width: auto;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description .table-responsive {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description thead {
+    display: table-header-group !important;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description tbody {
+    display: table-row-group !important;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description tr {
+    border-bottom: 0;
+    display: table-row !important;
+    padding: 0;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description td {
+    border-color: var(--site-border) !important;
+    display: table-cell !important;
+    padding: 12px !important;
+    white-space: normal !important;
+    width: auto !important;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description td::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description .image {
+    min-width: 0;
+    width: auto;
+  }
+
+  .vendor-order-details-page .wsus__invoice_description .amount,
+  .vendor-order-details-page .wsus__invoice_description .quentity,
+  .vendor-order-details-page .wsus__invoice_description .total {
+    min-width: 0;
+    text-align: center;
+    width: auto;
   }
 }
 
@@ -2107,6 +2785,57 @@ header .wsus__header_logo {
   color: var(--site-primary);
 }
 
+.wsus__input,
+.form-group.wsus__input {
+  margin-bottom: 14px;
+}
+
+.wsus__input label,
+.form-group.wsus__input label {
+  color: var(--site-text) !important;
+  display: block;
+  font-size: 12px !important;
+  font-weight: 700;
+  margin-bottom: 7px;
+  text-transform: capitalize;
+}
+
+.wsus__input input,
+.wsus__input select,
+.wsus__input textarea,
+.form-group.wsus__input input,
+.form-group.wsus__input select,
+.form-group.wsus__input textarea,
+.form-group.wsus__input .form-control,
+.wsus__input .form-control {
+  background-color: var(--site-surface) !important;
+  border: 1px solid var(--site-border) !important;
+  border-radius: 7px !important;
+  color: var(--site-text) !important;
+  font-size: 13px !important;
+  min-height: 44px;
+}
+
+.wsus__input textarea,
+.form-group.wsus__input textarea {
+  min-height: 110px;
+}
+
+.dashboard_content > h3 {
+  background-color: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgb(16 24 40 / 5%);
+  color: var(--site-text) !important;
+  font-size: 22px !important;
+  margin-bottom: 18px !important;
+  padding: 16px 18px;
+}
+
+.dashboard_content > h3 i {
+  color: var(--site-primary) !important;
+}
+
 .wsus__dash_add_single {
   background-color: var(--site-surface) !important;
   border: 1px solid var(--site-border) !important;
@@ -2185,8 +2914,587 @@ header .wsus__header_logo {
   color: var(--site-text) !important;
 }
 
+.dashboard-vendor-request-page .dashboard-info-card {
+  margin-bottom: 16px;
+}
+
+.dashboard-vendor-request-page .vendor-request-hero {
+  background-color: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgb(16 24 40 / 5%);
+  display: block !important;
+  float: none !important;
+  margin-bottom: 18px !important;
+  padding: 18px 20px;
+  position: static !important;
+  visibility: visible !important;
+  width: 100%;
+  z-index: auto !important;
+}
+
+.dashboard-vendor-request-page .vendor-request-hero h3 {
+  align-items: center;
+  color: var(--site-text) !important;
+  display: flex;
+  gap: 12px;
+  font-size: 24px !important;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 8px !important;
+}
+
+.dashboard-vendor-request-page .vendor-request-hero h3 i {
+  color: var(--site-primary) !important;
+}
+
+.dashboard-vendor-request-page .vendor-request-hero p {
+  color: var(--site-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.vendor-request-layout {
+  clear: both;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 18px;
+  align-items: start;
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.vendor-request-card {
+  background-color: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgb(16 24 40 / 6%);
+  padding: 20px;
+}
+
+.vendor-request-eyebrow {
+  color: var(--site-primary-dark);
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.vendor-request-card h4 {
+  color: var(--site-text);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.dashboard-vendor-request-page .vendor-request-content p,
+.dashboard-vendor-request-page .vendor-request-content li {
+  text-align: justify;
+}
+
+.dashboard-vendor-request-page .vendor-request-content p,
+.dashboard-vendor-request-page .vendor-request-content li {
+  color: var(--site-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.8;
+}
+
+.dashboard-vendor-request-page .vendor-request-content ul,
+.dashboard-vendor-request-page .vendor-request-content ol {
+  padding-left: 18px;
+}
+
+.dashboard-vendor-request-page .dashboard-form-card {
+  margin-top: 0;
+}
+
+.vendor-request-form {
+  display: grid;
+  gap: 14px;
+}
+
+.vendor-request-form__header h4 {
+  margin-bottom: 0;
+}
+
+.vendor-request-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.vendor-request-field {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.vendor-request-field span {
+  color: var(--site-text);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.vendor-request-field input,
+.vendor-request-field textarea {
+  background-color: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 7px;
+  color: var(--site-text);
+  font-size: 13px;
+  min-height: 44px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.vendor-request-field input[type="file"] {
+  padding: 9px 12px;
+}
+
+.vendor-request-field textarea {
+  min-height: 124px;
+  resize: vertical;
+}
+
+.vendor-request-submit {
+  justify-self: start;
+  margin-top: 2px;
+}
+
+@media (max-width: 991.98px) {
+  .vendor-request-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .dashboard-vendor-request-page .vendor-request-hero {
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 18px !important;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 14px 12px;
+  }
+
+  .dashboard-vendor-request-page .vendor-request-hero h3 {
+    align-items: center;
+    display: grid;
+    font-size: 18px !important;
+    gap: 10px;
+    grid-template-columns: 30px minmax(0, 1fr);
+    line-height: 1.3;
+    margin-bottom: 8px !important;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  .dashboard-vendor-request-page .vendor-request-hero h3 i {
+    font-size: 20px !important;
+  }
+
+  .dashboard-vendor-request-page .vendor-request-hero p {
+    font-size: 12px !important;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+
+  .vendor-request-layout {
+    gap: 14px;
+    margin-top: 0 !important;
+  }
+
+  .vendor-request-card {
+    padding: 14px;
+  }
+
+  .vendor-request-eyebrow {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .vendor-request-card h4 {
+    font-size: 18px !important;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .dashboard-vendor-request-page .vendor-request-content h1,
+  .dashboard-vendor-request-page .vendor-request-content h2,
+  .dashboard-vendor-request-page .vendor-request-content h3,
+  .dashboard-vendor-request-page .vendor-request-content h4,
+  .dashboard-vendor-request-page .vendor-request-content h5,
+  .dashboard-vendor-request-page .vendor-request-content h6 {
+    display: block;
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    word-spacing: normal !important;
+  }
+
+  .dashboard-vendor-request-page .vendor-request-content p,
+  .dashboard-vendor-request-page .vendor-request-content li {
+    font-size: 12px !important;
+    line-height: 1.75;
+    overflow-wrap: break-word;
+    text-align: justify;
+  }
+
+  .vendor-request-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vendor-request-submit {
+    justify-self: stretch;
+    text-align: center;
+  }
+}
+
 .dashboard-chat-card .row {
   --bs-gutter-x: 1rem;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    height: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  body.printing-order-invoice * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    visibility: hidden !important;
+  }
+
+  body.printing-order-invoice .invoice-print,
+  body.printing-order-invoice .invoice-print * {
+    visibility: visible !important;
+  }
+
+  body.printing-order-invoice .invoice-print {
+    background: #ffffff !important;
+    color: #111827 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_area {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    max-width: 193mm !important;
+    padding: 7mm !important;
+    page-break-inside: avoid;
+  }
+
+  body.printing-order-invoice .order-invoice-brand {
+    align-items: center !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    gap: 4mm !important;
+    justify-content: space-between !important;
+    margin-bottom: 5mm !important;
+    padding: 3mm !important;
+  }
+
+  body.printing-order-invoice .order-invoice-brand__identity {
+    align-items: center !important;
+    display: flex !important;
+    gap: 3mm !important;
+    min-width: 0 !important;
+  }
+
+  body.printing-order-invoice .order-invoice-brand__identity img {
+    height: 11mm !important;
+    object-fit: contain !important;
+    width: 31mm !important;
+  }
+
+  body.printing-order-invoice .order-invoice-brand__identity h4 {
+    color: #111827 !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1mm !important;
+  }
+
+  body.printing-order-invoice .order-invoice-brand__identity p {
+    color: #4b5563 !important;
+    font-size: 8px !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    max-width: 82mm !important;
+  }
+
+  body.printing-order-invoice .order-invoice-brand__meta {
+    flex: 0 0 38mm !important;
+    text-align: right !important;
+  }
+
+  body.printing-order-invoice .order-invoice-brand__meta span {
+    color: #6b7280 !important;
+    display: block !important;
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+  }
+
+  body.printing-order-invoice .order-invoice-brand__meta strong {
+    color: #c75c00 !important;
+    display: block !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    margin-top: 1mm !important;
+  }
+
+  body.printing-order-invoice .order-detail-summary {
+    display: grid !important;
+    gap: 4mm !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    margin-bottom: 5mm !important;
+  }
+
+  body.printing-order-invoice .order-detail-summary > div,
+  body.printing-order-invoice .wsus__invoice_single {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0 !important;
+    padding: 3mm !important;
+  }
+
+  body.printing-order-invoice .order-detail-summary span,
+  body.printing-order-invoice .wsus__invoice_single h5 {
+    color: #6b7280 !important;
+    display: block !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 2mm !important;
+    text-transform: uppercase !important;
+  }
+
+  body.printing-order-invoice .order-detail-summary strong,
+  body.printing-order-invoice .wsus__invoice_single h6 {
+    color: #111827 !important;
+    display: block !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1mm !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_single p {
+    color: #4b5563 !important;
+    font-size: 9px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 1mm !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_header {
+    margin-top: 0 !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_content .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    margin-left: -2mm !important;
+    margin-right: -2mm !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_content [class*="col-"] {
+    flex: 0 0 33.3333% !important;
+    max-width: 33.3333% !important;
+    padding-left: 2mm !important;
+    padding-right: 2mm !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0 !important;
+    margin-top: 5mm !important;
+    overflow: visible !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description .table-responsive {
+    overflow: visible !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description table {
+    border-collapse: collapse !important;
+    display: table !important;
+    margin-bottom: 0 !important;
+    min-width: 0 !important;
+    table-layout: fixed !important;
+    width: 100% !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description thead {
+    display: table-header-group !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description tbody {
+    display: table-row-group !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description tr {
+    border: 0 !important;
+    display: table-row !important;
+    page-break-inside: avoid;
+    padding: 0 !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description th,
+  body.printing-order-invoice .wsus__invoice_description td {
+    border: 1px solid #e5e7eb !important;
+    color: #111827 !important;
+    display: table-cell !important;
+    font-size: 8px !important;
+    line-height: 1.25 !important;
+    padding: 2mm !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    white-space: normal !important;
+    width: auto !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description th {
+    background: #fff4e8 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description td::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description .name {
+    min-width: 0 !important;
+    text-align: left !important;
+    width: auto !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description .name p {
+    color: #111827 !important;
+    font-size: 8.5px !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1mm !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description .name span {
+    color: #4b5563 !important;
+    font-size: 7.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_description .image img {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0 !important;
+    height: 11mm !important;
+    object-fit: cover !important;
+    width: 11mm !important;
+  }
+
+  body.printing-order-invoice .user-order-details-page .wsus__invoice_description col.image-col,
+  body.printing-order-invoice .vendor-order-details-page .wsus__invoice_description col.image-col {
+    width: 16mm !important;
+  }
+
+  body.printing-order-invoice .user-order-details-page .wsus__invoice_description col.product-col,
+  body.printing-order-invoice .vendor-order-details-page .wsus__invoice_description col.product-col {
+    width: auto !important;
+  }
+
+  body.printing-order-invoice .user-order-details-page .wsus__invoice_description col.vendor-col {
+    width: 24mm !important;
+  }
+
+  body.printing-order-invoice .user-order-details-page .wsus__invoice_description col.amount-col,
+  body.printing-order-invoice .user-order-details-page .wsus__invoice_description col.quantity-col,
+  body.printing-order-invoice .user-order-details-page .wsus__invoice_description col.total-col,
+  body.printing-order-invoice .vendor-order-details-page .wsus__invoice_description col.amount-col,
+  body.printing-order-invoice .vendor-order-details-page .wsus__invoice_description col.quantity-col,
+  body.printing-order-invoice .vendor-order-details-page .wsus__invoice_description col.total-col {
+    width: 20mm !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_footer {
+    background: #fff4e8 !important;
+    border: 1px solid #fed7aa !important;
+    border-radius: 0 !important;
+    margin-left: auto !important;
+    margin-top: 5mm !important;
+    padding: 3mm !important;
+    width: 64mm !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_footer p {
+    color: #4b5563 !important;
+    display: flex !important;
+    font-size: 9px !important;
+    gap: 3mm !important;
+    justify-content: space-between !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    padding: 1.2mm 0 !important;
+  }
+
+  body.printing-order-invoice .wsus__invoice_footer p span,
+  body.printing-order-invoice .wsus__invoice_footer p:last-child {
+    color: #111827 !important;
+    font-weight: 800 !important;
+  }
+
+  body.printing-order-invoice .order-invoice-print-footer {
+    border-top: 1px solid #e5e7eb !important;
+    display: flex !important;
+    gap: 4mm !important;
+    justify-content: space-between !important;
+    margin-top: 4mm !important;
+    padding-top: 3mm !important;
+  }
+
+  body.printing-order-invoice .order-invoice-print-footer strong {
+    color: #111827 !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+  }
+
+  body.printing-order-invoice .order-invoice-print-footer span {
+    color: #4b5563 !important;
+    font-size: 8px !important;
+    line-height: 1.25 !important;
+    text-align: right !important;
+  }
 }
 
 .wsus__chatlist,

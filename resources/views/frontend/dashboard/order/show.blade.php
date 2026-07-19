@@ -20,7 +20,7 @@
 
             <div class="row">
                 <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
-                    <div class="dashboard_content mt-2 mt-md-0 dashboard-order-details-page">
+                    <div class="dashboard_content mt-2 mt-md-0 dashboard-order-details-page user-order-details-page">
                         <div class="dashboard-page-header">
                             <div>
                                 <h3><i class="fas fa-receipt"></i> Order Details</h3>
@@ -40,6 +40,20 @@
                             <section id="" class="invoice-print">
                                 <div class="">
                                     <div class="wsus__invoice_area">
+                                        <div class="order-invoice-brand">
+                                            <div class="order-invoice-brand__identity">
+                                                <img src="{{ asset($logoSetting->logo) }}" alt="Rhamify Technology logo">
+                                                <div>
+                                                    <h4>Rhamify Technology</h4>
+                                                    <p>Trusted ecommerce marketplace for smart shopping, reliable vendors, and smooth delivery.</p>
+                                                </div>
+                                            </div>
+                                            <div class="order-invoice-brand__meta">
+                                                <span>Official Invoice</span>
+                                                <strong>https://rhamify.com</strong>
+                                            </div>
+                                        </div>
+
                                         <div class="order-detail-summary">
                                             <div>
                                                 <span>Order ID</span>
@@ -101,8 +115,17 @@
                                             <div class="wsus__invoice_description">
                                                 <div class="table-responsive">
                                                     <table class="table">
+                                                        <colgroup>
+                                                            <col class="image-col">
+                                                            <col class="product-col">
+                                                            <col class="vendor-col">
+                                                            <col class="amount-col">
+                                                            <col class="quantity-col">
+                                                            <col class="total-col">
+                                                        </colgroup>
                                                         <thead>
                                                             <tr>
+                                                                <th class="image">Image</th>
                                                                 <th class="name">Product</th>
                                                                 <th class="vendor">Vendor</th>
                                                                 <th class="amount">Amount</th>
@@ -116,6 +139,9 @@
                                                                     $variants = json_decode($product->variants) ?? [];
                                                                 @endphp
                                                                 <tr>
+                                                                    <td class="image" data-label="Image">
+                                                                        <img src="{{ asset($product->product->thumb_image ?? 'frontend/images/ts-2.jpg') }}" alt="{{ $product->product_name }}">
+                                                                    </td>
                                                                     <td class="name" data-label="Product">
                                                                         <p>{{ $product->product_name }}</p>
                                                                         @foreach ($variants as $key => $item)
@@ -126,7 +152,7 @@
                                                                         @endforeach
                                                                     </td>
                                                                     <td class="vendor" data-label="Vendor">
-                                                                        {{ $product->vendor->shop_name }}
+                                                                        {{ @$product->vendor->shop_name ?? 'N/A' }}
                                                                     </td>
                                                                     <td class="amount" data-label="Amount">
                                                                         {{ $settings->currency_icon }}
@@ -158,6 +184,10 @@
 
 
                                         </div>
+                                        <div class="order-invoice-print-footer">
+                                            <strong>Thank you for shopping with Rhamify Technology.</strong>
+                                            <span>For support, visit https://rhamify.com or keep this invoice for your records.</span>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -179,15 +209,12 @@
 @push('scripts')
     <script>
         $('.print_invoice').on('click', function() {
-            let printBody = $('.invoice-print');
-            let originalContents = $('body').html();
-
-            $('body').html(printBody.html());
-
+            document.body.classList.add('printing-order-invoice');
             window.print();
-
-            $('body').html(originalContents);
-
         })
+
+        window.addEventListener('afterprint', function() {
+            document.body.classList.remove('printing-order-invoice');
+        });
     </script>
 @endpush
