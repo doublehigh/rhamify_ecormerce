@@ -7,6 +7,9 @@
             <button type="button" data-toggle="sidebar" class="admin-sidebar-collapse" aria-label="Toggle sidebar width">
                 <i class="fas fa-angle-left"></i>
             </button>
+            <button type="button" data-toggle="sidebar" class="admin-sidebar-close" aria-label="Close admin menu">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('admin.dashbaord') }}">R</a>

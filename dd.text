@@ -1,0 +1,28 @@
+database_password: #Superbase@1357
+
+db = db.sxtiplnnetwtcyxhujqb.supabase.co
+
+npm install & npm run build
+
+# php artisan storage:link
+php artisan migrate --force
+# php artisan db:seed --class=FoodParkDatabaseSeeder --force
+php artisan optimize:clear
+php artisan optimize
+
+
+DB_CONNECTION=pgsql
+DB_HOST=db.sxtiplnnetwtcyxhujqb.supabase.co
+DB_PORT=5432
+DB_DATABASE=postgres
+DB_USERNAME=postgres
+DB_PASSWORD="#Superbase@1357"
+PGSSLMODE=require
+
+CACHE_DRIVER=database
+SESSION_DRIVER=database
+QUEUE_CONNECTION=database
+
+changed the Popular Categories banner image to stretch into the exact shape of its container using object-fit: fill.
+
+Stisla purple: #6777ef

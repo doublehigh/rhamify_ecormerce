@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <section class="section">
+    <section class="section admin-dashboard-page">
         <div class="section-header">
             <h1>Dashboard</h1>
         </div>
