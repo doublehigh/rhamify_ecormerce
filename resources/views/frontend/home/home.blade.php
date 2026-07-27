@@ -36,7 +36,7 @@
     <!--============================
        MONTHLY TOP PRODUCT START
     ==============================-->
-    @if ($renderProductSections && $popularCategory && $homepage_secion_banner_one)
+    @if (false && $renderProductSections && $popularCategory && $homepage_secion_banner_one)
         @include('frontend.home.sections.top-category-product')
     @endif
     <!--============================
@@ -78,7 +78,7 @@
     <!--============================
         ELECTRONIC PART START
     ==============================-->
-    @if ($renderProductSections && $categoryProductSliderSectionOne)
+    @if (false && $renderProductSections && $categoryProductSliderSectionOne)
         @include('frontend.home.sections.category-product-slider-one')
     @endif
     <!--============================
@@ -89,7 +89,7 @@
     <!--============================
         ELECTRONIC PART START
     ==============================-->
-    @if ($renderProductSections && $categoryProductSliderSectionTwo)
+    @if (false && $renderProductSections && $categoryProductSliderSectionTwo)
         @include('frontend.home.sections.category-product-slider-two')
     @endif
 
@@ -113,7 +113,7 @@
     <!--============================
         WEEKLY BEST ITEM START
     ==============================-->
-    @if ($renderProductSections && $categoryProductSliderSectionThree)
+    @if (false && $renderProductSections && $categoryProductSliderSectionThree)
         @include('frontend.home.sections.weekly-best-item')
     @endif
     <!--============================

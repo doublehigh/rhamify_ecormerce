@@ -15,7 +15,7 @@
 
             @php
                 $products = \App\Models\Product::query()
-                    ->with(['variants', 'category', 'productImageGalleries'])->whereIn('id', $flashSaleItems)->get();
+                    ->with(['variants.productVariantItems', 'category', 'productImageGalleries'])->whereIn('id', $flashSaleItems)->get();
             @endphp
             @foreach ($products as $product)
                 <x-product-card :product="$product" />
