@@ -1,7 +1,5 @@
 @php
-    $footerInfo = Cache::rememberForever('footer_info', function(){
-            return \App\Models\FooterInfo::first();
-    });
+    $footerInfo = \App\Models\FooterInfo::find(1) ?? \App\Models\FooterInfo::first();
     $footerSocials = Cache::rememberForever('footer_socials', function(){
         return \App\Models\FooterSocial::where('status', 1)->get();
     });
@@ -74,7 +72,11 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="wsus__copyright d-flex justify-content-center">
-                        <p>Copyright &copy; {{ date('Y') }} Rhamify Technology. All Rights Reserved.</p>
+                        @if ($footerInfo?->copyright)
+                            <p>{{ $footerInfo->copyright }}</p>
+                        @else
+                            <p>Copyright &copy; {{ date('Y') }} Rhamify Technology. All Rights Reserved.</p>
+                        @endif
                     </div>
                 </div>
             </div>
