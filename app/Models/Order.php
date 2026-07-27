@@ -9,6 +9,8 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $casts = ['payment_status' => 'integer'];
+
     public function user()
     {
         return $this->belongsTo(User::class);

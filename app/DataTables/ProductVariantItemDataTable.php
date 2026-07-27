@@ -30,7 +30,7 @@ class ProductVariantItemDataTable extends DataTable
                 return $editBtn.$deleteBtn;
             })
             ->addColumn('status', function($query){
-                if($query->status == 1){
+                if($query->status){
                     $button = '<label class="custom-switch mt-2">
                         <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status" >
                         <span class="custom-switch-indicator"></span>
@@ -44,7 +44,7 @@ class ProductVariantItemDataTable extends DataTable
                 return $button;
             })
             ->addColumn('is_default', function($query){
-                if($query->is_default == 1){
+                if($query->is_default){
                     return '<i class="badge badge-success">defalut</i>';
                 }else {
                     return '<i class="badge badge-danger">no</i>';

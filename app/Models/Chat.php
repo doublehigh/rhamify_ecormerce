@@ -10,6 +10,8 @@ class Chat extends Model
 {
     use HasFactory;
 
+    protected $casts = ['seen' => 'boolean'];
+
     protected $fillable = ['seen'];
 
     function receiverProfile() : BelongsTo {

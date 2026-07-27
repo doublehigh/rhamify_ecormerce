@@ -42,7 +42,7 @@ class FooterSocialController extends Controller
         $footer->icon = $request->icon;
         $footer->name = $request->name;
         $footer->url = $request->url;
-        $footer->status = $request->status;
+        $footer->status = $request->boolean('status');
         $footer->save();
 
         Cache::forget('footer_socials');
@@ -78,7 +78,7 @@ class FooterSocialController extends Controller
         $footer->icon = $request->icon;
         $footer->name = $request->name;
         $footer->url = $request->url;
-        $footer->status = $request->status;
+        $footer->status = $request->boolean('status');
         $footer->save();
 
         Cache::forget('footer_socials');
@@ -105,7 +105,7 @@ class FooterSocialController extends Controller
     public function changeStatus(Request $request)
     {
         $footer = FooterSocial::findOrFail($request->id);
-        $footer->status = $request->status == 'true' ? 1 : 0;
+        $footer->status = $request->boolean('status');
         $footer->save();
         
         Cache::forget('footer_socials');

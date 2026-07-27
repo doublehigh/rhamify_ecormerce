@@ -54,7 +54,7 @@ class SliderController extends Controller
        $slider->starting_price = $request->starting_price;
        $slider->btn_url = $request->btn_url;
        $slider->serial = $request->serial;
-       $slider->status = $request->status;
+       $slider->status = $request->boolean('status');
        $slider->save();
 
        Cache::forget('sliders');
@@ -108,7 +108,7 @@ class SliderController extends Controller
        $slider->starting_price = $request->starting_price;
        $slider->btn_url = $request->btn_url;
        $slider->serial = $request->serial;
-       $slider->status = $request->status;
+       $slider->status = $request->boolean('status');
        $slider->save();
 
        Cache::forget('sliders');

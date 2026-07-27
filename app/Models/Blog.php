@@ -9,6 +9,8 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $casts = ['status' => 'boolean'];
+
     public function category()
     {
         return $this->belongsTo(BlogCategory::class);

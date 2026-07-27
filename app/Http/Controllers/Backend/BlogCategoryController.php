@@ -40,7 +40,7 @@ class BlogCategoryController extends Controller
         $category = new BlogCategory();
         $category->name = $request->name;
         $category->slug = Str::slug($request->name);
-        $category->status = $request->status;
+        $category->status = $request->boolean('status');
         $category->save();
 
         toastr('Created Successfully!', 'success', 'success');
@@ -72,7 +72,7 @@ class BlogCategoryController extends Controller
         $category = BlogCategory::findOrFail($id);
         $category->name = $request->name;
         $category->slug = Str::slug($request->name);
-        $category->status = $request->status;
+        $category->status = $request->boolean('status');
         $category->save();
 
         toastr('Updated Successfully!', 'success', 'success');
@@ -94,7 +94,7 @@ class BlogCategoryController extends Controller
     public function changeStatus(Request $request)
     {
         $category = BlogCategory::findOrFail($request->id);
-        $category->status = $request->status == 'true' ? 1 : 0;
+        $category->status = $request->boolean('status');
         $category->save();
 
         return response(['message' => 'Status has been updated!']);

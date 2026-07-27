@@ -181,7 +181,7 @@ class CartController extends Controller
             return response(['status' => 'error', 'message' => 'Coupon filed is required']);
         }
 
-        $coupon = Coupon::where(['code' => $request->coupon_code, 'status' => 1])->first();
+        $coupon = Coupon::where(['code' => $request->coupon_code, 'status' => true])->first();
 
         if($coupon === null){
             return response(['status' => 'error', 'message' => 'Coupon not exist!']);

@@ -24,7 +24,7 @@ class VendorRequestController extends Controller
     public function changeStatus(Request $request, string $id)
     {
         $vendor = Vendor::findOrFail($id);
-        $vendor->status = $request->status;
+        $vendor->status = $request->boolean('status');
         $vendor->save();
 
         $user = User::findOrFail($vendor->user_id);

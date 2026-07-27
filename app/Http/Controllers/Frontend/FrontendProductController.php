@@ -23,7 +23,7 @@ class FrontendProductController extends Controller
             ->with(['variants', 'category', 'productImageGalleries'])
             ->where([
                 'category_id' => $category->id,
-                'status' => 1,
+                'status' => true,
                 'is_approved' => 1
             ])
             ->when($request->has('range'), function($query) use ($request){
@@ -40,7 +40,7 @@ class FrontendProductController extends Controller
             ->with(['variants', 'category', 'productImageGalleries'])
             ->where([
                 'sub_category_id' => $category->id,
-                'status' => 1,
+                'status' => true,
                 'is_approved' => 1
             ])
             ->when($request->has('range'), function($query) use ($request){
@@ -58,7 +58,7 @@ class FrontendProductController extends Controller
             ->with(['variants', 'category', 'productImageGalleries'])
             ->where([
                 'child_category_id' => $category->id,
-                'status' => 1,
+                'status' => true,
                 'is_approved' => 1
             ])
             ->when($request->has('range'), function($query) use ($request){
@@ -76,7 +76,7 @@ class FrontendProductController extends Controller
             ->with(['variants', 'category', 'productImageGalleries'])
             ->where([
                 'brand_id' => $brand->id,
-                'status' => 1,
+                'status' => true,
                 'is_approved' => 1
             ])
             ->when($request->has('range'), function($query) use ($request){
@@ -90,7 +90,7 @@ class FrontendProductController extends Controller
         }elseif($request->has('search')){
             $products = Product::withAvg('reviews', 'rating')->withCount('reviews')
             ->with(['variants', 'category', 'productImageGalleries'])
-            ->where(['status' => 1, 'is_approved' => 1])
+            ->where(['status' => true, 'is_approved' => 1])
             ->where(function ($query) use ($request){
                 $query->where('name', 'like', '%'.$request->search.'%')
                     ->orWhere('long_description', 'like', '%'.$request->search.'%')
@@ -104,11 +104,11 @@ class FrontendProductController extends Controller
         }else {
             $products = Product::withAvg('reviews', 'rating')->withCount('reviews')
             ->with(['variants', 'category', 'productImageGalleries'])
-            ->where(['status' => 1, 'is_approved' => 1])->orderBy('id', 'DESC')->paginate(12);
+            ->where(['status' => true, 'is_approved' => 1])->orderBy('id', 'DESC')->paginate(12);
         }
 
-        $categories = Category::where(['status' => 1])->get();
-        $brands = Brand::where(['status' => 1])->get();
+        $categories = Category::where(['status' => true])->get();
+        $brands = Brand::where(['status' => true])->get();
         [$from, $to] = $request->filled('range')
             ? array_pad(explode(';', $request->range), 2, null)
             : [0, 8000];
@@ -124,10 +124,10 @@ class FrontendProductController extends Controller
     {
         $product = Product::with(['vendor', 'category', 'productImageGalleries', 'variants', 'brand'])
             ->where('slug', $slug)
-            ->where('status', 1)
+            ->where('status', true)
             ->firstOrFail();
 
-        $reviews = ProductReview::where('product_id', $product->id)->where('status', 1)->paginate(10);
+        $reviews = ProductReview::where('product_id', $product->id)->where('status', true)->paginate(10);
         return view('frontend.pages.product-detail', compact('product', 'reviews'));
     }
 

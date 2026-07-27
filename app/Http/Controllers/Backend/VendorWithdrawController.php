@@ -9,7 +9,7 @@ use App\Models\WithdrawMethod;
 use App\Models\WithdrawRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class VendorWithdrawController extends Controller
 {
@@ -22,7 +22,7 @@ class VendorWithdrawController extends Controller
         ->whereHas('order', function($query){
             $query->where('payment_status', 1)->where('order_status', 'delivered');
         })
-        ->sum(DB::raw('unit_price * qty + variant_total'));
+        ->sum(DB::raw('unit_price * qty + COALESCE(variant_total, 0)'));
 
         $totalWithdraw = WithdrawRequest::where('status', 'paid')->sum('total_amount');
 
@@ -65,7 +65,7 @@ class VendorWithdrawController extends Controller
         ->whereHas('order', function($query){
             $query->where('payment_status', 1)->where('order_status', 'delivered');
         })
-        ->sum(DB::raw('unit_price * qty + variant_total'));
+        ->sum(DB::raw('unit_price * qty + COALESCE(variant_total, 0)'));
 
         $totalWithdraw = WithdrawRequest::where('status', 'paid')->sum('total_amount');
 

@@ -30,7 +30,7 @@ class VendorMessageController extends Controller
             ->whereIn('sender_id', [$senderId, $receiverId])
             ->orderBy('created_at', 'asc')
             ->get();
-        Chat::where(['sender_id' => $receiverId, 'receiver_id' => $senderId])->update(['seen' => 1]);
+        Chat::where(['sender_id' => $receiverId, 'receiver_id' => $senderId])->update(['seen' => true]);
 
         return response($messages);
     }

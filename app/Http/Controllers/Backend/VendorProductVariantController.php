@@ -50,7 +50,7 @@ class VendorProductVariantController extends Controller
         $varinat = new ProductVariant();
         $varinat->product_id = $request->product;
         $varinat->name = $request->name;
-        $varinat->status = $request->status;
+        $varinat->status = $request->boolean('status');
         $varinat->save();
 
         toastr('Created Successfully!', 'success', 'success');
@@ -95,7 +95,7 @@ class VendorProductVariantController extends Controller
             abort(404);
         }
         $varinat->name = $request->name;
-        $varinat->status = $request->status;
+        $varinat->status = $request->boolean('status');
         $varinat->save();
 
         toastr('Updated Successfully!', 'success', 'success');
@@ -127,7 +127,7 @@ class VendorProductVariantController extends Controller
     public function changeStatus(Request $request)
     {
         $varinat = ProductVariant::findOrFail($request->id);
-        $varinat->status = $request->status == 'true' ? 1 : 0;
+        $varinat->status = $request->boolean('status');
         $varinat->save();
 
         return response(['message' => 'Status has been updated!']);

@@ -9,6 +9,8 @@ class Vendor extends Model
 {
     use HasFactory;
 
+    protected $casts = ['status' => 'boolean'];
+
     public function user()
     {
         return $this->belongsTo(User::class);

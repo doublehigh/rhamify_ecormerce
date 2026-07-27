@@ -54,7 +54,7 @@ class CouponController extends Controller
         $coupon->discount_type = $request->discount_type;
         $coupon->discount = $request->discount;
         $coupon->total_used = 0;
-        $coupon->status = $request->status;
+        $coupon->status = $request->boolean('status');
         $coupon->save();
 
         toastr('Created Successfully', 'success', 'Success');
@@ -107,7 +107,7 @@ class CouponController extends Controller
         $coupon->end_date = $request->end_date;
         $coupon->discount_type = $request->discount_type;
         $coupon->discount = $request->discount;
-        $coupon->status = $request->status;
+        $coupon->status = $request->boolean('status');
         $coupon->save();
 
         toastr('Updated Successfully', 'success', 'Success');
@@ -129,7 +129,7 @@ class CouponController extends Controller
     public function changeStatus(Request $request)
     {
         $coupon = Coupon::findOrFail($request->id);
-        $coupon->status = $request->status == 'true' ? 1 : 0;
+        $coupon->status = $request->boolean('status');
         $coupon->save();
 
         return response(['message' => 'Status has been updated!']);

@@ -9,6 +9,11 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'status' => 'boolean',
+        'is_approved' => 'integer',
+    ];
+
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);

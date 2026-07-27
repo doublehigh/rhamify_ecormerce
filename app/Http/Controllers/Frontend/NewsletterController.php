@@ -20,7 +20,7 @@ class NewsletterController extends Controller
         $existSubscriber = NewsletterSubscriber::where('email', $request->email)->first();
 
         if(!empty($existSubscriber)){
-            if($existSubscriber->is_verified == 0){
+            if(! $existSubscriber->is_verified){
                 $existSubscriber->verified_token = \Str::random(25);
                 $existSubscriber->save();
                 // set mail config
@@ -30,14 +30,14 @@ class NewsletterController extends Controller
 
                 return response(['status' => 'success', 'message' => 'A verification link has been sent to your email please check']);
 
-            }elseif($existSubscriber->is_verified == 1){
+            }elseif($existSubscriber->is_verified){
                 return response(['status' => 'error', 'message' => 'You already subscribed with this email!']);
             }
         }else {
             $subscriber = new NewsletterSubscriber();
             $subscriber->email = $request->email;
             $subscriber->verified_token = \Str::random(25);
-            $subscriber->is_verified = 0;
+            $subscriber->is_verified = '0';
             $subscriber->save();
 
             // set mail config
@@ -58,7 +58,7 @@ class NewsletterController extends Controller
        $verify = NewsletterSubscriber::where('verified_token', $token)->first();
        if($verify){
             $verify->verified_token = 'verified';
-            $verify->is_verified = 1;
+            $verify->is_verified = '1';
             $verify->save();
             toastr('Email verification successfully', 'success', 'success');
             return redirect()->route('home');

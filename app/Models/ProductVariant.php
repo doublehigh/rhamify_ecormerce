@@ -9,6 +9,8 @@ class ProductVariant extends Model
 {
     use HasFactory;
 
+    protected $casts = ['status' => 'boolean'];
+
     public function productVariantItems()
     {
         return $this->hasMany(ProductVariantItem::class);

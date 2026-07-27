@@ -14,7 +14,7 @@ class CheckOutController extends Controller
     public function index()
     {
         $addresses = UserAddress::where('user_id', Auth::user()->id)->get();
-        $shippingMethods = ShippingRule::where('status', 1)->get();
+        $shippingMethods = ShippingRule::where('status', true)->get();
         return view('frontend.pages.checkout', compact('addresses', 'shippingMethods'));
     }
 

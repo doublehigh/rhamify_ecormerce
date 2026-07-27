@@ -31,7 +31,7 @@ class FlashSaleItemDataTable extends DataTable
                 return "<a href='".route('admin.products.edit', $query->product->id)."'>".$query->product->name."</a>";
             })
             ->addColumn('status', function($query){
-                if($query->status == 1){
+                if($query->status){
                     $button = '<label class="custom-switch mt-2">
                         <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status" >
                         <span class="custom-switch-indicator"></span>
@@ -45,7 +45,7 @@ class FlashSaleItemDataTable extends DataTable
                 return $button;
             })
             ->addColumn('show_at_home', function($query){
-                if($query->show_at_home == 1){
+                if($query->show_at_home){
                     $button = '<label class="custom-switch mt-2">
                         <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-at-home-status" >
                         <span class="custom-switch-indicator"></span>

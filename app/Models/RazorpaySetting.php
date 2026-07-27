@@ -9,6 +9,8 @@ class RazorpaySetting extends Model
 {
     use HasFactory;
 
+    protected $casts = ['status' => 'boolean'];
+
     protected $fillable = [
         'status',
         'country_name',

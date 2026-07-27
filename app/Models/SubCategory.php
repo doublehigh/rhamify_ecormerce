@@ -9,6 +9,8 @@ class SubCategory extends Model
 {
     use HasFactory;
 
+    protected $casts = ['status' => 'boolean'];
+
 
     public function category()
     {

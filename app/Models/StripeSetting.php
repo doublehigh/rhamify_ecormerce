@@ -9,6 +9,8 @@ class StripeSetting extends Model
 {
     use HasFactory;
 
+    protected $casts = ['status' => 'boolean'];
+
     protected $fillable = [
         'status',
         'mode',

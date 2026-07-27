@@ -48,8 +48,8 @@ class BrandController extends Controller
         $brand->logo = $logoPath;
         $brand->name = $request->name;
         $brand->slug = Str::slug($request->name);
-        $brand->is_featured = $request->is_featured;
-        $brand->status = $request->status;
+        $brand->is_featured = $request->boolean('is_featured');
+        $brand->status = $request->boolean('status');
         $brand->save();
 
         toastr('Created Successfully!', 'success');
@@ -92,8 +92,8 @@ class BrandController extends Controller
         $brand->logo = empty(!$logoPath) ? $logoPath : $brand->logo;
         $brand->name = $request->name;
         $brand->slug = Str::slug($request->name);
-        $brand->is_featured = $request->is_featured;
-        $brand->status = $request->status;
+        $brand->is_featured = $request->boolean('is_featured');
+        $brand->status = $request->boolean('status');
         $brand->save();
 
         toastr('Updated Successfully!', 'success');
@@ -118,7 +118,7 @@ class BrandController extends Controller
     public function changeStatus(Request $request)
     {
         $category = Brand::findOrFail($request->id);
-        $category->status = $request->status == 'true' ? 1 : 0;
+        $category->status = $request->boolean('status');
         $category->save();
 
         return response(['message' => 'Status has been updated!']);

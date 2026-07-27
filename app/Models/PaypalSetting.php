@@ -9,6 +9,8 @@ class PaypalSetting extends Model
 {
     use HasFactory;
 
+    protected $casts = ['status' => 'boolean'];
+
     protected $fillable = [
         'status',
         'mode',

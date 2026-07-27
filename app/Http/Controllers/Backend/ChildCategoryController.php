@@ -36,7 +36,7 @@ class ChildCategoryController extends Controller
      */
     public function getSubCategories(Request $request)
     {
-        $subCategories = SubCategory::where('category_id', $request->id)->where('status', 1)->get();
+        $subCategories = SubCategory::where('category_id', $request->id)->where('status', true)->get();
         return $subCategories;
     }
 
@@ -58,7 +58,7 @@ class ChildCategoryController extends Controller
         $childCategory->sub_category_id = $request->sub_category;
         $childCategory->name = $request->name;
         $childCategory->slug = Str::slug($request->name);
-        $childCategory->status = $request->status;
+        $childCategory->status = $request->boolean('status');
         $childCategory->save();
 
         toastr('Created Successfully!', 'success');
@@ -104,7 +104,7 @@ class ChildCategoryController extends Controller
         $childCategory->sub_category_id = $request->sub_category;
         $childCategory->name = $request->name;
         $childCategory->slug = Str::slug($request->name);
-        $childCategory->status = $request->status;
+        $childCategory->status = $request->boolean('status');
         $childCategory->save();
 
         toastr('Update Successfully!', 'success');
@@ -139,7 +139,7 @@ class ChildCategoryController extends Controller
     public function changeStatus(Request $request)
     {
         $category = ChildCategory::findOrFail($request->id);
-        $category->status = $request->status == 'true' ? 1 : 0;
+        $category->status = $request->boolean('status');
         $category->save();
 
         return response(['message' => 'Status has been updated!']);

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class FooterSocial extends Model
 {
     use HasFactory;
+
+    protected $casts = ['status' => 'boolean'];
 }

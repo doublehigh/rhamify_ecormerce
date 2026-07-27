@@ -9,6 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $casts = ['status' => 'boolean'];
+
     public function subCategories()
     {
         return $this->hasMany(SubCategory::class);

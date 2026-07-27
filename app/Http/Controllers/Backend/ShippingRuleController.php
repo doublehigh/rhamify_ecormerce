@@ -43,7 +43,7 @@ class ShippingRuleController extends Controller
         $shipping->type = $request->type;
         $shipping->min_cost = $request->min_cost;
         $shipping->cost = $request->cost;
-        $shipping->status = $request->status;
+        $shipping->status = $request->boolean('status');
         $shipping->save();
 
         toastr('Created Successfully', 'success', 'Success');
@@ -87,7 +87,7 @@ class ShippingRuleController extends Controller
         $shipping->type = $request->type;
         $shipping->min_cost = $request->min_cost;
         $shipping->cost = $request->cost;
-        $shipping->status = $request->status;
+        $shipping->status = $request->boolean('status');
         $shipping->save();
 
         toastr('Updated Successfully', 'success', 'Success');
@@ -109,7 +109,7 @@ class ShippingRuleController extends Controller
     public function changeStatus(Request $request)
     {
         $shipping = ShippingRule::findOrFail($request->id);
-        $shipping->status = $request->status == 'true' ? 1 : 0;
+        $shipping->status = $request->boolean('status');
         $shipping->save();
 
         return response(['message' => 'Status has been updated!']);

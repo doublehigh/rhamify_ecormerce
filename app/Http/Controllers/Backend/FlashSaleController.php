@@ -14,7 +14,7 @@ class FlashSaleController extends Controller
     public function index(FlashSaleItemDataTable $dataTable)
     {
         $flashSaleDate = FlashSale::first();
-        $products = Product::where('is_approved', 1)->where('status', 1)->orderBy('id', 'DESC')->get();
+        $products = Product::where('is_approved', 1)->where('status', true)->orderBy('id', 'DESC')->get();
         return $dataTable->render('admin.flash-sale.index', compact('flashSaleDate', 'products'));
     }
 
@@ -51,8 +51,8 @@ class FlashSaleController extends Controller
         $flashSaleItem = new FlashSaleItem();
         $flashSaleItem->product_id = $request->product;
         $flashSaleItem->flash_sale_id = $flashSaleDate->id;
-        $flashSaleItem->show_at_home = $request->show_at_home;
-        $flashSaleItem->status = $request->status;
+        $flashSaleItem->show_at_home = $request->boolean('show_at_home');
+        $flashSaleItem->status = $request->boolean('status');
         $flashSaleItem->save();
 
         toastr('Product Added Successfully!', 'success', 'Success');
@@ -64,7 +64,7 @@ class FlashSaleController extends Controller
     public function chageShowAtHomeStatus(Request $request)
     {
         $flashSaleItem = FlashSaleItem::findOrFail($request->id);
-        $flashSaleItem->show_at_home = $request->status == 'true' ? 1 : 0;
+        $flashSaleItem->show_at_home = $request->boolean('status');
         $flashSaleItem->save();
 
         return response(['message' => 'Status has been updated!']);
@@ -73,7 +73,7 @@ class FlashSaleController extends Controller
     public function changeStatus(Request $request)
     {
         $flashSaleItem = FlashSaleItem::findOrFail($request->id);
-        $flashSaleItem->status = $request->status == 'true' ? 1 : 0;
+        $flashSaleItem->status = $request->boolean('status');
         $flashSaleItem->save();
 
         return response(['message' => 'Status has been updated!']);

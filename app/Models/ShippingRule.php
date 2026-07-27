@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ShippingRule extends Model
 {
     use HasFactory;
+
+    protected $casts = ['status' => 'boolean'];
 }

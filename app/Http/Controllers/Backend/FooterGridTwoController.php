@@ -42,7 +42,7 @@ class FooterGridTwoController extends Controller
         $footer = new FooterGridTwo();
         $footer->name = $request->name;
         $footer->url = $request->url;
-        $footer->status = $request->status;
+        $footer->status = $request->boolean('status');
         $footer->save();
 
         Cache::forget('footer_grid_two');
@@ -76,7 +76,7 @@ class FooterGridTwoController extends Controller
         $footer = FooterGridTwo::findOrFail($id);
         $footer->name = $request->name;
         $footer->url = $request->url;
-        $footer->status = $request->status;
+        $footer->status = $request->boolean('status');
         $footer->save();
 
         Cache::forget('footer_grid_two');
@@ -101,7 +101,7 @@ class FooterGridTwoController extends Controller
     public function changeStatus(Request $request)
     {
         $footer = FooterGridTwo::findOrFail($request->id);
-        $footer->status = $request->status == 'true' ? 1 : 0;
+        $footer->status = $request->boolean('status');
         $footer->save();
         
         Cache::forget('footer_grid_two');

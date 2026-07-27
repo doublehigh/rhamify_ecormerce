@@ -65,9 +65,9 @@ class VendorProductDataTable extends DataTable
         })
         ->addColumn('status', function($query){
             $inputId = 'vendor-product-status-'.$query->id;
-            $statusText = $query->status == 1 ? 'Active' : 'Inactive';
-            $checked = $query->status == 1 ? 'checked' : '';
-            if($query->status == 1){
+            $statusText = $query->status ? 'Active' : 'Inactive';
+            $checked = $query->status ? 'checked' : '';
+            if($query->status){
 
                 $button = '<label class="vendor-product-status-switch vendor-status-toggle" for="'.$inputId.'">
                 <input '.$checked.' class="change-status vendor-status-toggle__input" type="checkbox" id="'.$inputId.'" data-id="'.$query->id.'"><span class="vendor-status-toggle__track" aria-hidden="true"></span><span class="vendor-status-toggle__text">'.$statusText.'</span></label>';

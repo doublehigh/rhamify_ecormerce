@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class FooterGridTwo extends Model
 {
     use HasFactory;
+
+    protected $casts = ['status' => 'boolean'];
 }

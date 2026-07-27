@@ -45,7 +45,7 @@ class SubCategoryController extends Controller
         $subCategory->category_id = $request->category;
         $subCategory->name = $request->name;
         $subCategory->slug = Str::slug($request->name);
-        $subCategory->status = $request->status;
+        $subCategory->status = $request->boolean('status');
         $subCategory->save();
 
         toastr('Created Successfully!', 'success');
@@ -88,7 +88,7 @@ class SubCategoryController extends Controller
         $subCategory->category_id = $request->category;
         $subCategory->name = $request->name;
         $subCategory->slug = Str::slug($request->name);
-        $subCategory->status = $request->status;
+        $subCategory->status = $request->boolean('status');
         $subCategory->save();
 
         toastr('Updated Successfully!', 'success');
@@ -115,7 +115,7 @@ class SubCategoryController extends Controller
     public function changeStatus(Request $request)
     {
         $category = SubCategory::findOrFail($request->id);
-        $category->status = $request->status == 'true' ? 1 : 0;
+        $category->status = $request->boolean('status');
         $category->save();
 
         return response(['message' => 'Status has been updated!']);

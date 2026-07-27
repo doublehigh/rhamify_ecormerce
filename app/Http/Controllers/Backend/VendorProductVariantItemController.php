@@ -42,8 +42,8 @@ class VendorProductVariantItemController extends Controller
         $variantItem->product_variant_id = $request->variant_id;
         $variantItem->name = $request->name;
         $variantItem->price = $request->price;
-        $variantItem->is_default = $request->is_default;
-        $variantItem->status = $request->status;
+        $variantItem->is_default = $request->boolean('is_default');
+        $variantItem->status = $request->boolean('status');
         $variantItem->save();
 
         toastr('Created Successfully!', 'success', 'success');
@@ -71,8 +71,8 @@ class VendorProductVariantItemController extends Controller
         $variantItem = ProductVariantItem::findOrFail($variantItemId);
         $variantItem->name = $request->name;
         $variantItem->price = $request->price;
-        $variantItem->is_default = $request->is_default;
-        $variantItem->status = $request->status;
+        $variantItem->is_default = $request->boolean('is_default');
+        $variantItem->status = $request->boolean('status');
         $variantItem->save();
 
         toastr('Update Successfully!', 'success', 'success');
@@ -92,7 +92,7 @@ class VendorProductVariantItemController extends Controller
     public function chageStatus(Request $request)
     {
         $variantItem = ProductVariantItem::findOrFail($request->id);
-        $variantItem->status = $request->status == 'true' ? 1 : 0;
+        $variantItem->status = $request->boolean('status');
         $variantItem->save();
 
         return response(['message' => 'Status has been updated!']);

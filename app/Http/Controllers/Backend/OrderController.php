@@ -120,11 +120,11 @@ class OrderController extends Controller
     {
         $request->validate([
             'id' => ['required', 'integer', 'exists:orders,id'],
-            'status' => ['required', Rule::in([0, 1])],
+            'status' => ['required', 'boolean'],
         ]);
 
         $paymentStatus = Order::findOrFail($request->id);
-        $paymentStatus->payment_status = $request->status;
+        $paymentStatus->payment_status = $request->boolean('status') ? 1 : 0;
         $paymentStatus->save();
 
         return response(['status' => 'success', 'message' => 'Updated Payment Status Successfully']);

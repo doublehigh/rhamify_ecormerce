@@ -270,7 +270,7 @@ class PaymentController extends Controller
             return redirect()->route('user.checkout');
         }
 
-        if($codPaySetting->status == 0){
+        if(! $codPaySetting->status){
             return redirect()->back();
         }
 

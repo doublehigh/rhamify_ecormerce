@@ -9,6 +9,11 @@ class ProductVariantItem extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'is_default' => 'boolean',
+        'status' => 'boolean',
+    ];
+
 
     public function productVariant()
     {

@@ -23,7 +23,7 @@ class SubscribersController extends Controller
             'message' => ['required']
         ]);
 
-        $emails = NewsletterSubscriber::where('is_verified', 1)->pluck('email')->toArray();
+        $emails = NewsletterSubscriber::where('is_verified', '1')->pluck('email')->toArray();
 
         Mail::to($emails)->send(new Newsletter($request->subject, $request->message));
 

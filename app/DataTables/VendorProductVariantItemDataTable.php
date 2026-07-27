@@ -31,7 +31,7 @@ class VendorProductVariantItemDataTable extends DataTable
             return $editBtn.$deleteBtn;
         })
         ->addColumn('status', function($query){
-            if($query->status == 1){
+            if($query->status){
                 $button = '<div class="form-check form-switch">
                 <input checked class="form-check-input change-status" type="checkbox" id="flexSwitchCheckDefault" data-id="'.$query->id.'"></div>';
             }else {
@@ -41,7 +41,7 @@ class VendorProductVariantItemDataTable extends DataTable
             return $button;
         })
         ->addColumn('is_default', function($query){
-            if($query->is_default == 1){
+            if($query->is_default){
                 return '<i class="badge bg-success">defalut</i>';
             }else {
                 return '<i class="badge bg-danger">no</i>';

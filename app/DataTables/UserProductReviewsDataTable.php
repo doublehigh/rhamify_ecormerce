@@ -31,7 +31,7 @@ class UserProductReviewsDataTable extends DataTable
                 return $query->user->name;
             })
             ->addColumn('status', function($query){
-                if($query->status == 1){
+                if($query->status){
                     return "<span class='badge bg-success'>Approved</span>";
                 }else {
                     return "<span class='badge bg-warning'>Pending</span>";

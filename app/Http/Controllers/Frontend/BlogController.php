@@ -14,29 +14,29 @@ class BlogController extends Controller
     {
         if ($request->has('search')) {
             $blogs = Blog::with('category')->where('title', 'like', '%' . $request->search . '%')
-                ->where('status', 1)->orderBy('id', 'DESC')
+                ->where('status', true)->orderBy('id', 'DESC')
                 ->paginate(12);
         } elseif ($request->has('category')) {
             $category = BlogCategory::where('slug', $request->category)
-                ->where('status',1)->firstOrFail();
+                ->where('status', true)->firstOrFail();
 
             $blogs = Blog::with('category')->where('category_id', $category->id)
-                ->where('status', 1)->orderBy('id', 'DESC')
+                ->where('status', true)->orderBy('id', 'DESC')
                 ->paginate(12);
         } else {
-            $blogs = Blog::with('category')->where('status', 1)->orderBy('id', 'DESC')->paginate(12);
+            $blogs = Blog::with('category')->where('status', true)->orderBy('id', 'DESC')->paginate(12);
         }
         return view('frontend.pages.blog', compact('blogs'));
     }
     public function blogDetails(string $slug)
     {
-        $blog = Blog::with('comments')->where('slug', $slug)->where('status', 1)->firstOrFail();
-        $moreBlogs = Blog::where('slug', '!=', $slug)->where('status', 1)->orderBy('id', 'DESC')->take(5)->get();
-        $recentBlogs = Blog::where('slug', '!=', $slug)->where('status', 1)
+        $blog = Blog::with('comments')->where('slug', $slug)->where('status', true)->firstOrFail();
+        $moreBlogs = Blog::where('slug', '!=', $slug)->where('status', true)->orderBy('id', 'DESC')->take(5)->get();
+        $recentBlogs = Blog::where('slug', '!=', $slug)->where('status', true)
             ->where('category_id', $blog->category_id)->orderBy('id', 'DESC')->take(12)->get();
 
         $comments = $blog->comments()->paginate(20);
-        $categories = BlogCategory::where('status', 1)->get();
+        $categories = BlogCategory::where('status', true)->get();
         return view('frontend.pages.blog-detail', compact('blog', 'moreBlogs','recentBlogs', 'comments', 'categories'));
     }
 

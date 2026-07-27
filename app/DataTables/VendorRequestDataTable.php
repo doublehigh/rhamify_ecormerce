@@ -38,7 +38,7 @@ class VendorRequestDataTable extends DataTable
                 return $query->email;
             })
             ->addColumn('status', function($query){
-                if($query->status == 0){
+                if(! $query->status){
                     return "<span class='badge bg-warning'>pending</span>";
                 }else {
                     return "<span class='badge bg-success'>active</span>";
@@ -53,7 +53,7 @@ class VendorRequestDataTable extends DataTable
      */
     public function query(Vendor $model): QueryBuilder
     {
-        return $model->where('status', 0)->newQuery();
+        return $model->where('status', false)->newQuery();
     }
 
     /**

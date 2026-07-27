@@ -24,16 +24,16 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Cache::rememberForever('sliders', function(){
-            return Slider::where('status', 1)->orderBy('serial', 'asc')->get();
+            return Slider::where('status', true)->orderBy('serial', 'asc')->get();
         });
 
         $flashSaleDate = FlashSale::first();
 
-        $flashSaleItems = FlashSaleItem::where('show_at_home', 1)->where('status', 1)->pluck('product_id')->toArray();
+        $flashSaleItems = FlashSaleItem::where('show_at_home', true)->where('status', true)->pluck('product_id')->toArray();
 
         $popularCategory = HomePageSetting::where('key', 'popular_category_section')->first();
-        $homeCategories = Category::where('status', 1)->orderBy('id')->take(10)->get();
-        $brands = Brand::where('status', 1)->where('is_featured', 1)->get();
+        $homeCategories = Category::where('status', true)->orderBy('id')->take(10)->get();
+        $brands = Brand::where('status', true)->where('is_featured', true)->get();
 
         $typeBaseProducts = $this->getTypeBaseProduct();
         $categoryProductSliderSectionOne = HomePageSetting::where('key', 'product_slider_section_one')->first();
@@ -54,7 +54,7 @@ class HomeController extends Controller
         $homepage_secion_banner_four = Adverisement::where('key', 'homepage_secion_banner_four')->first();
         $homepage_secion_banner_four = json_decode($homepage_secion_banner_four?->value);
 
-        $recentBlogs = Blog::with(['category', 'user'])->where('status',1)->orderBy('id', 'DESC')->take(8)->get();
+        $recentBlogs = Blog::with(['category', 'user'])->where('status', true)->orderBy('id', 'DESC')->take(8)->get();
 
         return view('frontend.home.home',
             compact(
@@ -84,36 +84,36 @@ class HomeController extends Controller
 
         $typeBaseProducts['new_arrival'] = Product::withAvg('reviews', 'rating')->withCount('reviews')
         ->with(['variants', 'category', 'productImageGalleries'])
-        ->where(['product_type' => 'new_arrival', 'is_approved' => 1, 'status' => 1])->orderBy('id', 'DESC')->take(8)->get();
+        ->where(['product_type' => 'new_arrival', 'is_approved' => 1, 'status' => true])->orderBy('id', 'DESC')->take(8)->get();
 
         $typeBaseProducts['featured_product'] = Product::withAvg('reviews', 'rating')->withCount('reviews')
         ->with(['variants', 'category', 'productImageGalleries'])
-        ->where(['product_type' => 'featured_product', 'is_approved' => 1, 'status' => 1])->orderBy('id', 'DESC')->take(8)->get();
+        ->where(['product_type' => 'featured_product', 'is_approved' => 1, 'status' => true])->orderBy('id', 'DESC')->take(8)->get();
 
         $typeBaseProducts['top_product'] = Product::withAvg('reviews', 'rating')->withCount('reviews')
         ->with(['variants', 'category', 'productImageGalleries'])
-        ->where(['product_type' => 'top_product', 'is_approved' => 1, 'status' => 1])->orderBy('id', 'DESC')->take(8)->get();
+        ->where(['product_type' => 'top_product', 'is_approved' => 1, 'status' => true])->orderBy('id', 'DESC')->take(8)->get();
 
         $typeBaseProducts['best_product'] = Product::withAvg('reviews', 'rating')->withCount('reviews')
         ->with(['variants', 'category', 'productImageGalleries'])
-        ->where(['product_type' => 'best_product', 'is_approved' => 1, 'status' => 1])->orderBy('id', 'DESC')->take(8)->get();
+        ->where(['product_type' => 'best_product', 'is_approved' => 1, 'status' => true])->orderBy('id', 'DESC')->take(8)->get();
 
         return $typeBaseProducts;
     }
 
     public function vendorPage()
     {
-       $vendors = Vendor::where('status',1)->paginate(20);
+       $vendors = Vendor::where('status', true)->paginate(20);
        return view('frontend.pages.vendor', compact('vendors'));
     }
 
     public function vendorProductsPage(string $id)
     {
 
-        $products = Product::where(['status' => 1, 'is_approved' => 1, 'vendor_id' => $id])->orderBy('id', 'DESC')->paginate(12);
+        $products = Product::where(['status' => true, 'is_approved' => 1, 'vendor_id' => $id])->orderBy('id', 'DESC')->paginate(12);
 
-        $categories = Category::where(['status' => 1])->get();
-        $brands = Brand::where(['status' => 1])->get();
+        $categories = Category::where(['status' => true])->get();
+        $brands = Brand::where(['status' => true])->get();
         $vendor = Vendor::findOrFail($id);
 
         return view('frontend.pages.vendor-product', compact('products', 'categories', 'brands', 'vendor'));

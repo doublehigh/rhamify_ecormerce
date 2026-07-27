@@ -27,7 +27,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $categories = BlogCategory::where('status', 1)->get();
+        $categories = BlogCategory::where('status', true)->get();
         return view('admin.blog.create', compact('categories'));
     }
 
@@ -57,7 +57,7 @@ class BlogController extends Controller
         $blog->description = $request->description;
         $blog->seo_title = $request->seo_title;
         $blog->seo_description = $request->seo_description;
-        $blog->status = $request->status;
+        $blog->status = $request->boolean('status');
 
         $blog->save();
 
@@ -75,7 +75,7 @@ class BlogController extends Controller
     public function edit(string $id)
     {
         $blog = Blog::findOrFail($id);
-        $categories = BlogCategory::where('status', 1)->get();
+        $categories = BlogCategory::where('status', true)->get();
         return view('admin.blog.edit', compact('blog', 'categories'));
     }
 
@@ -106,7 +106,7 @@ class BlogController extends Controller
         $blog->description = $request->description;
         $blog->seo_title = $request->seo_title;
         $blog->seo_description = $request->seo_description;
-        $blog->status = $request->status;
+        $blog->status = $request->boolean('status');
 
         $blog->save();
 
@@ -131,7 +131,7 @@ class BlogController extends Controller
     public function changeStatus(Request $request)
     {
         $blog = Blog::findOrFail($request->id);
-        $blog->status = $request->status == 'true' ? 1 : 0;
+        $blog->status = $request->boolean('status');
         $blog->save();
 
         return response(['message' => 'Status has been updated!']);

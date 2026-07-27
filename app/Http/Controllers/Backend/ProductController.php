@@ -80,7 +80,7 @@ class ProductController extends Controller
         $product->offer_start_date = $request->offer_start_date;
         $product->offer_end_date = $request->offer_end_date;
         $product->product_type = $request->product_type;
-        $product->status = $request->status;
+        $product->status = $request->boolean('status');
         $product->is_approved = 1;
         $product->seo_title = $request->seo_title;
         $product->seo_description = $request->seo_description;
@@ -154,7 +154,7 @@ class ProductController extends Controller
         $product->offer_start_date = $request->offer_start_date;
         $product->offer_end_date = $request->offer_end_date;
         $product->product_type = $request->product_type;
-        $product->status = $request->status;
+        $product->status = $request->boolean('status');
         $product->seo_title = $request->seo_title;
         $product->seo_description = $request->seo_description;
         $product->save();
@@ -201,7 +201,7 @@ class ProductController extends Controller
     public function changeStatus(Request $request)
     {
         $product = Product::findOrFail($request->id);
-        $product->status = $request->status == 'true' ? 1 : 0;
+        $product->status = $request->boolean('status');
         $product->save();
 
         return response(['message' => 'Status has been updated!']);

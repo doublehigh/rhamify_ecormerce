@@ -9,6 +9,11 @@ class FlashSaleItem extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'show_at_home' => 'boolean',
+        'status' => 'boolean',
+    ];
+
     public function product()
     {
         return $this->belongsTo(Product::class);

@@ -34,14 +34,14 @@ class BrandDataTable extends DataTable
             ->addColumn('is_featured', function($query){
                 $active = '<i class="badge badge-success">Yes</i>';
                 $inActive = '<i class="badge badge-danger">No</i>';
-                if($query->is_featured == 1){
+                if($query->is_featured){
                     return $active;
                 }else {
                     return $inActive;
                 }
             })
             ->addColumn('status', function($query){
-                if($query->status == 1){
+                if($query->status){
                     $button = '<label class="custom-switch mt-2">
                         <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status" >
                         <span class="custom-switch-indicator"></span>

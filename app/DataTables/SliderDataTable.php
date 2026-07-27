@@ -34,7 +34,7 @@ class SliderDataTable extends DataTable
             ->addColumn('status', function($query){
                 $active = '<i class="badge badge-success">Active</i>';
                 $inActive = '<i class="badge badge-danger">Inactive</i>';
-                if($query->status == 1){
+                if($query->status){
                     return $active;
                 }else {
                     return $inActive;

@@ -33,7 +33,7 @@ class CouponDataTable extends DataTable
                 return GeneralSetting::first()->currency_icon.$query->discount;
             })
             ->addColumn('status', function($query){
-                if($query->status == 1){
+                if($query->status){
                     $button = '<label class="custom-switch mt-2">
                         <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status" >
                         <span class="custom-switch-indicator"></span>

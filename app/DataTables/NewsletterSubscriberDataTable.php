@@ -28,7 +28,7 @@ class NewsletterSubscriberDataTable extends DataTable
                 return $deleteBtn;
             })
             ->addColumn('is_verified', function($query){
-                if($query->is_verified == 1){
+                if($query->is_verified){
 
                     return '<i class="badge bg-success text-light">Yes</i>';
                 }else {
