@@ -187,7 +187,7 @@
                                                         @endif
                                                     @endfor
 
-                                                    <span>({{$product->reviews_count}} review)</span>
+                                                    <span>({{$product->reviews_count ?? 0}} review)</span>
                                                 </p>
                                                 <a class="wsus__pro_name" href="{{route('product-detail', $product->slug)}}">{{limitText($product->name, 53)}}</a>
                                                 @if(checkDiscount($product))
@@ -252,14 +252,14 @@
 
 
                                                     @for ($i = 1; $i <= 5; $i++)
-                                                        @if ($i <= $product->reviews_avg_rating)
+                                                        @if ($i <= ($product->reviews_avg_rating ?? 0))
                                                         <i class="fas fa-star"></i>
                                                         @else
                                                         <i class="far fa-star"></i>
                                                         @endif
                                                     @endfor
 
-                                                    <span>({{$product->reviews_count}} review)</span>
+                                                    <span>({{$product->reviews_count ?? 0}} review)</span>
                                                 </p>
                                                 <a class="wsus__pro_name" href="{{route('product-detail', $product->slug)}}">{{$product->name}}</a>
 

@@ -19,21 +19,21 @@
 
                     if (array_keys($lastKey)[0] === 'category') {
                         $category = \App\Models\Category::find($lastKey['category']);
-                        $products = \App\Models\Product::withAvg('reviews', 'rating')->withCount('reviews')
+                        $products = \App\Models\Product::query()
                         ->where('category_id', $category->id)
                             ->orderBy('id', 'DESC')
                             ->take(6)
                             ->get();
                     } elseif (array_keys($lastKey)[0] === 'sub_category') {
                         $category = \App\Models\SubCategory::find($lastKey['sub_category']);
-                        $products = \App\Models\Product::withAvg('reviews', 'rating')->withCount('reviews')
+                        $products = \App\Models\Product::query()
                         ->where('sub_category_id', $category->id)
                             ->orderBy('id', 'DESC')
                             ->take(6)
                             ->get();
                     } else {
                         $category = \App\Models\ChildCategory::find($lastKey['child_category']);
-                        $products = \App\Models\Product::withAvg('reviews', 'rating')->withCount('reviews')
+                        $products = \App\Models\Product::query()
                         ->where('child_category_id', $category->id)
                             ->orderBy('id', 'DESC')
                             ->take(6)
@@ -48,6 +48,10 @@
                     <div class="row weekly_best2">
 
                         @foreach ($products as $item)
+                        @php
+                            $reviewsAvgRating = $item->reviews_avg_rating ?? 0;
+                            $reviewsCount = $item->reviews_count ?? 0;
+                        @endphp
                         <div class="col-xl-4 col-lg-4 col-12">
                             <a class="wsus__hot_deals__single" href="{{route('product-detail', $item->slug)}}">
                                 <div class="wsus__hot_deals__single_img">
@@ -58,14 +62,14 @@
                                     <p class="wsus__rating">
 
                                         @for ($i = 1; $i <= 5; $i++)
-                                            @if ($i <= $item->reviews_avg_rating)
+                                            @if ($i <= $reviewsAvgRating)
                                             <i class="fas fa-star"></i>
                                             @else
                                             <i class="far fa-star"></i>
                                             @endif
                                         @endfor
 
-                                        <span>({{$item->reviews_count}} review)</span>
+                                        <span>({{$reviewsCount}} review)</span>
                                     </p>
                                     @if (checkDiscount($item))
                                         <p class="wsus__tk">{{$settings->currency_icon}}{{$item->offer_price}} <del>{{$settings->currency_icon}}{{$item->price}}</del></p>

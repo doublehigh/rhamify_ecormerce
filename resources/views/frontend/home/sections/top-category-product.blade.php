@@ -37,18 +37,18 @@
 
                             if(array_keys($lastKey)[0] === 'category'){
                                 $category = \App\Models\Category::find($lastKey['category']);
-                                $products[] = \App\Models\Product::withAvg('reviews', 'rating')
+                                $products[] = \App\Models\Product::query()
                                 ->with(['variants', 'category', 'productImageGalleries'])
                                 ->where('category_id', $category->id)->orderBy('id', 'DESC')->take(12)->get();
                             }elseif(array_keys($lastKey)[0] === 'sub_category'){
                                 $category = \App\Models\SubCategory::find($lastKey['sub_category']);
-                                $products[] = \App\Models\Product::withAvg('reviews', 'rating')
+                                $products[] = \App\Models\Product::query()
                                 ->with(['variants', 'category', 'productImageGalleries'])
                                 ->where('sub_category_id', $category->id)->orderBy('id', 'DESC')->take(12)->get();
 
                             }else {
                                 $category = \App\Models\ChildCategory::find($lastKey['child_category']);
-                                $products[] = \App\Models\Product::withAvg('reviews', 'rating')
+                                $products[] = \App\Models\Product::query()
                                 ->with(['variants', 'category', 'productImageGalleries'])
                                 ->where('child_category_id', $category->id)->orderBy('id', 'DESC')->take(12)->get();
 
@@ -66,6 +66,7 @@
                 <div class="row grid">
                     @foreach ($products as $key => $product)
                         @foreach ($product as $item)
+                            @php($reviewsAvgRating = $item->reviews_avg_rating ?? 0)
                             <div class="col-xl-2 col-6 col-sm-6 col-md-4 col-lg-3 category-{{$key}}">
                                 <a class="wsus__hot_deals__single" href="{{route('product-detail', $item->slug)}}">
                                     <div class="wsus__hot_deals__single_img">
@@ -75,7 +76,7 @@
                                         <h5>{{ limitText($item->name) }}</h5>
                                         <p class="wsus__rating">
                                             @for ($i = 1; $i <= 5; $i++)
-                                                @if ($i <= $item->reviews_avg_rating)
+                                                @if ($i <= $reviewsAvgRating)
                                                 <i class="fas fa-star"></i>
                                                 @else
                                                 <i class="far fa-star"></i>

@@ -52,7 +52,7 @@
 
                 <div class="row">
                     @php
-                        $products = \App\Models\Product::withAvg('reviews', 'rating')->withCount('reviews')
+                        $products = \App\Models\Product::query()
                     ->with(['variants', 'category', 'productImageGalleries'])
                         ->whereIn('id', $flashSaleItems)->get();
                     @endphp
