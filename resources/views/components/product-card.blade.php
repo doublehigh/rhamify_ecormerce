@@ -28,19 +28,15 @@
             <p class="wsus__pro_rating">
 
 
-                @php
-                    $reviewsAvgRating = $product->reviews_avg_rating ?? 0;
-                    $reviewsCount = $product->reviews_count ?? 0;
-                @endphp
                 @for ($i = 1; $i <= 5; $i++)
-                    @if ($i <= $reviewsAvgRating)
+                    @if ($i <= ($product->reviews_avg_rating ?? 0))
                     <i class="fas fa-star"></i>
                     @else
                     <i class="far fa-star"></i>
                     @endif
                 @endfor
 
-                <span>({{$reviewsCount}} review)</span>
+                <span>({{$product->reviews_count ?? 0}} review)</span>
             </p>
             <a class="wsus__pro_name" href="{{route('product-detail', $product->slug)}}">{{limitText($product->name, 52)}}</a>
             @if(checkDiscount($product))
