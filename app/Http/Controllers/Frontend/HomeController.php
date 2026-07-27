@@ -7,13 +7,10 @@ use App\Models\Adverisement;
 use App\Models\Blog;
 use App\Models\Brand;
 use App\Models\Category;
-use App\Models\ChildCategory;
 use App\Models\FlashSale;
-use App\Models\FlashSaleItem;
 use App\Models\HomePageSetting;
 use App\Models\Product;
 use App\Models\Slider;
-use App\Models\SubCategory;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -23,22 +20,24 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $renderProductSections = false;
+
         $sliders = Cache::rememberForever('sliders', function(){
             return Slider::where('status', true)->orderBy('serial', 'asc')->get();
         });
 
         $flashSaleDate = FlashSale::first();
 
-        $flashSaleItems = FlashSaleItem::where('show_at_home', true)->where('status', true)->pluck('product_id')->toArray();
+        $flashSaleItems = [];
 
         $popularCategory = HomePageSetting::where('key', 'popular_category_section')->first();
         $homeCategories = Category::where('status', true)->orderBy('id')->take(10)->get();
         $brands = Brand::where('status', true)->where('is_featured', true)->get();
 
-        $typeBaseProducts = $this->getTypeBaseProduct();
-        $categoryProductSliderSectionOne = HomePageSetting::where('key', 'product_slider_section_one')->first();
-        $categoryProductSliderSectionTwo = HomePageSetting::where('key', 'product_slider_section_two')->first();
-        $categoryProductSliderSectionThree = HomePageSetting::where('key', 'product_slider_section_three')->first();
+        $typeBaseProducts = [];
+        $categoryProductSliderSectionOne = null;
+        $categoryProductSliderSectionTwo = null;
+        $categoryProductSliderSectionThree = null;
 
         // banners
 
@@ -68,6 +67,7 @@ class HomeController extends Controller
                 'categoryProductSliderSectionOne',
                 'categoryProductSliderSectionTwo',
                 'categoryProductSliderSectionThree',
+                'renderProductSections',
 
                 'homepage_secion_banner_one',
                 'homepage_secion_banner_two',

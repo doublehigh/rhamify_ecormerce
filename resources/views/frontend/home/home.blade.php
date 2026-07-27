@@ -25,7 +25,7 @@
     <!--============================
         FLASH SELL START
     ==============================-->
-    @if ($flashSaleDate)
+    @if ($renderProductSections && $flashSaleDate)
         @include('frontend.home.sections.flash-sale')
     @endif
     <!--============================
@@ -36,7 +36,7 @@
     <!--============================
        MONTHLY TOP PRODUCT START
     ==============================-->
-    @if ($popularCategory && $homepage_secion_banner_one)
+    @if ($renderProductSections && $popularCategory && $homepage_secion_banner_one)
         @include('frontend.home.sections.top-category-product')
     @endif
     <!--============================
@@ -67,7 +67,7 @@
     <!--============================
         HOT DEALS START
     ==============================-->
-    @if ($homepage_secion_banner_three)
+    @if ($renderProductSections && $homepage_secion_banner_three)
         @include('frontend.home.sections.hot-deals')
     @endif
     <!--============================
@@ -78,7 +78,7 @@
     <!--============================
         ELECTRONIC PART START
     ==============================-->
-    @if ($categoryProductSliderSectionOne)
+    @if ($renderProductSections && $categoryProductSliderSectionOne)
         @include('frontend.home.sections.category-product-slider-one')
     @endif
     <!--============================
@@ -89,7 +89,7 @@
     <!--============================
         ELECTRONIC PART START
     ==============================-->
-    @if ($categoryProductSliderSectionTwo)
+    @if ($renderProductSections && $categoryProductSliderSectionTwo)
         @include('frontend.home.sections.category-product-slider-two')
     @endif
 
@@ -113,7 +113,7 @@
     <!--============================
         WEEKLY BEST ITEM START
     ==============================-->
-    @if ($categoryProductSliderSectionThree)
+    @if ($renderProductSections && $categoryProductSliderSectionThree)
         @include('frontend.home.sections.weekly-best-item')
     @endif
     <!--============================
