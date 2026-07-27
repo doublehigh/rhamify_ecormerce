@@ -8,6 +8,7 @@ use App\Models\Blog;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\FlashSale;
+use App\Models\FlashSaleItem;
 use App\Models\HomePageSetting;
 use App\Models\Product;
 use App\Models\Slider;
@@ -20,7 +21,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $renderProductSections = false;
+        $renderProductSections = true;
 
         $sliders = Cache::rememberForever('sliders', function(){
             return Slider::where('status', true)->orderBy('serial', 'asc')->get();
@@ -28,16 +29,16 @@ class HomeController extends Controller
 
         $flashSaleDate = FlashSale::first();
 
-        $flashSaleItems = [];
+        $flashSaleItems = FlashSaleItem::where('show_at_home', true)->where('status', true)->pluck('product_id')->toArray();
 
         $popularCategory = HomePageSetting::where('key', 'popular_category_section')->first();
         $homeCategories = Category::where('status', true)->orderBy('id')->take(10)->get();
         $brands = Brand::where('status', true)->where('is_featured', true)->get();
 
-        $typeBaseProducts = [];
-        $categoryProductSliderSectionOne = null;
-        $categoryProductSliderSectionTwo = null;
-        $categoryProductSliderSectionThree = null;
+        $typeBaseProducts = $this->getTypeBaseProduct();
+        $categoryProductSliderSectionOne = HomePageSetting::where('key', 'product_slider_section_one')->first();
+        $categoryProductSliderSectionTwo = HomePageSetting::where('key', 'product_slider_section_two')->first();
+        $categoryProductSliderSectionThree = HomePageSetting::where('key', 'product_slider_section_three')->first();
 
         // banners
 
