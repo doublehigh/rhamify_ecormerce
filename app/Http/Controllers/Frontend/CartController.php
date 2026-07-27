@@ -21,7 +21,7 @@ class CartController extends Controller
 
         if(count($cartItems) === 0){
             Session::forget('coupon');
-            toastr('Please add some products in your cart for view the cart page', 'warning', 'Cart is empty!');
+            toastr('Please add some products in your cart for view the cart page', 'warning');
             return redirect()->route('home');
         }
 
@@ -146,7 +146,7 @@ class CartController extends Controller
     public function removeProduct($rowId)
     {
         Cart::remove($rowId);
-        toastr('Product removed succesfully!', 'success', 'Success');
+        toastr('Product removed succesfully!', 'success');
         return redirect()->back();
     }
 

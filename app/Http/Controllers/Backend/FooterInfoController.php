@@ -42,7 +42,7 @@ class FooterInfoController extends Controller
         FooterInfo::updateOrCreate(
             ['id' => $id],
             [
-                'logo' => empty(!$imagePath) ? $imagePath : $footerInfo->banner,
+                'logo' => $imagePath ?: $footerInfo?->logo,
                 'phone' => $request->phone,
                 'email' => $request->email,
                 'address' => $request->address,
@@ -52,7 +52,7 @@ class FooterInfoController extends Controller
 
         Cache::forget('footer_info');
 
-        toastr('Updated successfully!', 'success', 'success');
+        toastr('Updated successfully!', 'success');
 
         return redirect()->back();
     }

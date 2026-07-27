@@ -50,7 +50,7 @@ class WishlistController extends Controller
         }
         $wishlistProducts->delete();
 
-        toastr('Product removed successfully', 'success', 'success');
+        toastr('Product removed successfully', 'success');
 
         return redirect()->back();
 

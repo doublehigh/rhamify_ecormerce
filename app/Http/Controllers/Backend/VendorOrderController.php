@@ -39,7 +39,7 @@ class VendorOrderController extends Controller
         $order->order_status = $request->status;
         $order->save();
 
-        toastr('Status Updated Successfully!', 'success', 'Success');
+        toastr('Status Updated Successfully!', 'success');
 
         return redirect()->back();
     }

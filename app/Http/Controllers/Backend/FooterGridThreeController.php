@@ -49,7 +49,7 @@ class FooterGridThreeController extends Controller
 
         Cache::forget('footer_grid_three');
 
-        toastr('Created Successfully!', 'success', 'success');
+        toastr('Created Successfully!', 'success');
 
         return redirect()->route('admin.footer-grid-three.index');
     }
@@ -83,7 +83,7 @@ class FooterGridThreeController extends Controller
 
         Cache::forget('footer_grid_three');
 
-        toastr('Update Successfully!', 'success', 'success');
+        toastr('Update Successfully!', 'success');
 
         return redirect()->route('admin.footer-grid-three.index');
     }
@@ -121,7 +121,7 @@ class FooterGridThreeController extends Controller
         ['footer_grid_three_title' => $request->title]
        );
 
-       toastr('Updated Successfully', 'success', 'success');
+       toastr('Updated Successfully', 'success');
 
        return redirect()->back();
     }

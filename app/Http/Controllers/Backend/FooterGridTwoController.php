@@ -47,7 +47,7 @@ class FooterGridTwoController extends Controller
 
         Cache::forget('footer_grid_two');
 
-        toastr('Created Successfully!', 'success', 'success');
+        toastr('Created Successfully!', 'success');
 
         return redirect()->route('admin.footer-grid-two.index');
     }
@@ -81,7 +81,7 @@ class FooterGridTwoController extends Controller
 
         Cache::forget('footer_grid_two');
 
-        toastr('Update Successfully!', 'success', 'success');
+        toastr('Update Successfully!', 'success');
 
         return redirect()->route('admin.footer-grid-two.index');
     }
@@ -120,7 +120,7 @@ class FooterGridTwoController extends Controller
         ['footer_grid_two_title' => $request->title]
        );
 
-       toastr('Updated Successfully', 'success', 'success');
+       toastr('Updated Successfully', 'success');
 
        return redirect()->back();
     }

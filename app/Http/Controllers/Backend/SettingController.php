@@ -61,7 +61,7 @@ class SettingController extends Controller
             ]
         );
 
-        toastr('Updated successfully!', 'success', 'Success');
+        toastr('Updated successfully!', 'success');
 
         return redirect()->back();
 
@@ -90,7 +90,7 @@ class SettingController extends Controller
             ]
         );
 
-        toastr('Updates successfully!', 'success', 'success');
+        toastr('Updates successfully!', 'success');
         return redirect()->back();
     }
 
@@ -112,7 +112,7 @@ class SettingController extends Controller
             ]
         );
 
-        toastr('Updated successfully!', 'success', 'success');
+        toastr('Updated successfully!', 'success');
 
         return redirect()->back();
     }
@@ -132,7 +132,7 @@ class SettingController extends Controller
             $validatedData
         );
 
-        toastr('Updated successfully!', 'success', 'success');
+        toastr('Updated successfully!', 'success');
         return redirect()->back();
 
     }

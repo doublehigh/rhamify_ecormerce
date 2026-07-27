@@ -27,7 +27,7 @@ class AboutController extends Controller
             ]
         );
 
-        toastr('updated successfully!', 'success', 'success');
+        toastr('updated successfully!', 'success');
 
         return redirect()->back();
 
