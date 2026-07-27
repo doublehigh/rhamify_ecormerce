@@ -9,6 +9,12 @@ class OrderProduct extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'unit_price' => 'decimal:2',
+        'variant_total' => 'integer',
+        'qty' => 'integer',
+    ];
+
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);

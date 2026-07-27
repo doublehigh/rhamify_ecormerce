@@ -9,7 +9,10 @@ class ProductReview extends Model
 {
     use HasFactory;
 
-    protected $casts = ['status' => 'boolean'];
+    protected $casts = [
+        'rating' => 'integer',
+        'status' => 'boolean',
+    ];
 
     public function user()
     {

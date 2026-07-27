@@ -23,7 +23,7 @@ class ReviewController extends Controller
     {
 
         $request->validate([
-            'rating' => ['required'],
+            'rating' => ['required', 'integer', 'between:1,5'],
             'review' => ['required', 'max:200'],
             'images.*' => ['image']
         ]);
@@ -40,9 +40,9 @@ class ReviewController extends Controller
         $productReview->product_id = $request->product_id;
         $productReview->vendor_id = $request->vendor_id;
         $productReview->user_id = Auth::user()->id;
-        $productReview->rating = $request->rating;
+        $productReview->rating = $request->integer('rating');
         $productReview->review = $request->review;
-        $productReview->status = 0;
+        $productReview->status = false;
 
         $productReview->save();
 
