@@ -204,6 +204,7 @@
 
         })
     </script>
+  @flasher_render
   @stack('scripts')
 </body>
 

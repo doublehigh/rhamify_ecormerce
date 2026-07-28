@@ -158,6 +158,7 @@
             @endforeach
         @endif
     </script>
+    @flasher_render
     <script>
         $(document).ready(function(){
             $('.auto_click').click();

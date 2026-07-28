@@ -115,6 +115,7 @@
         @endforeach
     @endif
   </script>
+  @flasher_render
 
   <!-- Dynamic Delete alart -->
 
